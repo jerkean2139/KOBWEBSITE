@@ -123,3 +123,10 @@
 ## Update Header Logo
 - [x] Replace header logo with text-based "KEAN ON BIZ" logo
 - [x] Add gradient effect from blue to electric blue/cyan
+
+## Export Logo Assets
+- [x] Create transparent PNG file of gradient KEAN ON BIZ logo
+- [x] Create darker blue gradient version of logo
+
+## Update About Section Headline
+- [x] Change headline to display on separate lines: "35 Years. / 13 Brands Created. / One Truth."

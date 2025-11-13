@@ -135,7 +135,9 @@ export default function Home() {
                 <p className="text-primary text-sm font-bold uppercase tracking-wider">Meet Jeremy</p>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                35 Years. 13 Brands. One Truth.
+                35 Years.<br />
+                13 Brands Created.<br />
+                One Truth.
               </h2>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
                 The difference between struggling and scaling isn't working harder – it's building better systems.
