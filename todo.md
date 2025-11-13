@@ -136,3 +136,7 @@
 - [x] Update all gradient backgrounds throughout the site
 - [x] Update button and accent colors
 - [x] Test responsive design with new colors
+
+## Update Logo to Lime Green Version
+- [x] Generate stacked KEAN ON BIZ logo with lime green "ON" badge
+- [x] Replace gradient text logo with new image logo in Navigation
