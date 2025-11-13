@@ -15,6 +15,18 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileMenuOpen]);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -90,7 +102,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-background border-t border-border">
+        <div className="md:hidden bg-background border-t border-border fixed inset-x-0 top-20 bottom-0 overflow-y-auto">
           <div className="container py-6 flex flex-col gap-4">
             <button
               onClick={() => scrollToSection("about")}

@@ -64,3 +64,6 @@
 - [x] Update hero subheadline for insurance agencies and business owners
 - [x] Add December 10th launch messaging for book
 - [x] Remove duplicate book showcase section
+
+## Bug Fixes
+- [x] Fix mobile view scrolling issue (floating/jumping behavior)
