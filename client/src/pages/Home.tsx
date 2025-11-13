@@ -24,7 +24,7 @@ export default function Home() {
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 max-w-full"
         style={{
-          background: "linear-gradient(135deg, oklch(0.15 0 0) 0%, oklch(0.18 0 0) 50%, oklch(0.12 0 0) 100%)",
+          background: "linear-gradient(135deg, oklch(0.20 0.08 250) 0%, oklch(0.15 0.06 255) 50%, oklch(0.18 0.07 245) 100%)",
         }}
       >
         <div className="absolute inset-0 opacity-20">
@@ -127,9 +127,16 @@ export default function Home() {
       <section id="about" className="py-24 bg-background relative" style={{ clipPath: "polygon(0 0, 100% 0, 100% 95%, 0 100%)" }}>
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              {/* Image removed per user request */}
-            </div>
+            <AnimatedSection animation="slide-left" className="order-2 md:order-1">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-primary/10 rounded-2xl blur-2xl"></div>
+                <img
+                  src="/jeremy-hero-photo.webp"
+                  alt="Jeremy Kean"
+                  className="relative rounded-2xl shadow-2xl w-full h-auto"
+                />
+              </div>
+            </AnimatedSection>
             <AnimatedSection animation="slide-right" className="order-1 md:order-2">
               <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
                 <p className="text-primary text-sm font-bold uppercase tracking-wider">Meet Jeremy</p>
@@ -168,7 +175,7 @@ export default function Home() {
 
       {/* Brand Philosophy Section */}
       <section className="py-24 relative overflow-hidden -mt-16" style={{
-        background: "linear-gradient(135deg, oklch(0.20 0 0) 0%, oklch(0.15 0 0) 100%)",
+        background: "linear-gradient(135deg, oklch(0.25 0.08 250) 0%, oklch(0.20 0.06 255) 100%)",
         clipPath: "polygon(0 5%, 100% 0, 100% 95%, 0 100%)",
         paddingTop: "8rem"
       }}>
@@ -202,6 +209,53 @@ export default function Home() {
             </div>
             <p className="text-xl text-white font-semibold max-w-3xl mx-auto leading-relaxed">
               Together, they're how modern businesses stop duct-taping tools and finally operate with clarity, speed, and soul.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Ecosystem Section */}
+      <section id="tech-ecosystem" className="py-24 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
+              <p className="text-primary text-sm font-bold uppercase tracking-wider">Tech Brands</p>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Purpose-Built Platforms
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Our tech ecosystem leverages industry-leading automation and AI platforms to build custom solutions that actually work for your business.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center max-w-6xl mx-auto">
+            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/zapier-logo.png" alt="Zapier" className="h-12 w-auto" />
+            </div>
+            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/make-logo.png" alt="Make.com" className="h-12 w-auto" />
+            </div>
+            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/n8n-logo.png" alt="n8n" className="h-12 w-auto" />
+            </div>
+            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/replit-logo.png" alt="Replit" className="h-12 w-auto" />
+            </div>
+            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/lovable-logo.png" alt="Lovable" className="h-12 w-auto" />
+            </div>
+            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/chatgpt-logo.png" alt="ChatGPT" className="h-12 w-auto" />
+            </div>
+            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/claude-logo.png" alt="Claude AI" className="h-12 w-auto" />
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              We combine these powerful platforms with custom development to create automation solutions tailored to your specific business needs.
             </p>
           </div>
         </div>
@@ -321,10 +375,8 @@ export default function Home() {
                     <span>Custom AI projects</span>
                   </li>
                 </ul>
-                <Button className="w-full" variant="outline" asChild>
-                  <a href="https://zenoflo.com" target="_blank" rel="noopener noreferrer">
-                    Explore Zenoflo <ExternalLink className="ml-2" size={14} />
-                  </a>
+                <Button className="w-full" onClick={() => scrollToSection("tech-ecosystem")}>
+                  Learn More
                 </Button>
               </CardContent>
             </Card>
@@ -762,7 +814,7 @@ export default function Home() {
         id="contact"
         className="py-20 relative overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, oklch(0.15 0 0) 0%, oklch(0.18 0 0) 50%, oklch(0.12 0 0) 100%)",
+          background: "linear-gradient(135deg, oklch(0.20 0.08 250) 0%, oklch(0.15 0.06 255) 50%, oklch(0.18 0.07 245) 100%)",
         }}
       >
         <div className="container relative z-10">

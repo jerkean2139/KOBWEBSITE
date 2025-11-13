@@ -56,9 +56,9 @@ export default function Navigation() {
             className="hover:opacity-80 transition-opacity"
           >
             <img 
-              src="/kean-on-biz-logo-lime-green.png" 
+              src="/kean-on-biz-logo-dark-blue.png" 
               alt="Kean on Biz" 
-              className="h-14 w-auto"
+              className="h-20 w-auto knight-rider-glow"
             />
           </button>
 
