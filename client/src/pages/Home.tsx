@@ -21,7 +21,7 @@ export default function Home() {
         id="hero"
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
         style={{
-          background: "linear-gradient(135deg, oklch(0.20 0.03 30) 0%, oklch(0.15 0.02 25) 50%, oklch(0.18 0.02 35) 100%)",
+          background: "linear-gradient(135deg, oklch(0.20 0.08 250) 0%, oklch(0.15 0.06 255) 50%, oklch(0.18 0.07 245) 100%)",
         }}
       >
         <div className="absolute inset-0 opacity-20">
@@ -125,7 +125,7 @@ export default function Home() {
 
       {/* Brand Philosophy Section */}
       <section className="py-16 relative overflow-hidden" style={{
-        background: "linear-gradient(135deg, oklch(0.25 0.03 35) 0%, oklch(0.20 0.02 30) 100%)",
+        background: "linear-gradient(135deg, oklch(0.25 0.08 250) 0%, oklch(0.20 0.06 255) 100%)",
       }}>
         <div className="container relative z-10">
           <div className="max-w-5xl mx-auto text-center">
@@ -557,7 +557,7 @@ export default function Home() {
         id="contact"
         className="py-20 relative overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, oklch(0.20 0.03 30) 0%, oklch(0.15 0.02 25) 50%, oklch(0.18 0.02 35) 100%)",
+          background: "linear-gradient(135deg, oklch(0.20 0.08 250) 0%, oklch(0.15 0.06 255) 50%, oklch(0.18 0.07 245) 100%)",
         }}
       >
         <div className="container relative z-10">

@@ -50,3 +50,9 @@
 - [x] Add slide-up effects for sections
 - [x] Create stagger animations for cards and list items
 - [x] Add smooth reveal animations for images
+
+## Color Scheme Comparison
+- [ ] Create Version A: Deep Navy + Electric Blue (unified system)
+- [ ] Create Version B: Dual Brand (warm personal + cool tech)
+- [ ] Update all gradients, buttons, and accents for Version A
+- [ ] Update all gradients, buttons, and accents for Version B
