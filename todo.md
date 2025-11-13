@@ -111,3 +111,7 @@
 - [x] Add Zenoflo logo to Zenoflo brand card
 - [x] Add AgentMob.ai logo to AgentMob brand card
 - [x] Add "Coming Soon" badge to AgentMob.ai card
+
+## Replace with Actual Brand Logos
+- [x] Replace Zenoflo logo with actual black transparent logo
+- [x] Replace AgentMob.ai logo with actual brand logo
