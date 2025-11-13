@@ -80,3 +80,9 @@
 
 ## Exit Popup Update
 - [x] Convert exit-intent popup from email capture to "Learn More About The Book" with link to manumation.ai
+
+## Logo Update
+- [x] Extract Kean on Biz logo from screenshot
+- [x] Convert grey text to electric blue
+- [x] Convert orange "ON" badge to electric blue
+- [x] Replace text logo in navigation with actual logo image

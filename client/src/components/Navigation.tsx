@@ -53,10 +53,13 @@ export default function Navigation() {
           {/* Logo */}
           <button
             onClick={scrollToTop}
-            className="text-2xl font-bold text-foreground hover:text-primary transition-colors"
+            className="hover:opacity-80 transition-opacity"
           >
-            <span className="text-primary">KEAN</span>
-            <span className="text-foreground ml-1">ON BIZ</span>
+            <img 
+              src="/kean-on-biz-logo-blue.png" 
+              alt="Kean on Biz" 
+              className="h-12 w-auto"
+            />
           </button>
 
           {/* Desktop Navigation */}
