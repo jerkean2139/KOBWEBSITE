@@ -29,3 +29,10 @@
 - [x] Add route for /jeremys-calendar page
 - [x] Update site title to "Kean on Biz"
 - [x] Remove all pricing information
+
+## New Features - GHL Integration & Book Showcase
+- [x] Add GoHighLevel embed code sections to Calendar page for each session type
+- [x] Create biweekly newsletter signup section on homepage
+- [x] Add Manumation Assessment CTA section linking to GHL survey
+- [x] Create Manumation.ai book showcase section with book cover image
+- [x] Link book showcase to manumation.ai website

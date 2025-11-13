@@ -73,6 +73,15 @@ export default function Calendar() {
                     </li>
                   </ul>
                 </div>
+                <div className="bg-muted/50 rounded-lg p-6 mb-6">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong className="text-foreground">Paste your GoHighLevel 1:1 Coaching embed code below:</strong>
+                  </p>
+                  <div className="bg-background/50 rounded border-2 border-dashed border-primary/30 p-8 text-center">
+                    <p className="text-muted-foreground">GHL 1:1 Coaching Embed Code Goes Here</p>
+                    <p className="text-sm text-muted-foreground/70 mt-2">(Replace this placeholder in the code)</p>
+                  </div>
+                </div>
                 <Button size="lg" className="w-full md:w-auto">
                   <CalendarIcon className="mr-2" size={18} />
                   Schedule 1:1 Coaching Call
@@ -125,6 +134,15 @@ export default function Calendar() {
                       <span>Making introductions or discussing partnership opportunities</span>
                     </li>
                   </ul>
+                </div>
+                <div className="bg-muted/50 rounded-lg p-6 mb-6">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong className="text-foreground">Paste your GoHighLevel Quick Connect embed code below:</strong>
+                  </p>
+                  <div className="bg-background/50 rounded border-2 border-dashed border-primary/30 p-8 text-center">
+                    <p className="text-muted-foreground">GHL Quick Connect Embed Code Goes Here</p>
+                    <p className="text-sm text-muted-foreground/70 mt-2">(Replace this placeholder in the code)</p>
+                  </div>
                 </div>
                 <Button size="lg" variant="outline" className="w-full md:w-auto">
                   <CalendarIcon className="mr-2" size={18} />
@@ -187,6 +205,15 @@ export default function Calendar() {
                   <p className="text-sm text-muted-foreground">
                     <strong className="text-foreground">Note:</strong> Come prepared with specific goals or challenges you want to address. The more context you provide beforehand, the more value we can extract from our time together.
                   </p>
+                </div>
+                <div className="bg-muted/50 rounded-lg p-6 mb-6">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong className="text-foreground">Paste your GoHighLevel Strategy Session embed code below:</strong>
+                  </p>
+                  <div className="bg-background/50 rounded border-2 border-dashed border-primary/30 p-8 text-center">
+                    <p className="text-muted-foreground">GHL Strategy Session Embed Code Goes Here</p>
+                    <p className="text-sm text-muted-foreground/70 mt-2">(Replace this placeholder in the code)</p>
+                  </div>
                 </div>
                 <Button size="lg" className="w-full md:w-auto">
                   <CalendarIcon className="mr-2" size={18} />

@@ -432,6 +432,129 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Manumation Book Showcase */}
+      <section className="py-24 bg-background">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="order-2 md:order-1">
+              <img
+                src="/manumation-book-cover.png"
+                alt="The Manumation Effect Book Cover"
+                className="rounded-lg shadow-2xl w-full max-w-md mx-auto"
+              />
+            </div>
+            <div className="order-1 md:order-2">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Introducing <span className="text-primary">The Manumation Effect</span>
+              </h2>
+              <p className="text-xl text-muted-foreground mb-6">
+                Manumation is the <strong>strategic fusion</strong> of human ingenuity, AI Agents, and automated systems that transforms business experiences while creating <strong>true freedom for innovative thinkers.</strong>
+              </p>
+              <p className="text-lg text-muted-foreground mb-8">
+                Discover the methodology that's revolutionizing how businesses operate. This book reveals the framework behind building systems that work with your brain, not against it.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="text-lg px-8 py-6" asChild>
+                  <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
+                    Explore Manumation.ai <ExternalLink className="ml-2" />
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="text-lg px-8 py-6" onClick={() => scrollToSection("assessment")}>
+                  Take the Assessment
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Manumation Assessment CTA */}
+      <section id="assessment" className="py-24 bg-muted/30">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Discover Your Automation Readiness
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Take the Manumation Assessment to identify exactly where intelligent automation and human-centered systems will free up your time, grow your revenue, and simplify your team's day-to-day.
+            </p>
+            <Card className="border-2 border-primary/20 p-8">
+              <div className="space-y-6">
+                <div className="flex items-center justify-center gap-4 text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="text-primary" size={20} />
+                    <span>5-10 Minutes</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="text-primary" size={20} />
+                    <span>Personalized Results</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="text-primary" size={20} />
+                    <span>Actionable Insights</span>
+                  </div>
+                </div>
+                <div className="bg-muted/50 rounded-lg p-6">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong className="text-foreground">Paste your GoHighLevel assessment embed code below:</strong>
+                  </p>
+                  <div className="bg-background/50 rounded border-2 border-dashed border-primary/30 p-8 text-center">
+                    <p className="text-muted-foreground">GHL Assessment Embed Code Goes Here</p>
+                    <p className="text-sm text-muted-foreground/70 mt-2">(Replace this placeholder in the code)</p>
+                  </div>
+                </div>
+                <Button size="lg" className="text-lg px-8 py-6">
+                  Start Your Assessment <ArrowRight className="ml-2" />
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <section className="py-24 bg-background">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <Card className="border-2 border-primary/20">
+              <CardContent className="p-8 md:p-12">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Stay Ahead of the Curve
+                  </h2>
+                  <p className="text-lg text-muted-foreground">
+                    Join our biweekly newsletter and get the latest insights on AI, automation, and business systems delivered straight to your inbox.
+                  </p>
+                </div>
+                <div className="bg-muted/50 rounded-lg p-6 mb-6">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong className="text-foreground">Paste your GoHighLevel newsletter signup embed code below:</strong>
+                  </p>
+                  <div className="bg-background/50 rounded border-2 border-dashed border-primary/30 p-8 text-center">
+                    <p className="text-muted-foreground">GHL Newsletter Embed Code Goes Here</p>
+                    <p className="text-sm text-muted-foreground/70 mt-2">(Replace this placeholder in the code)</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="text-primary" size={16} />
+                    <span>Biweekly Updates</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="text-primary" size={16} />
+                    <span>AI & Automation Insights</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="text-primary" size={16} />
+                    <span>Unsubscribe Anytime</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section
         id="contact"
