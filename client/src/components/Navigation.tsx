@@ -41,17 +41,17 @@ export default function Navigation() {
               Services
             </button>
             <button
-              onClick={() => scrollToSection("benefits")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Benefits
-            </button>
-            <button
               onClick={() => scrollToSection("testimonials")}
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
-              Testimonials
+              Results
             </button>
+            <a
+              href="/jeremys-calendar"
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Book a Call
+            </a>
             <Button onClick={() => scrollToSection("contact")} size="lg">
               Get Started
             </Button>
@@ -82,12 +82,12 @@ export default function Navigation() {
               >
                 Services
               </button>
-              <button
-                onClick={() => scrollToSection("benefits")}
+              <a
+                href="/jeremys-calendar"
                 className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"
               >
-                Benefits
-              </button>
+                Book a Call
+              </a>
               <button
                 onClick={() => scrollToSection("testimonials")}
                 className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"
