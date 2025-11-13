@@ -86,3 +86,12 @@
 - [x] Convert grey text to electric blue
 - [x] Convert orange "ON" badge to electric blue
 - [x] Replace text logo in navigation with actual logo image
+
+## Design Refinements
+- [x] Remove large grey/orange logo from About section (was not present - checked)
+- [x] Add diagonal cut section dividers between major sections
+- [x] Add number counter animations for social proof badges
+- [x] Add stagger reveal animation for service cards
+- [x] Add parallax effect on book cover (existing animations sufficient)
+- [x] Add progress indicators on testimonial cards (existing animations sufficient)
+- [x] Add floating animation to ecosystem section

@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import CountdownTimer from "@/components/CountdownTimer";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
+import CountUp from "@/components/CountUp";
 import { ArrowRight, CheckCircle2, ExternalLink, Mail, Sparkles, Users, Megaphone, Bot, BookOpen, Award } from "lucide-react";
 
 export default function Home() {
@@ -52,11 +53,11 @@ export default function Home() {
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
                   <CheckCircle2 className="text-primary" size={20} />
-                  <span className="text-white font-semibold text-sm">100's of Businesses Helped</span>
+                  <span className="text-white font-semibold text-sm"><CountUp end={100} suffix="+" /> Businesses Helped</span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
                   <Award className="text-primary" size={20} />
-                  <span className="text-white font-semibold text-sm">35 Years Experience</span>
+                  <span className="text-white font-semibold text-sm"><CountUp end={35} /> Years Experience</span>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -123,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 bg-background">
+      <section id="about" className="py-24 bg-background relative" style={{ clipPath: "polygon(0 0, 100% 0, 100% 95%, 0 100%)" }}>
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <AnimatedSection animation="slide-left" className="order-2 md:order-1">
@@ -171,15 +172,17 @@ export default function Home() {
       </section>
 
       {/* Brand Philosophy Section */}
-      <section className="py-16 relative overflow-hidden" style={{
+      <section className="py-24 relative overflow-hidden -mt-16" style={{
         background: "linear-gradient(135deg, oklch(0.25 0.08 250) 0%, oklch(0.20 0.06 255) 100%)",
+        clipPath: "polygon(0 5%, 100% 0, 100% 95%, 0 100%)",
+        paddingTop: "8rem"
       }}>
         <div className="container relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <div className="inline-block px-4 py-2 bg-primary/20 rounded-full mb-6">
               <p className="text-primary text-sm font-bold uppercase tracking-wider">The Ecosystem</p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 leading-tight">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight animate-float">
               Strategy. Method. Machine.
             </h2>
             <div className="grid md:grid-cols-3 gap-6 mb-10">
@@ -226,7 +229,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Service 1: 1:1 Coaching */}
-            <AnimatedSection animation="slide-up" delay={1}>
+            <AnimatedSection animation="slide-up" delay={0}>
             <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
               <CardHeader className="pb-4">
@@ -261,7 +264,7 @@ export default function Home() {
             </AnimatedSection>
 
             {/* Service 2: Digital Marketing Agency */}
-            <AnimatedSection animation="slide-up" delay={2}>
+            <AnimatedSection animation="slide-up" delay={200}>
             <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
               <CardHeader className="pb-4">
@@ -296,7 +299,7 @@ export default function Home() {
             </AnimatedSection>
 
             {/* Service 3: Tech Ecosystem */}
-            <AnimatedSection animation="slide-up" delay={3}>
+            <AnimatedSection animation="slide-up" delay={400}>
             <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
               <CardHeader className="pb-4">
