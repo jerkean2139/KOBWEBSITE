@@ -32,6 +32,7 @@ export default function Home() {
             src="/jeremy-main-hero.webp"
             alt="Jeremy Kean"
             className="w-full h-full object-cover"
+            style={{ transform: "scaleX(-1)" }}
           />
         </div>
         <div className="container relative z-10">

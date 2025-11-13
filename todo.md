@@ -99,3 +99,6 @@
 ## Mobile Fixes
 - [x] Fix horizontal scrolling on mobile - lock to vertical scroll only
 - [x] Identify and constrain overflowing elements causing white space on right
+
+## Hero Image Adjustment
+- [x] Flip hero background image horizontally to position Jeremy's head on the right side
