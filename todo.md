@@ -95,3 +95,7 @@
 - [x] Add parallax effect on book cover (existing animations sufficient)
 - [x] Add progress indicators on testimonial cards (existing animations sufficient)
 - [x] Add floating animation to ecosystem section
+
+## Mobile Fixes
+- [x] Fix horizontal scrolling on mobile - lock to vertical scroll only
+- [x] Identify and constrain overflowing elements causing white space on right
