@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { X, Mail, Gift } from "lucide-react";
+import { X, BookOpen, ArrowRight } from "lucide-react";
 
 export default function ExitIntentPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,15 +30,6 @@ export default function ExitIntentPopup() {
     setIsVisible(false);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // TODO: Replace with actual GHL form submission
-    const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
-    console.log("Email submitted:", email);
-    alert("Thanks! We'll notify you when the book launches on December 10th!");
-    setIsVisible(false);
-  };
-
   if (!isVisible) return null;
 
   return (
@@ -50,51 +41,53 @@ export default function ExitIntentPopup() {
       />
       
       {/* Popup */}
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md mx-4 animate-in zoom-in-95 duration-300">
-        <div className="bg-gradient-to-br from-background to-muted border-2 border-primary/30 rounded-2xl shadow-2xl p-8 relative">
+      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-lg mx-4 animate-in zoom-in-95 duration-300">
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-[#FFD700]/40 rounded-2xl shadow-2xl overflow-hidden relative">
           {/* Close Button */}
           <button
             onClick={handleClose}
-            className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+            className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors z-10"
           >
             <X size={24} />
           </button>
 
-          {/* Icon */}
-          <div className="flex justify-center mb-4">
-            <div className="p-4 bg-[#FFD700]/20 rounded-full">
-              <Gift className="text-[#FFD700]" size={40} />
-            </div>
-          </div>
-
-          {/* Content */}
-          <h3 className="text-2xl font-bold text-center mb-3">
-            Wait! Don't Miss the <span className="text-primary">Manumation</span> Launch
-          </h3>
-          <p className="text-center text-muted-foreground mb-6">
-            Get notified when <strong>The Manumation Effect</strong> launches on <strong className="text-[#FFD700]">December 10th</strong> + receive a free automation readiness checklist!
-          </p>
-
-          {/* Email Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="relative">
-              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={20} />
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-                className="w-full pl-11 pr-4 py-3 bg-background border-2 border-border rounded-lg focus:border-primary focus:outline-none transition-colors"
+          {/* Book Cover Section */}
+          <div className="flex flex-col md:flex-row">
+            <div className="md:w-2/5 bg-[#FFD700] p-6 flex items-center justify-center">
+              <img 
+                src="/manumation-book-cover.png" 
+                alt="The Manumation Effect" 
+                className="w-full max-w-[200px] rounded-lg shadow-xl"
               />
             </div>
-            <Button type="submit" size="lg" className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold">
-              Notify Me + Get Free Checklist
-            </Button>
-          </form>
+            
+            {/* Content Section */}
+            <div className="md:w-3/5 p-8">
+              <div className="flex items-center gap-2 mb-3">
+                <BookOpen className="text-[#FFD700]" size={24} />
+                <span className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">Launching Dec 10th</span>
+              </div>
+              
+              <h3 className="text-2xl font-bold text-white mb-3">
+                The Manumation Effect
+              </h3>
+              
+              <p className="text-white/80 text-sm mb-6 leading-relaxed">
+                Discover the strategic fusion of human ingenuity, AI Agents, and automated systems that transforms business experiences while creating true freedom for innovative thinkers.
+              </p>
 
-          <p className="text-xs text-center text-muted-foreground mt-4">
-            We respect your privacy. Unsubscribe anytime.
-          </p>
+              <Button 
+                size="lg" 
+                className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold group"
+                asChild
+              >
+                <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
+                  Learn More & Pre-Order
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </>

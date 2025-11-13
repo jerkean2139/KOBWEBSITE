@@ -77,3 +77,6 @@
 - [x] Add social proof badges to hero (100's of businesses helped, 35 years experience)
 - [x] Create live countdown timer to December 10th book launch
 - [x] Implement exit-intent popup for email capture
+
+## Exit Popup Update
+- [x] Convert exit-intent popup from email capture to "Learn More About The Book" with link to manumation.ai
