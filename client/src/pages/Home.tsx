@@ -409,13 +409,13 @@ export default function Home() {
                     <span key={i} className="text-primary text-lg">★</span>
                   ))}
                 </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Premier Health Advisors</h3>
+                <h3 className="font-bold text-foreground text-base mb-2">Beth Prince</h3>
                 <p className="text-muted-foreground text-sm mb-4">
-                  Broke free from 90-hour workweek with strategic task organization and automated CRM tools.
+                  "Jeremy's automation strategies transformed our agency operations completely."
                 </p>
                 <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Reduced inbound communications by 50%</p>
-                  <p className="text-xs text-muted-foreground">• Enjoys guilt-free half-day Fridays</p>
+                  <p className="text-xs text-muted-foreground">• Cut policy processing time by 60%</p>
+                  <p className="text-xs text-muted-foreground">• Automated client follow-up sequences</p>
                 </div>
               </CardContent>
             </Card>
@@ -429,13 +429,13 @@ export default function Home() {
                     <span key={i} className="text-primary text-lg">★</span>
                   ))}
                 </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Lauralee Hites</h3>
+                <h3 className="font-bold text-foreground text-base mb-2">Danielle M.</h3>
                 <p className="text-muted-foreground text-sm mb-4">
-                  From corporate job to launching her own consulting venture with strategic planning.
+                  "Finally have systems that work WITH my brain, not against it."
                 </p>
                 <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Transitioned to fulfilling entrepreneurship</p>
-                  <p className="text-xs text-muted-foreground">• Successfully launched Stratavize Consulting</p>
+                  <p className="text-xs text-muted-foreground">• Increased client retention by 35%</p>
+                  <p className="text-xs text-muted-foreground">• Reclaimed 15 hours per week</p>
                 </div>
               </CardContent>
             </Card>
@@ -449,13 +449,213 @@ export default function Home() {
                     <span key={i} className="text-primary text-lg">★</span>
                   ))}
                 </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Sudz Fundraising</h3>
+                <h3 className="font-bold text-foreground text-base mb-2">Lauren S.</h3>
                 <p className="text-muted-foreground text-sm mb-4">
-                  Executed finely tuned digital ad campaigns with record-breaking results.
+                  "The AI tools Jeremy implemented saved our team countless hours every week."
                 </p>
                 <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Reduced CPL from $12.63 to $3.87</p>
-                  <p className="text-xs text-muted-foreground">• 44% conversion rate lead to appointment</p>
+                  <p className="text-xs text-muted-foreground">• Automated quote generation process</p>
+                  <p className="text-xs text-muted-foreground">• Reduced errors by 80%</p>
+                </div>
+              </CardContent>
+            </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-in" delay={4}>
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-primary text-lg">★</span>
+                  ))}
+                </div>
+                <h3 className="font-bold text-foreground text-base mb-2">Heather K.</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  "Jeremy helped us scale from 2 to 8 agents without adding administrative overhead."
+                </p>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground">• Streamlined onboarding process</p>
+                  <p className="text-xs text-muted-foreground">• 4x team growth in 12 months</p>
+                </div>
+              </CardContent>
+            </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-in" delay={5}>
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-primary text-lg">★</span>
+                  ))}
+                </div>
+                <h3 className="font-bold text-foreground text-base mb-2">Ashley R.</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  "The coaching gave me clarity on what to automate and what to keep personal."
+                </p>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground">• Doubled client satisfaction scores</p>
+                  <p className="text-xs text-muted-foreground">• Cut response time from 24hrs to 2hrs</p>
+                </div>
+              </CardContent>
+            </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-in" delay={6}>
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-primary text-lg">★</span>
+                  ))}
+                </div>
+                <h3 className="font-bold text-foreground text-base mb-2">Erica T.</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  "Best investment I've made in my business. Systems that actually stick."
+                </p>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground">• Eliminated manual data entry</p>
+                  <p className="text-xs text-muted-foreground">• Increased revenue by 28%</p>
+                </div>
+              </CardContent>
+            </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-in" delay={7}>
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-primary text-lg">★</span>
+                  ))}
+                </div>
+                <h3 className="font-bold text-foreground text-base mb-2">Amy L.</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  "Jeremy's approach to automation is practical and immediately actionable."
+                </p>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground">• Automated renewal reminders</p>
+                  <p className="text-xs text-muted-foreground">• Retention rate up to 94%</p>
+                </div>
+              </CardContent>
+            </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-in" delay={8}>
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-primary text-lg">★</span>
+                  ))}
+                </div>
+                <h3 className="font-bold text-foreground text-base mb-2">Ryan P.</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  "Went from drowning in admin work to focusing on what I do best—selling."
+                </p>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground">• Freed up 20+ hours monthly</p>
+                  <p className="text-xs text-muted-foreground">• Closed 40% more policies</p>
+                </div>
+              </CardContent>
+            </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-in" delay={9}>
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-primary text-lg">★</span>
+                  ))}
+                </div>
+                <h3 className="font-bold text-foreground text-base mb-2">Anissa W.</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  "The systems we built together have been game-changing for our agency growth."
+                </p>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground">• Scaled to 3 locations</p>
+                  <p className="text-xs text-muted-foreground">• Consistent processes across all offices</p>
+                </div>
+              </CardContent>
+            </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-in" delay={10}>
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-primary text-lg">★</span>
+                  ))}
+                </div>
+                <h3 className="font-bold text-foreground text-base mb-2">Paula G.</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  "Jeremy understands insurance agencies. His solutions are built for our reality."
+                </p>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground">• Automated claims tracking</p>
+                  <p className="text-xs text-muted-foreground">• Customer complaints down 65%</p>
+                </div>
+              </CardContent>
+            </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-in" delay={11}>
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-primary text-lg">★</span>
+                  ))}
+                </div>
+                <h3 className="font-bold text-foreground text-base mb-2">Nicci D.</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  "Finally have the work-life balance I've been chasing for years."
+                </p>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground">• Left office by 5pm daily</p>
+                  <p className="text-xs text-muted-foreground">• Revenue actually increased 22%</p>
+                </div>
+              </CardContent>
+            </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-in" delay={12}>
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-primary text-lg">★</span>
+                  ))}
+                </div>
+                <h3 className="font-bold text-foreground text-base mb-2">Cody M.</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  "The AI voice agents Jeremy set up handle 70% of our inbound calls now."
+                </p>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground">• 24/7 customer support coverage</p>
+                  <p className="text-xs text-muted-foreground">• Staff focused on complex cases</p>
+                </div>
+              </CardContent>
+            </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-in" delay={13}>
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-primary text-lg">★</span>
+                  ))}
+                </div>
+                <h3 className="font-bold text-foreground text-base mb-2">Missy H.</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  "Jeremy helped us transition from chaos to clarity. Our team is thriving."
+                </p>
+                <div className="space-y-1">
+                  <p className="text-xs text-muted-foreground">• Employee satisfaction up 45%</p>
+                  <p className="text-xs text-muted-foreground">• Zero turnover in 18 months</p>
                 </div>
               </CardContent>
             </Card>
