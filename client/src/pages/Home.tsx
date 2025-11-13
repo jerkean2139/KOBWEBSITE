@@ -2,7 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { ArrowRight, CheckCircle2, ExternalLink, Mail, Sparkles, Users, Megaphone, Bot, BookOpen } from "lucide-react";
+import CountdownTimer from "@/components/CountdownTimer";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
+import { ArrowRight, CheckCircle2, ExternalLink, Mail, Sparkles, Users, Megaphone, Bot, BookOpen, Award } from "lucide-react";
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
@@ -14,6 +16,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <ExitIntentPopup />
       <Navigation />
 
       {/* Hero Section */}
@@ -41,9 +44,21 @@ export default function Home() {
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 Your Business Deserves Systems <span className="text-primary">That Actually Work</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
                 Strategic coaching and AI-powered automation for insurance agencies and business owners who are done duct-taping solutions.
               </p>
+              
+              {/* Social Proof Badges */}
+              <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+                  <CheckCircle2 className="text-primary" size={20} />
+                  <span className="text-white font-semibold text-sm">100's of Businesses Helped</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+                  <Award className="text-primary" size={20} />
+                  <span className="text-white font-semibold text-sm">35 Years Experience</span>
+                </div>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
@@ -97,6 +112,10 @@ export default function Home() {
                     </a>
                   </Button>
                 </div>
+              </div>
+              {/* Countdown Timer */}
+              <div className="mt-8 flex justify-center">
+                <CountdownTimer />
               </div>
             </div>
           </div>

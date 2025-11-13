@@ -72,3 +72,8 @@
 - [x] Add mobile-specific book CTA (visible on small screens)
 - [x] Optimize hero text size for screens under 375px
 - [x] Increase touch-friendly spacing for buttons and nav items (44px minimum)
+
+## Conversion Optimization
+- [x] Add social proof badges to hero (100's of businesses helped, 35 years experience)
+- [x] Create live countdown timer to December 10th book launch
+- [x] Implement exit-intent popup for email capture
