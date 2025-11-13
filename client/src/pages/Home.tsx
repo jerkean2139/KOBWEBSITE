@@ -34,14 +34,15 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
-              <div className="inline-block px-4 py-2 bg-primary/20 rounded-full mb-6">
-                <p className="text-primary text-sm font-bold uppercase tracking-wider">Hey There!</p>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FFD700]/20 rounded-full mb-6">
+                <BookOpen className="text-[#FFD700]" size={16} />
+                <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book • Launching Dec 10th</p>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                Stop Wrestling with Systems <span className="text-primary">That Don't Fit</span>
+                Your Business Deserves Systems <span className="text-primary">That Actually Work</span>
               </h1>
               <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                Your business deserves better than cookie-cutter solutions. I build custom automation strategies that work the way you do, delivering practical results without the complexity.
+                Strategic coaching and AI-powered automation for insurance agencies and business owners who are done duct-taping solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
@@ -62,13 +63,20 @@ export default function Home() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl"></div>
+              <div className="relative max-w-md mx-auto">
+                <div className="absolute -inset-6 bg-[#FFD700]/20 rounded-2xl blur-3xl"></div>
                 <img
-                  src="/jeremy-main-hero.webp"
-                  alt="Jeremy Kean - Business Automation Expert"
-                  className="relative rounded-2xl shadow-2xl"
+                  src="/manumation-book-cover.png"
+                  alt="The Manumation Effect - Launching December 10th"
+                  className="relative rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
                 />
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-full">
+                  <Button size="lg" className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold shadow-xl" asChild>
+                    <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
+                      Pre-Order Now • Dec 10th
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -413,49 +421,6 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Manumation Book Showcase */}
-      <section className="py-16 bg-gradient-to-br from-[#FFD700]/10 to-background">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
-            <AnimatedSection animation="scale" className="order-2 md:order-1">
-              <div className="relative max-w-sm mx-auto">
-                <div className="absolute -inset-4 bg-[#FFD700]/20 rounded-2xl blur-2xl"></div>
-                <img
-                  src="/manumation-book-cover.png"
-                  alt="The Manumation Effect Book Cover"
-                  className="relative rounded-xl shadow-2xl w-full"
-                />
-              </div>
-            </AnimatedSection>
-            <AnimatedSection animation="slide-right" className="order-1 md:order-2">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FFD700]/20 rounded-full mb-4">
-                <BookOpen className="text-[#FFD700]" size={16} />
-                <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book</p>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-                The <span className="text-primary">Manumation</span> Effect
-              </h2>
-              <p className="text-lg text-foreground font-semibold mb-4">
-                The strategic fusion of human ingenuity, AI Agents, and automated systems.
-              </p>
-              <p className="text-base text-muted-foreground mb-6">
-                Discover the methodology that's revolutionizing how businesses operate. This book reveals the framework behind building systems that work with your brain, not against it—creating true freedom for innovative thinkers.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-base px-6 py-5" asChild>
-                  <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
-                    Explore Manumation.ai <ExternalLink className="ml-2" />
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" className="text-base px-6 py-5" onClick={() => scrollToSection("assessment")}>
-                  Take the Assessment
-                </Button>
-              </div>
             </AnimatedSection>
           </div>
         </div>
