@@ -152,3 +152,7 @@
 
 ## Update Hero Headline
 - [x] Change hero headline to "Let Your Business Breathe Again."
+
+## Revert to Straight-Line Text Logo
+- [x] Replace stacked image logo with straight-line text logo (KEAN ON BIZ)
+- [x] Slow down Knight Rider animation to be more subtle (increase duration)
