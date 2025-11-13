@@ -55,11 +55,15 @@ export default function Navigation() {
             onClick={scrollToTop}
             className="hover:opacity-80 transition-opacity"
           >
-            <img 
-              src="/kean-on-biz-logo-blue.png" 
-              alt="Kean on Biz" 
-              className="h-12 w-auto"
-            />
+            <h1 className="text-2xl font-bold">
+              <span className="bg-gradient-to-r from-primary via-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                KEAN
+              </span>
+              <span className="text-xs align-middle mx-1 text-primary">ON</span>
+              <span className="bg-gradient-to-r from-primary via-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                BIZ
+              </span>
+            </h1>
           </button>
 
           {/* Desktop Navigation */}
