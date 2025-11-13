@@ -43,7 +43,7 @@ export default function Home() {
                 <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book • Launching Dec 10th</p>
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
-                Your Business Deserves Systems <span className="text-primary">That Actually Work</span>
+                Let Your Business <span className="text-primary">Breathe Again.</span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
                 Strategic coaching and AI-powered automation for insurance agencies and business owners who are done duct-taping solutions.

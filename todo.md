@@ -149,3 +149,6 @@
 - [x] Fix missing image in About section
 - [x] Create new Tech Ecosystem section with tool logos (Zapier, Make.com, n8n, Replit, Lovable, ChatGPT, Claude)
 - [x] Update Tech Ecosystem service card to link to new section
+
+## Update Hero Headline
+- [x] Change hero headline to "Let Your Business Breathe Again."
