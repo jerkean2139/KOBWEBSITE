@@ -102,3 +102,12 @@
 
 ## Hero Image Adjustment
 - [x] Flip hero background image horizontally to position Jeremy's head on the right side
+
+## Remove Old Logo
+- [x] Remove large grey/orange Kean on Biz logo image from About section
+
+## Content & Branding Updates
+- [x] Update 1:1 Coaching service to focus on "Entrepreneur and their team"
+- [x] Add Zenoflo logo to Zenoflo brand card
+- [x] Add AgentMob.ai logo to AgentMob brand card
+- [x] Add "Coming Soon" badge to AgentMob.ai card

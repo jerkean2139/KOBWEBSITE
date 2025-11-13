@@ -127,16 +127,9 @@ export default function Home() {
       <section id="about" className="py-24 bg-background relative" style={{ clipPath: "polygon(0 0, 100% 0, 100% 95%, 0 100%)" }}>
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <AnimatedSection animation="slide-left" className="order-2 md:order-1">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-primary/10 rounded-2xl blur-xl"></div>
-                <img
-                  src="/jeremy-hero-photo.webp"
-                  alt="Meet Jeremy"
-                  className="relative rounded-2xl shadow-xl w-full"
-                />
-              </div>
-            </AnimatedSection>
+            <div className="order-2 md:order-1">
+              {/* Image removed per user request */}
+            </div>
             <AnimatedSection animation="slide-right" className="order-1 md:order-2">
               <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
                 <p className="text-primary text-sm font-bold uppercase tracking-wider">Meet Jeremy</p>
@@ -238,7 +231,7 @@ export default function Home() {
                 </div>
                 <CardTitle className="text-xl mb-2">1:1 Coaching</CardTitle>
                 <CardDescription className="text-sm">
-                  Personal guidance for entrepreneurs
+                  For entrepreneurs and their teams
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -353,7 +346,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Card className="border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <CardHeader>
-                <CardTitle className="text-3xl text-primary mb-2">Zenoflo</CardTitle>
+                <img src="/zenoflo-logo.png" alt="Zenoflo" className="h-12 mb-4 object-contain object-left" />
                 <CardDescription className="text-base">
                   Your Business Command Center
                 </CardDescription>
@@ -370,9 +363,12 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <Card className="border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative">
+              <div className="absolute top-4 right-4 px-3 py-1 bg-yellow-500 text-black text-xs font-bold rounded-full">
+                COMING SOON
+              </div>
               <CardHeader>
-                <CardTitle className="text-3xl text-primary mb-2">AgentMob.ai</CardTitle>
+                <img src="/agentmob-logo.png" alt="AgentMob.ai" className="h-12 mb-4 object-contain object-left" />
                 <CardDescription className="text-base">
                   AI Agent Orchestration Platform
                 </CardDescription>
