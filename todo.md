@@ -130,3 +130,9 @@
 
 ## Update About Section Headline
 - [x] Change headline to display on separate lines: "35 Years. / 13 Brands Created. / One Truth."
+
+## Create Lime Green Color Scheme Version
+- [x] Update CSS color variables to lime green, black, white, light grey
+- [x] Update all gradient backgrounds throughout the site
+- [x] Update button and accent colors
+- [x] Test responsive design with new colors
