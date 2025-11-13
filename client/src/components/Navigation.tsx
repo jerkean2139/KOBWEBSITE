@@ -103,32 +103,32 @@ export default function Navigation() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-background border-t border-border fixed inset-x-0 top-20 bottom-0 overflow-y-auto">
-          <div className="container py-6 flex flex-col gap-4">
+          <div className="container py-6 flex flex-col gap-2">
             <button
               onClick={() => scrollToSection("about")}
-              className="text-left text-foreground hover:text-primary transition-colors font-medium py-2 text-sm uppercase tracking-wide"
+              className="text-left text-foreground hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-left text-foreground hover:text-primary transition-colors font-medium py-2 text-sm uppercase tracking-wide"
+              className="text-left text-foreground hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
             >
               Services
             </button>
             <a
               href="/jeremys-calendar"
-              className="text-left text-foreground hover:text-primary transition-colors font-medium py-2 text-sm uppercase tracking-wide"
+              className="text-left text-foreground hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
             >
               Book a Call
             </a>
             <button
               onClick={() => scrollToSection("testimonials")}
-              className="text-left text-foreground hover:text-primary transition-colors font-medium py-2 text-sm uppercase tracking-wide"
+              className="text-left text-foreground hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
             >
               Results
             </button>
-            <Button onClick={() => scrollToSection("contact")} size="lg" className="mt-2">
+            <Button onClick={() => scrollToSection("contact")} size="lg" className="mt-4 min-h-[44px]">
               Get Started
             </Button>
           </div>

@@ -38,16 +38,16 @@ export default function Home() {
                 <BookOpen className="text-[#FFD700]" size={16} />
                 <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book • Launching Dec 10th</p>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 Your Business Deserves Systems <span className="text-primary">That Actually Work</span>
               </h1>
-              <p className="text-xl text-white/90 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
                 Strategic coaching and AI-powered automation for insurance agencies and business owners who are done duct-taping solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl"
+                  className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 min-h-[44px] bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl"
                   onClick={() => scrollToSection("services")}
                 >
                   Explore Services <ArrowRight className="ml-2" />
@@ -55,11 +55,31 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-lg px-8 py-6 bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm"
+                  className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 min-h-[44px] bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm"
                   onClick={() => scrollToSection("contact")}
                 >
                   Let's Talk Business
                 </Button>
+              </div>
+              
+              {/* Mobile Book CTA */}
+              <div className="lg:hidden mt-8 p-6 bg-gradient-to-br from-[#FFD700]/20 to-primary/20 rounded-2xl border-2 border-[#FFD700]/30">
+                <div className="flex items-center gap-4">
+                  <img
+                    src="/manumation-book-cover.png"
+                    alt="The Manumation Effect"
+                    className="w-20 h-auto rounded-lg shadow-lg"
+                  />
+                  <div className="flex-1">
+                    <p className="text-[#FFD700] text-xs font-bold uppercase mb-1">New Book</p>
+                    <h3 className="text-white font-bold text-sm mb-2">The Manumation Effect</h3>
+                    <Button size="sm" className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold min-h-[44px]" asChild>
+                      <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
+                        Pre-Order • Dec 10th
+                      </a>
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="hidden lg:block">

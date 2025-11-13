@@ -67,3 +67,8 @@
 
 ## Bug Fixes
 - [x] Fix mobile view scrolling issue (floating/jumping behavior)
+
+## Mobile Enhancements
+- [x] Add mobile-specific book CTA (visible on small screens)
+- [x] Optimize hero text size for screens under 375px
+- [x] Increase touch-friendly spacing for buttons and nav items (44px minimum)
