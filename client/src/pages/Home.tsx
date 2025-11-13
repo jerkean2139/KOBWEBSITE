@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
+import { AnimatedSection } from "@/components/AnimatedSection";
 import { ArrowRight, CheckCircle2, ExternalLink, Mail, Sparkles, Users, Megaphone, Bot, BookOpen } from "lucide-react";
 
 export default function Home() {
@@ -78,7 +79,7 @@ export default function Home() {
       <section id="about" className="py-16 bg-background">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
+            <AnimatedSection animation="slide-left" className="order-2 md:order-1">
               <div className="relative">
                 <div className="absolute -inset-4 bg-primary/10 rounded-2xl blur-xl"></div>
                 <img
@@ -87,8 +88,8 @@ export default function Home() {
                   className="relative rounded-2xl shadow-xl w-full"
                 />
               </div>
-            </div>
-            <div className="order-1 md:order-2">
+            </AnimatedSection>
+            <AnimatedSection animation="slide-right" className="order-1 md:order-2">
               <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
                 <p className="text-primary text-sm font-bold uppercase tracking-wider">Meet Jeremy</p>
               </div>
@@ -117,7 +118,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -178,6 +179,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Service 1: 1:1 Coaching */}
+            <AnimatedSection animation="slide-up" delay={1}>
             <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
               <CardHeader className="pb-4">
@@ -209,8 +211,10 @@ export default function Home() {
                 </Button>
               </CardContent>
             </Card>
+            </AnimatedSection>
 
             {/* Service 2: Digital Marketing Agency */}
+            <AnimatedSection animation="slide-up" delay={2}>
             <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
               <CardHeader className="pb-4">
@@ -242,8 +246,10 @@ export default function Home() {
                 </Button>
               </CardContent>
             </Card>
+            </AnimatedSection>
 
             {/* Service 3: Tech Ecosystem */}
+            <AnimatedSection animation="slide-up" delay={3}>
             <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
               <CardHeader className="pb-4">
@@ -277,6 +283,7 @@ export default function Home() {
                 </Button>
               </CardContent>
             </Card>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -348,6 +355,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
+            <AnimatedSection animation="fade-in" delay={1}>
             <Card className="border-l-4 border-l-primary">
               <CardContent className="pt-6">
                 <div className="flex items-center gap-1 mb-4">
@@ -365,7 +373,9 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
+            </AnimatedSection>
 
+            <AnimatedSection animation="fade-in" delay={2}>
             <Card className="border-l-4 border-l-primary">
               <CardContent className="pt-6">
                 <div className="flex items-center gap-1 mb-4">
@@ -383,7 +393,9 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
+            </AnimatedSection>
 
+            <AnimatedSection animation="fade-in" delay={3}>
             <Card className="border-l-4 border-l-primary">
               <CardContent className="pt-6">
                 <div className="flex items-center gap-1 mb-4">
@@ -401,6 +413,7 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -409,7 +422,7 @@ export default function Home() {
       <section className="py-16 bg-gradient-to-br from-[#FFD700]/10 to-background">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
-            <div className="order-2 md:order-1">
+            <AnimatedSection animation="scale" className="order-2 md:order-1">
               <div className="relative max-w-sm mx-auto">
                 <div className="absolute -inset-4 bg-[#FFD700]/20 rounded-2xl blur-2xl"></div>
                 <img
@@ -418,8 +431,8 @@ export default function Home() {
                   className="relative rounded-xl shadow-2xl w-full"
                 />
               </div>
-            </div>
-            <div className="order-1 md:order-2">
+            </AnimatedSection>
+            <AnimatedSection animation="slide-right" className="order-1 md:order-2">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FFD700]/20 rounded-full mb-4">
                 <BookOpen className="text-[#FFD700]" size={16} />
                 <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book</p>
@@ -443,7 +456,7 @@ export default function Home() {
                   Take the Assessment
                 </Button>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
