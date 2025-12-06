@@ -5,7 +5,8 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import CountdownTimer from "@/components/CountdownTimer";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import CountUp from "@/components/CountUp";
-import { ArrowRight, CheckCircle2, ExternalLink, Mail, Sparkles, Users, Megaphone, Bot, BookOpen, Award } from "lucide-react";
+import { ArrowRight, CheckCircle2, ExternalLink, Mail, Sparkles, Users, Megaphone, Bot, BookOpen, Award, ClipboardCheck } from "lucide-react";
+import { DIYIcon, DWYIcon, DFYIcon } from "@/components/VehicleIcons";
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
