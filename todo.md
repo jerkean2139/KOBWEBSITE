@@ -156,3 +156,13 @@
 ## Revert to Straight-Line Text Logo
 - [x] Replace stacked image logo with straight-line text logo (KEAN ON BIZ)
 - [x] Slow down Knight Rider animation to be more subtle (increase duration)
+
+## Integrate Manumation.ai Design Theme
+- [x] Update book cover to new "The Manumation Method" design
+- [x] Change launch date from Dec 10th to Dec 15th
+- [x] Fix menu font color to white for visibility on dark background
+- [x] Match fonts with Manumation.ai site (bold condensed sans-serif)
+- [x] Fix 'g' clipping issue in current font
+- [x] Fix Jeremy's photo positioning - face is cut off
+- [ ] Add yellow/gold accent colors from Manumation.ai
+- [ ] Push to GitHub repository

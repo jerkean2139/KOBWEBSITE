@@ -40,7 +40,7 @@ export default function Home() {
             <div className="text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FFD700]/20 rounded-full mb-6">
                 <BookOpen className="text-[#FFD700]" size={16} />
-                <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book • Launching Dec 10th</p>
+                <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book • Launching Dec 15th</p>
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 Let Your Business <span className="text-primary">Breathe Again.</span>
@@ -91,7 +91,7 @@ export default function Home() {
                     <h3 className="text-white font-bold text-sm mb-2">The Manumation Effect</h3>
                     <Button size="sm" className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold min-h-[44px]" asChild>
                       <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
-                        Pre-Order • Dec 10th
+                        Pre-Order • Dec 15th
                       </a>
                     </Button>
                   </div>
@@ -103,13 +103,13 @@ export default function Home() {
                 <div className="absolute -inset-6 bg-[#FFD700]/20 rounded-2xl blur-3xl"></div>
                 <img
                   src="/manumation-book-cover.png"
-                  alt="The Manumation Effect - Launching December 10th"
+                  alt="The Manumation Method - Launching December 15th"
                   className="relative rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-full">
                   <Button size="lg" className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold shadow-xl" asChild>
                     <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
-                      Pre-Order Now • Dec 10th
+                      Pre-Order Now • Dec 15th
                     </a>
                   </Button>
                 </div>
@@ -133,7 +133,8 @@ export default function Home() {
                 <img
                   src="/jeremy-hero-photo.webp"
                   alt="Jeremy Kean"
-                  className="relative rounded-2xl shadow-2xl w-full h-auto"
+                  className="relative rounded-2xl shadow-2xl w-full h-auto object-cover object-top"
+                  style={{ maxHeight: '600px' }}
                 />
               </div>
             </AnimatedSection>

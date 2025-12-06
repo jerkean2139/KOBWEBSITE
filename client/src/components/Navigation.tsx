@@ -66,25 +66,25 @@ export default function Navigation() {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide"
+              className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide`}
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-foreground hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide"
+              className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide`}
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("testimonials")}
-              className="text-foreground hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide"
+              className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide`}
             >
               Results
             </button>
             <a
               href="/jeremys-calendar"
-              className="text-foreground hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide"
+              className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide`}
             >
               Book a Call
             </a>
