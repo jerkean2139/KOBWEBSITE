@@ -160,3 +160,34 @@ Preferred communication style: Simple, everyday language.
 **Why shadcn/ui over Material-UI**: Greater customization flexibility, smaller bundle size, and better alignment with Tailwind CSS workflow. Components are copied into the project rather than imported, allowing for easy modifications.
 
 **Missing Database Layer**: Currently a static site with no backend persistence. GoHighLevel handles all data collection (bookings, newsletter signups, assessments).
+
+## SEO / AEO / GEO Optimization
+
+### Meta Tags (client/index.html)
+- **Title**: Optimized with name, role, and brand
+- **Description**: 160-character summary with keywords
+- **Keywords**: Business coaching, AI automation, insurance agency consulting
+- **Canonical URL**: https://keanonbiz.com/
+- **Robots**: index, follow with max-image-preview:large
+- **Open Graph**: Full social sharing support for Facebook/LinkedIn
+- **Twitter Cards**: summary_large_image for Twitter previews
+- **PWA**: theme-color, mobile-web-app-capable tags
+
+### Structured Data (JSON-LD in client/index.html)
+Three Schema.org schemas implemented:
+1. **ProfessionalService**: Business info, founder details, services catalog with 3 offerings
+2. **Book**: "The Manumation Method" by Jeremy Kean
+3. **FAQPage**: 3 FAQs about Manumation Method, Jeremy Kean, and services
+
+### Technical SEO Files
+- **robots.txt** (client/public/): Allows all crawlers, specifies sitemap location
+- **sitemap.xml** (client/public/): Two URLs with image sitemap extensions
+- **manifest.json** (client/public/): PWA manifest with app icons and colors
+
+### Accessibility Improvements
+- Skip-to-content link for keyboard navigation
+- Semantic HTML structure (main, header, section elements)
+- ARIA labels on navigation and interactive elements
+- Proper heading hierarchy (h1 > h2 > h3)
+- Descriptive alt text on all images
+- Lazy loading on below-the-fold images

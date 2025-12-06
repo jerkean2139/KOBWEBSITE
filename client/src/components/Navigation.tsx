@@ -41,7 +41,9 @@ export default function Navigation() {
   };
 
   return (
+    <header>
     <nav
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border"
@@ -54,12 +56,13 @@ export default function Navigation() {
           <button
             onClick={scrollToTop}
             className="hover:opacity-80 transition-opacity"
+            aria-label="Go to homepage"
           >
-            <h1 className="text-3xl font-bold knight-rider-glow">
+            <span className="text-3xl font-bold knight-rider-glow">
               <span className="text-primary">KEAN</span>
               <span className="text-xs align-middle mx-1 text-primary">ON</span>
               <span className="text-primary">BIZ</span>
-            </h1>
+            </span>
           </button>
 
           {/* Desktop Navigation */}
@@ -97,6 +100,8 @@ export default function Navigation() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden text-foreground hover:text-primary transition-colors"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -138,5 +143,6 @@ export default function Navigation() {
         </div>
       )}
     </nav>
+    </header>
   );
 }

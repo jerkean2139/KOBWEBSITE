@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://keanonbiz.com/</loc>
+    <lastmod>2024-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://keanonbiz.com/jeremy-hero-photo.webp</image:loc>
+      <image:title>Jeremy Kean - Business Coach and AI Automation Expert</image:title>
+      <image:caption>Jeremy Kean, founder of KeanOnBiz, helping businesses transform through strategic coaching and AI automation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://keanonbiz.com/manumation-book-cover.png</image:loc>
+      <image:title>The Manumation Method Book Cover</image:title>
+      <image:caption>The Manumation Method - Strategic fusion of human ingenuity and AI automation by Jeremy Kean</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://keanonbiz.com/jeremys-calendar</loc>
+    <lastmod>2024-12-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

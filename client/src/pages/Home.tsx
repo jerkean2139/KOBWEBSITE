@@ -16,21 +16,22 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <>
       <ExitIntentPopup />
       <Navigation />
-
-      {/* Hero Section */}
-      <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 max-w-full"
+      <main id="main-content" className="min-h-screen" role="main">
+        {/* Hero Section */}
+        <section
+          aria-labelledby="hero-heading"
+          className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 max-w-full"
         style={{
           background: "linear-gradient(135deg, oklch(0.20 0.08 250) 0%, oklch(0.15 0.06 255) 50%, oklch(0.18 0.07 245) 100%)",
         }}
       >
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-20" aria-hidden="true">
           <img
             src="/jeremy-main-hero.webp"
-            alt="Jeremy Kean"
+            alt=""
             className="w-full h-full object-cover object-center"
             style={{ transform: "scaleX(-1)", objectPosition: "center 20%" }}
           />
@@ -42,7 +43,7 @@ export default function Home() {
                 <BookOpen className="text-[#FFD700]" size={16} />
                 <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book • Launching Dec 15th</p>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 id="hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 Let Your Business <span className="text-primary">Breathe Again.</span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
@@ -124,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-background relative" style={{ clipPath: "polygon(0 0, 100% 0, 100% 95%, 0 100%)" }}>
+      <section id="about" aria-labelledby="about-heading" className="py-24 bg-background relative" style={{ clipPath: "polygon(0 0, 100% 0, 100% 95%, 0 100%)" }}>
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <AnimatedSection animation="slide-left" className="order-2 md:order-1">
@@ -132,9 +133,10 @@ export default function Home() {
                 <div className="absolute -inset-4 bg-primary/10 rounded-2xl blur-2xl"></div>
                 <img
                   src="/jeremy-hero-photo.webp"
-                  alt="Jeremy Kean"
+                  alt="Jeremy Kean - Business Coach with 35 years of experience helping entrepreneurs transform their businesses"
                   className="relative rounded-2xl shadow-2xl w-full h-auto object-cover object-top"
                   style={{ maxHeight: '600px' }}
+                  loading="lazy"
                 />
               </div>
             </AnimatedSection>
@@ -142,7 +144,7 @@ export default function Home() {
               <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
                 <p className="text-primary text-sm font-bold uppercase tracking-wider">Meet Jeremy</p>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              <h2 id="about-heading" className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                 35 Years.<br />
                 13 Brands Created.<br />
                 One Truth.
@@ -175,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* Brand Philosophy Section */}
-      <section className="py-24 relative overflow-hidden -mt-16" style={{
+      <section aria-labelledby="philosophy-heading" className="py-24 relative overflow-hidden -mt-16" style={{
         background: "linear-gradient(135deg, oklch(0.25 0.08 250) 0%, oklch(0.20 0.06 255) 100%)",
         clipPath: "polygon(0 5%, 100% 0, 100% 95%, 0 100%)",
         paddingTop: "8rem"
@@ -185,7 +187,7 @@ export default function Home() {
             <div className="inline-block px-4 py-2 bg-primary/20 rounded-full mb-6">
               <p className="text-primary text-sm font-bold uppercase tracking-wider">The Ecosystem</p>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight animate-float">
+            <h2 id="philosophy-heading" className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight animate-float">
               Strategy. Method. Machine.
             </h2>
             <div className="grid md:grid-cols-3 gap-6 mb-10">
@@ -216,13 +218,13 @@ export default function Home() {
       </section>
 
       {/* Tech Ecosystem Section */}
-      <section id="tech-ecosystem" className="py-24 bg-background">
+      <section id="tech-ecosystem" aria-labelledby="tech-heading" className="py-24 bg-background">
         <div className="container">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
               <p className="text-primary text-sm font-bold uppercase tracking-wider">Tech Brands</p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            <h2 id="tech-heading" className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               Purpose-Built Platforms
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -232,25 +234,25 @@ export default function Home() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center max-w-6xl mx-auto">
             <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/zapier-logo.png" alt="Zapier" className="h-12 w-auto" />
+              <img src="/zapier-logo.png" alt="Zapier - Automation platform integration" className="h-12 w-auto" loading="lazy" />
             </div>
             <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/make-logo.png" alt="Make.com" className="h-12 w-auto" />
+              <img src="/make-logo.png" alt="Make.com - Visual automation platform" className="h-12 w-auto" loading="lazy" />
             </div>
             <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/n8n-logo.png" alt="n8n" className="h-12 w-auto" />
+              <img src="/n8n-logo.png" alt="n8n - Workflow automation tool" className="h-12 w-auto" loading="lazy" />
             </div>
             <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/replit-logo.png" alt="Replit" className="h-12 w-auto" />
+              <img src="/replit-logo.png" alt="Replit - Cloud development platform" className="h-12 w-auto" loading="lazy" />
             </div>
             <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/lovable-logo.png" alt="Lovable" className="h-12 w-auto" />
+              <img src="/lovable-logo.png" alt="Lovable - AI development platform" className="h-12 w-auto" loading="lazy" />
             </div>
             <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/chatgpt-logo.png" alt="ChatGPT" className="h-12 w-auto" />
+              <img src="/chatgpt-logo.png" alt="ChatGPT - OpenAI language model" className="h-12 w-auto" loading="lazy" />
             </div>
             <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/claude-logo.png" alt="Claude AI" className="h-12 w-auto" />
+              <img src="/claude-logo.png" alt="Claude AI - Anthropic language model" className="h-12 w-auto" loading="lazy" />
             </div>
           </div>
 
@@ -263,13 +265,13 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 bg-background">
+      <section id="services" aria-labelledby="services-heading" className="py-16 bg-background">
         <div className="container">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
               <p className="text-primary text-sm font-bold uppercase tracking-wider">Services</p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+            <h2 id="services-heading" className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
               How We Work Together
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -401,7 +403,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Card className="border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <CardHeader>
-                <img src="/zenoflo-logo.png" alt="Zenoflo" className="h-12 mb-4 object-contain object-left" />
+                <img src="/zenoflo-logo.png" alt="Zenoflo - Your Business Command Center for AI agents and automation" className="h-12 mb-4 object-contain object-left" loading="lazy" />
                 <CardDescription className="text-base">
                   Your Business Command Center
                 </CardDescription>
@@ -423,7 +425,7 @@ export default function Home() {
                 COMING SOON
               </div>
               <CardHeader>
-                <img src="/agentmob-logo.png" alt="AgentMob.ai" className="h-12 mb-4 object-contain object-left" />
+                <img src="/agentmob-logo.png" alt="AgentMob.ai - AI Agent Orchestration Platform" className="h-12 mb-4 object-contain object-left" loading="lazy" />
                 <CardDescription className="text-base">
                   AI Agent Orchestration Platform
                 </CardDescription>
@@ -444,13 +446,13 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-16 bg-background">
+      <section id="testimonials" aria-labelledby="testimonials-heading" className="py-16 bg-background">
         <div className="container">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
               <p className="text-primary text-sm font-bold uppercase tracking-wider">Testimonials</p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+            <h2 id="testimonials-heading" className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
               Real Results
             </h2>
           </div>
@@ -903,6 +905,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+      </main>
+    </>
   );
 }

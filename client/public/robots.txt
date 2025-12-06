@@ -1,0 +1,26 @@
+# robots.txt for KeanOnBiz
+# https://keanonbiz.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://keanonbiz.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Block common non-content paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /assets/
+Disallow: /*.json$
+
+# Allow important resources
+Allow: /manifest.json
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.webp
+Allow: /*.svg
