@@ -165,4 +165,4 @@
 - [x] Fix 'g' clipping issue in current font
 - [x] Fix Jeremy's photo positioning - face is cut off
 - [ ] Add yellow/gold accent colors from Manumation.ai
-- [ ] Push to GitHub repository
+- [x] Push to GitHub repository
