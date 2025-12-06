@@ -6,12 +6,14 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Calendar from "./pages/Calendar";
+import ManumationCoach from "./pages/ManumationCoach";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path="/jeremys-calendar" component={Calendar} />
+      <Route path="/become-a-coach" component={ManumationCoach} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

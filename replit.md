@@ -14,9 +14,10 @@ Preferred communication style: Simple, everyday language.
 
 **Framework**: React 18 with TypeScript running on Vite for fast development and optimized builds.
 
-**Routing**: Wouter for lightweight client-side routing with two main routes:
+**Routing**: Wouter for lightweight client-side routing with three main routes:
 - `/` - Home page with all main sections
 - `/jeremys-calendar` - Dedicated calendar/booking page
+- `/become-a-coach` - Manumation Coach Certification "Coming Soon" page
 
 **UI Component System**: shadcn/ui (New York variant) providing a comprehensive set of Radix UI-based components with Tailwind CSS styling. Components are configured to use CSS variables for theming, allowing for easy color scheme customization.
 
