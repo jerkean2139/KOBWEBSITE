@@ -83,12 +83,12 @@ export default function Home() {
                 <div className="flex items-center gap-4">
                   <img
                     src="/manumation-book-cover.png"
-                    alt="The Manumation Effect"
+                    alt="The Manumation Method"
                     className="w-20 h-auto rounded-lg shadow-lg"
                   />
                   <div className="flex-1">
                     <p className="text-[#FFD700] text-xs font-bold uppercase mb-1">New Book</p>
-                    <h3 className="text-white font-bold text-sm mb-2">The Manumation Effect</h3>
+                    <h3 className="text-white font-bold text-sm mb-2">The Manumation Method</h3>
                     <Button size="sm" className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold min-h-[44px]" asChild>
                       <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
                         Pre-Order • Dec 15th

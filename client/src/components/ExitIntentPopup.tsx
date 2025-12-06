@@ -56,7 +56,7 @@ export default function ExitIntentPopup() {
             <div className="md:w-2/5 bg-[#FFD700] p-6 flex items-center justify-center">
               <img 
                 src="/manumation-book-cover.png" 
-                alt="The Manumation Effect" 
+                alt="The Manumation Method" 
                 className="w-full max-w-[200px] rounded-lg shadow-xl"
               />
             </div>
@@ -65,11 +65,11 @@ export default function ExitIntentPopup() {
             <div className="md:w-3/5 p-8">
               <div className="flex items-center gap-2 mb-3">
                 <BookOpen className="text-[#FFD700]" size={24} />
-                <span className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">Launching Dec 10th</span>
+                <span className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">Launching Dec 15th</span>
               </div>
               
               <h3 className="text-2xl font-bold text-white mb-3">
-                The Manumation Effect
+                The Manumation Method
               </h3>
               
               <p className="text-white/80 text-sm mb-6 leading-relaxed">
