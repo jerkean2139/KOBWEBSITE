@@ -31,8 +31,8 @@ export default function Home() {
           <img
             src="/jeremy-main-hero.webp"
             alt="Jeremy Kean"
-            className="w-full h-full object-cover"
-            style={{ transform: "scaleX(-1)" }}
+            className="w-full h-full object-cover object-center"
+            style={{ transform: "scaleX(-1)", objectPosition: "center 20%" }}
           />
         </div>
         <div className="container relative z-10">

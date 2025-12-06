@@ -166,3 +166,6 @@
 - [x] Fix Jeremy's photo positioning - face is cut off
 - [ ] Add yellow/gold accent colors from Manumation.ai
 - [x] Push to GitHub repository
+
+## Fix Hero Background Image
+- [x] Adjust hero section background image positioning - Jeremy's head is cut off at top
