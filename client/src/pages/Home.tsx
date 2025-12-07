@@ -498,276 +498,408 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" aria-labelledby="testimonials-heading" className="py-16 bg-background">
-        <div className="container">
-          <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
-              <p className="text-primary text-sm font-bold uppercase tracking-wider">Testimonials</p>
-            </div>
-            <h2 id="testimonials-heading" className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-              Real Results
-            </h2>
+      <section id="testimonials" aria-labelledby="testimonials-heading" className="py-24 relative overflow-hidden" style={{
+        background: "linear-gradient(135deg, oklch(0.25 0.08 250) 0%, oklch(0.18 0.06 255) 50%, oklch(0.22 0.07 245) 100%)",
+      }}>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700] rounded-full blur-3xl"></div>
+        </div>
+        <div className="container relative z-10">
+          <div className="text-center mb-16">
+            <AnimatedSection animation="fade-in">
+              <div className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full mb-6 border border-primary/30">
+                <p className="text-primary text-sm font-bold uppercase tracking-wider">Testimonials</p>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-up" delay={100}>
+              <h2 id="testimonials-heading" className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Real Results, <span className="bg-gradient-to-r from-primary via-[#FFD700] to-primary bg-clip-text text-transparent">Real Stories</span>
+              </h2>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-up" delay={200}>
+              <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
+                Business owners who transformed their operations with our proven systems
+              </p>
+            </AnimatedSection>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <AnimatedSection animation="fade-in" delay={1}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Beth Prince</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "Jeremy's automation strategies transformed our agency operations completely."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Cut policy processing time by 60%</p>
-                  <p className="text-xs text-muted-foreground">• Automated client follow-up sequences</p>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <AnimatedSection animation="slide-up" delay={0}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-[#FFD700] rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "Jeremy's automation strategies transformed our agency operations completely."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-primary font-medium">• Cut policy processing time by 60%</p>
+                    <p className="text-sm text-primary font-medium">• Automated client follow-up sequences</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-1.jpg" alt="Beth Prince" className="w-14 h-14 rounded-full object-cover border-2 border-primary/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Beth Prince</h3>
+                      <p className="text-white/60 text-sm">Insurance Agency Owner</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={2}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Danielle M.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "Finally have systems that work WITH my brain, not against it."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Increased client retention by 35%</p>
-                  <p className="text-xs text-muted-foreground">• Reclaimed 15 hours per week</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={100}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FFD700] to-purple-500 rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "Finally have systems that work WITH my brain, not against it."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-[#FFD700] font-medium">• Increased client retention by 35%</p>
+                    <p className="text-sm text-[#FFD700] font-medium">• Reclaimed 15 hours per week</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-2.jpg" alt="Danielle M." className="w-14 h-14 rounded-full object-cover border-2 border-[#FFD700]/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Danielle M.</h3>
+                      <p className="text-white/60 text-sm">Business Coach</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={3}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Lauren S.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "The AI tools Jeremy implemented saved our team countless hours every week."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Automated quote generation process</p>
-                  <p className="text-xs text-muted-foreground">• Reduced errors by 80%</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={200}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-primary rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "The AI tools Jeremy implemented saved our team countless hours every week."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-purple-400 font-medium">• Automated quote generation process</p>
+                    <p className="text-sm text-purple-400 font-medium">• Reduced errors by 80%</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-3.jpg" alt="Lauren S." className="w-14 h-14 rounded-full object-cover border-2 border-purple-500/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Lauren S.</h3>
+                      <p className="text-white/60 text-sm">Agency Manager</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={4}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Heather K.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "Jeremy helped us scale from 2 to 8 agents without adding administrative overhead."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Streamlined onboarding process</p>
-                  <p className="text-xs text-muted-foreground">• 4x team growth in 12 months</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={300}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-[#FFD700] rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "Jeremy helped us scale from 2 to 8 agents without adding administrative overhead."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-primary font-medium">• Streamlined onboarding process</p>
+                    <p className="text-sm text-primary font-medium">• 4x team growth in 12 months</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-4.jpg" alt="Heather K." className="w-14 h-14 rounded-full object-cover border-2 border-primary/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Heather K.</h3>
+                      <p className="text-white/60 text-sm">Agency Principal</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={5}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Ashley R.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "The coaching gave me clarity on what to automate and what to keep personal."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Doubled client satisfaction scores</p>
-                  <p className="text-xs text-muted-foreground">• Cut response time from 24hrs to 2hrs</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={400}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FFD700] to-purple-500 rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "The coaching gave me clarity on what to automate and what to keep personal."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-[#FFD700] font-medium">• Doubled client satisfaction scores</p>
+                    <p className="text-sm text-[#FFD700] font-medium">• Cut response time from 24hrs to 2hrs</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-5.jpg" alt="Ashley R." className="w-14 h-14 rounded-full object-cover border-2 border-[#FFD700]/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Ashley R.</h3>
+                      <p className="text-white/60 text-sm">Independent Agent</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={6}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Erica T.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "Best investment I've made in my business. Systems that actually stick."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Eliminated manual data entry</p>
-                  <p className="text-xs text-muted-foreground">• Increased revenue by 28%</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={500}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-primary rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "Best investment I've made in my business. Systems that actually stick."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-purple-400 font-medium">• Eliminated manual data entry</p>
+                    <p className="text-sm text-purple-400 font-medium">• Increased revenue by 28%</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-6.jpg" alt="Erica T." className="w-14 h-14 rounded-full object-cover border-2 border-purple-500/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Erica T.</h3>
+                      <p className="text-white/60 text-sm">Small Business Owner</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={7}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Amy L.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "Jeremy's approach to automation is practical and immediately actionable."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Automated renewal reminders</p>
-                  <p className="text-xs text-muted-foreground">• Retention rate up to 94%</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={600}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-[#FFD700] rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "Jeremy's approach to automation is practical and immediately actionable."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-primary font-medium">• Automated renewal reminders</p>
+                    <p className="text-sm text-primary font-medium">• Retention rate up to 94%</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-7.jpg" alt="Amy L." className="w-14 h-14 rounded-full object-cover border-2 border-primary/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Amy L.</h3>
+                      <p className="text-white/60 text-sm">Insurance Broker</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={8}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Ryan P.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "Went from drowning in admin work to focusing on what I do best—selling."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Freed up 20+ hours monthly</p>
-                  <p className="text-xs text-muted-foreground">• Closed 40% more policies</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={700}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FFD700] to-purple-500 rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "Went from drowning in admin work to focusing on what I do best—selling."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-[#FFD700] font-medium">• Freed up 20+ hours monthly</p>
+                    <p className="text-sm text-[#FFD700] font-medium">• Closed 40% more policies</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-8.jpg" alt="Ryan P." className="w-14 h-14 rounded-full object-cover border-2 border-[#FFD700]/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Ryan P.</h3>
+                      <p className="text-white/60 text-sm">Sales Executive</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={9}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Anissa W.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "The systems we built together have been game-changing for our agency growth."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Scaled to 3 locations</p>
-                  <p className="text-xs text-muted-foreground">• Consistent processes across all offices</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={800}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-primary rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "The systems we built together have been game-changing for our agency growth."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-purple-400 font-medium">• Scaled to 3 locations</p>
+                    <p className="text-sm text-purple-400 font-medium">• Consistent processes across all offices</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-9.jpg" alt="Anissa W." className="w-14 h-14 rounded-full object-cover border-2 border-purple-500/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Anissa W.</h3>
+                      <p className="text-white/60 text-sm">Multi-Location Owner</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={10}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Paula G.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "Jeremy understands insurance agencies. His solutions are built for our reality."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Automated claims tracking</p>
-                  <p className="text-xs text-muted-foreground">• Customer complaints down 65%</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={900}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-[#FFD700] rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "Jeremy understands insurance agencies. His solutions are built for our reality."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-primary font-medium">• Automated claims tracking</p>
+                    <p className="text-sm text-primary font-medium">• Customer complaints down 65%</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-10.jpg" alt="Paula G." className="w-14 h-14 rounded-full object-cover border-2 border-primary/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Paula G.</h3>
+                      <p className="text-white/60 text-sm">Claims Manager</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={11}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Nicci D.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "Finally have the work-life balance I've been chasing for years."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Left office by 5pm daily</p>
-                  <p className="text-xs text-muted-foreground">• Revenue actually increased 22%</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={1000}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FFD700] to-purple-500 rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "Finally have the work-life balance I've been chasing for years."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-[#FFD700] font-medium">• Left office by 5pm daily</p>
+                    <p className="text-sm text-[#FFD700] font-medium">• Revenue actually increased 22%</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-11.jpg" alt="Nicci D." className="w-14 h-14 rounded-full object-cover border-2 border-[#FFD700]/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Nicci D.</h3>
+                      <p className="text-white/60 text-sm">Agency Owner</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={12}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Cody M.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "The AI voice agents Jeremy set up handle 70% of our inbound calls now."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• 24/7 customer support coverage</p>
-                  <p className="text-xs text-muted-foreground">• Staff focused on complex cases</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={1100}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-primary rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "The AI voice agents Jeremy set up handle 70% of our inbound calls now."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-purple-400 font-medium">• 24/7 customer support coverage</p>
+                    <p className="text-sm text-purple-400 font-medium">• Staff focused on complex cases</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-1.jpg" alt="Cody M." className="w-14 h-14 rounded-full object-cover border-2 border-purple-500/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Cody M.</h3>
+                      <p className="text-white/60 text-sm">Tech Director</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
 
-            <AnimatedSection animation="fade-in" delay={13}>
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
-                  ))}
-                </div>
-                <h3 className="font-bold text-foreground text-base mb-2">Missy H.</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  "Jeremy helped us transition from chaos to clarity. Our team is thriving."
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">• Employee satisfaction up 45%</p>
-                  <p className="text-xs text-muted-foreground">• Zero turnover in 18 months</p>
-                </div>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="slide-up" delay={1200}>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-[#FFD700] rounded-2xl opacity-30 group-hover:opacity-60 blur transition-all duration-300"></div>
+              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-1 mb-6 text-[#FFD700]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-xl">★</span>
+                    ))}
+                  </div>
+                  <p className="text-white/90 text-lg mb-6 italic leading-relaxed">
+                    "Jeremy helped us transition from chaos to clarity. Our team is thriving."
+                  </p>
+                  <div className="space-y-2 mb-6 p-4 bg-white/5 rounded-xl">
+                    <p className="text-sm text-primary font-medium">• Employee satisfaction up 45%</p>
+                    <p className="text-sm text-primary font-medium">• Zero turnover in 18 months</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img src="/testimonial-2.jpg" alt="Missy H." className="w-14 h-14 rounded-full object-cover border-2 border-primary/50" loading="lazy" />
+                    <div>
+                      <h3 className="font-bold text-white text-lg">Missy H.</h3>
+                      <p className="text-white/60 text-sm">HR Manager</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             </AnimatedSection>
           </div>
         </div>
