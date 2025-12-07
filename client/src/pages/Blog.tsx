@@ -1,30 +1,23 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { getAllBlogPosts } from "@/data/blogPosts";
-import { Clock, Calendar, ArrowRight, Lightbulb, Target, Users, Zap, Mail, CheckCircle } from "lucide-react";
+import { Clock, Calendar, ArrowRight, Lightbulb, Target, Users, Zap, Mail } from "lucide-react";
 
 export default function Blog() {
-  const [email, setEmail] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsSubmitted(true);
-      setIsLoading(false);
-      setEmail("");
-    }, 800);
-  };
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://link.msgsndr.com/js/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const posts = getAllBlogPosts();
   const featuredPost = posts[0];
@@ -79,39 +72,29 @@ export default function Blog() {
                 </div>
 
                 <div className="mt-10 pt-8 border-t border-white/10">
-                  {isSubmitted ? (
-                    <div className="flex items-center gap-3 text-green-400">
-                      <CheckCircle size={24} />
-                      <p className="text-lg font-medium">You're in! Check your inbox for weekly insights.</p>
-                    </div>
-                  ) : (
-                    <div>
-                      <div className="flex items-center gap-2 mb-4">
-                        <Mail className="text-primary" size={20} />
-                        <p className="text-white font-medium">Get weekly business insights delivered free</p>
-                      </div>
-                      <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg">
-                        <Input
-                          type="email"
-                          placeholder="Enter your email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          required
-                          className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-primary focus:ring-primary"
-                        />
-                        <Button 
-                          type="submit" 
-                          size="lg"
-                          disabled={isLoading}
-                          className="whitespace-nowrap"
-                        >
-                          {isLoading ? "Subscribing..." : "Subscribe"}
-                          {!isLoading && <ArrowRight className="ml-2" size={16} />}
-                        </Button>
-                      </form>
-                      <p className="text-gray-500 text-xs mt-3">No spam. Unsubscribe anytime.</p>
-                    </div>
-                  )}
+                  <div className="flex items-center gap-2 mb-4">
+                    <Mail className="text-primary" size={20} />
+                    <p className="text-white font-medium">Get weekly business insights delivered free</p>
+                  </div>
+                  <div className="max-w-lg bg-white rounded-lg overflow-hidden" style={{ height: "280px" }}>
+                    <iframe
+                      src="https://api.leadconnectorhq.com/widget/form/WeCKj6eththzMepQtObZ"
+                      style={{ width: "100%", height: "100%", border: "none", borderRadius: "3px" }}
+                      id="inline-WeCKj6eththzMepQtObZ"
+                      data-layout='{"id":"INLINE"}'
+                      data-trigger-type="alwaysShow"
+                      data-trigger-value=""
+                      data-activation-type="alwaysActivated"
+                      data-activation-value=""
+                      data-deactivation-type="neverDeactivate"
+                      data-deactivation-value=""
+                      data-form-name="Newsletter Signup"
+                      data-height="507"
+                      data-layout-iframe-id="inline-WeCKj6eththzMepQtObZ"
+                      data-form-id="WeCKj6eththzMepQtObZ"
+                      title="Newsletter Signup"
+                    />
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
