@@ -5,7 +5,7 @@ const logos = [
   { src: "/make-logo.png", alt: "Make.com - Visual automation" },
   { src: "/n8n-logo.png", alt: "n8n - Workflow automation" },
   { src: "/replit-logo.png", alt: "Replit - Cloud development" },
-  { src: "/lovable-logo.png", alt: "Lovable - AI development" },
+  { src: "/gohighlevel-logo.png", alt: "GoHighLevel - Marketing automation platform" },
   { src: "/chatgpt-logo.png", alt: "ChatGPT - OpenAI" },
   { src: "/claude-logo.png", alt: "Claude AI - Anthropic" },
   { src: "/wordpress-logo.jpg", alt: "WordPress - CMS platform" },
