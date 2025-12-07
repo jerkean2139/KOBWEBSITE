@@ -14,10 +14,12 @@ Preferred communication style: Simple, everyday language.
 
 **Framework**: React 18 with TypeScript running on Vite for fast development and optimized builds.
 
-**Routing**: Wouter for lightweight client-side routing with three main routes:
+**Routing**: Wouter for lightweight client-side routing with five main routes:
 - `/` - Home page with all main sections
 - `/jeremys-calendar` - Dedicated calendar/booking page
 - `/become-a-coach` - Manumation Coach Certification "Coming Soon" page
+- `/blog` - Blog listing page with featured post and article cards
+- `/blog/:slug` - Individual blog post pages with full article content
 
 **UI Component System**: shadcn/ui (New York variant) providing a comprehensive set of Radix UI-based components with Tailwind CSS styling. Components are configured to use CSS variables for theming, allowing for easy color scheme customization.
 
@@ -51,6 +53,17 @@ Preferred communication style: Simple, everyday language.
 - `CountdownTimer`: Real-time countdown to book launch date
 - `ExitIntentPopup`: Modal triggered when user attempts to leave page
 - `ErrorBoundary`: Global error handling with stack trace display
+
+**Blog System** (in `/pages/` and `/data/`):
+- `Blog.tsx`: Blog listing page with featured post highlight and article cards
+- `BlogPost.tsx`: Individual blog post page with markdown rendering, FAQ sections, and share buttons
+- `blogPosts.ts`: Blog data store with SEO-optimized content including:
+  - Meta titles and descriptions for each post
+  - Featured images with alt text
+  - FAQs for rich snippets
+  - Tags and categories
+  - Author information with bio
+  - Strategic internal/external links (zenoflo.com, manumation.ai, /jeremys-calendar)
 
 **Design Patterns**:
 - Composition over inheritance for component reusability
@@ -182,7 +195,7 @@ Three Schema.org schemas implemented:
 
 ### Technical SEO Files
 - **robots.txt** (client/public/): Allows all crawlers, specifies sitemap location
-- **sitemap.xml** (client/public/): Two URLs with image sitemap extensions
+- **sitemap.xml** (client/public/): Homepage, blog listing, and 3 blog post URLs with image sitemap extensions
 - **manifest.json** (client/public/): PWA manifest with app icons and colors
 
 ### Accessibility Improvements
