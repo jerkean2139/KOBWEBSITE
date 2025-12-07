@@ -320,7 +320,7 @@ export default function Home() {
                 </ul>
                 
                 <Button className="w-full bg-primary/20 hover:bg-primary/30 text-white border border-primary/30 backdrop-blur-sm" asChild>
-                  <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
+                  <a href="/assessment">
                     <ClipboardCheck className="mr-2" size={16} />
                     Take the Assessment
                   </a>
@@ -375,7 +375,7 @@ export default function Home() {
                 </ul>
                 
                 <Button className="w-full bg-[#FFD700]/20 hover:bg-[#FFD700]/30 text-white border border-[#FFD700]/30 backdrop-blur-sm" asChild>
-                  <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
+                  <a href="/assessment">
                     <ClipboardCheck className="mr-2" size={16} />
                     Take the Assessment
                   </a>
@@ -426,7 +426,7 @@ export default function Home() {
                 </ul>
                 
                 <Button className="w-full bg-purple-500/20 hover:bg-purple-500/30 text-white border border-purple-500/30 backdrop-blur-sm" asChild>
-                  <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
+                  <a href="/assessment">
                     <ClipboardCheck className="mr-2" size={16} />
                     Take the Assessment
                   </a>
