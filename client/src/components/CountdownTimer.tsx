@@ -14,8 +14,8 @@ export default function CountdownTimer() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      // December 10, 2024 at midnight
-      const launchDate = new Date("2024-12-10T00:00:00").getTime();
+      // December 15, 2025 at midnight
+      const launchDate = new Date("2025-12-15T00:00:00").getTime();
       const now = new Date().getTime();
       const difference = launchDate - now;
 
@@ -43,7 +43,7 @@ export default function CountdownTimer() {
 
   if (isLaunched) {
     return (
-      <div className="inline-flex items-center gap-2 px-6 py-3 bg-[#FFD700]/20 rounded-xl border-2 border-[#FFD700]/40">
+      <div className="inline-flex items-center gap-2 px-6 py-3 bg-[#FFD700]/20 rounded-xl border-2 border-[#FFD700]/40" style={{ paddingBottom: '10px' }}>
         <Sparkles className="text-[#FFD700]" size={20} />
         <span className="text-[#FFD700] font-bold text-sm uppercase tracking-wide">Book Now Available!</span>
       </div>

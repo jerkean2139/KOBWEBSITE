@@ -111,16 +111,16 @@ export default function Home() {
                   alt="The Manumation Method - Launching December 15th"
                   className="relative rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-full">
-                  <Button size="lg" className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold shadow-xl" asChild>
-                    <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
-                      Pre-Order Now • Dec 15th
-                    </a>
-                  </Button>
-                </div>
+              </div>
+              <div className="flex justify-center mt-4" style={{ marginBottom: '10px' }}>
+                <Button size="lg" className="bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold shadow-xl px-8" asChild>
+                  <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
+                    Pre-Order Now • Dec 15th
+                  </a>
+                </Button>
               </div>
               {/* Countdown Timer */}
-              <div className="mt-8 flex justify-center">
+              <div className="flex justify-center" style={{ paddingBottom: '10px' }}>
                 <CountdownTimer />
               </div>
             </div>
