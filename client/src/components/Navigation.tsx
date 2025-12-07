@@ -58,11 +58,11 @@ export default function Navigation() {
             className="hover:opacity-80 transition-opacity"
             aria-label="Go to homepage"
           >
-            <img 
-              src="/attached_assets/FYSP-Kean-9262_1765129238579.jpg" 
-              alt="Jeremy Kean - Kean on Biz" 
-              className="h-14 w-14 rounded-full object-cover border-2 border-primary shadow-lg"
-            />
+            <span className="text-3xl font-bold knight-rider-glow">
+              <span className="text-primary">KEAN</span>
+              <span className="text-xs align-middle mx-1 text-primary">ON</span>
+              <span className="text-primary">BIZ</span>
+            </span>
           </button>
 
           {/* Desktop Navigation */}
