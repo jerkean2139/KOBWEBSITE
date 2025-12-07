@@ -7,6 +7,8 @@ import ExitIntentPopup from "@/components/ExitIntentPopup";
 import CountUp from "@/components/CountUp";
 import { ArrowRight, CheckCircle2, ExternalLink, Mail, Sparkles, Users, Megaphone, Bot, BookOpen, Award, ClipboardCheck } from "lucide-react";
 import { DIYIcon, DWYIcon, DFYIcon } from "@/components/VehicleIcons";
+import { TiltCard } from "@/components/TiltCard";
+import { NeuralBackground } from "@/components/NeuralBackground";
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
@@ -265,146 +267,195 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section - DIY/DWY/DFY Model */}
-      <section id="services" aria-labelledby="services-heading" className="py-16 bg-background">
-        <div className="container">
-          <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
-              <p className="text-primary text-sm font-bold uppercase tracking-wider">Engagement Levels</p>
-            </div>
-            <h2 id="services-heading" className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-              Choose Your Journey
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Think of your business transformation like a road trip. You decide how much support you need along the way.
-            </p>
+      {/* Services Section - DIY/DWY/DFY Model with Premium Design */}
+      <section 
+        id="services" 
+        aria-labelledby="services-heading" 
+        className="py-24 relative overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, oklch(0.12 0.03 250) 0%, oklch(0.08 0.02 260) 50%, oklch(0.10 0.04 240) 100%)",
+        }}
+      >
+        <NeuralBackground />
+        
+        <div className="container relative z-10">
+          <div className="text-center mb-16">
+            <AnimatedSection animation="fade-in">
+              <div className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full mb-6 border border-primary/30">
+                <p className="text-primary text-sm font-bold uppercase tracking-wider">Engagement Levels</p>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-up" delay={100}>
+              <h2 id="services-heading" className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Choose Your <span className="bg-gradient-to-r from-primary via-[#FFD700] to-primary bg-clip-text text-transparent animate-gradient-shift">Journey</span>
+              </h2>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-up" delay={200}>
+              <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
+                Think of your business transformation like a road trip. You decide how much support you need along the way.
+              </p>
+            </AnimatedSection>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* DIY - Do It Yourself */}
             <AnimatedSection animation="slide-up" delay={0}>
-            <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20 h-full">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
-              <CardHeader className="pb-4">
-                <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 mx-auto">
-                  <DIYIcon size={56} className="text-foreground" />
+              <TiltCard 
+                className="h-full p-6"
+                glowColor="rgba(59, 130, 246, 0.4)"
+                borderGradient="from-primary via-blue-400 to-primary"
+              >
+                <div className="text-center mb-6">
+                  <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center mb-4 mx-auto backdrop-blur-sm border border-primary/20">
+                    <DIYIcon size={72} className="text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Do It Yourself</h3>
+                  <p className="text-primary font-medium text-sm">
+                    You drive. We're in the back seat.
+                  </p>
                 </div>
-                <CardTitle className="text-xl mb-2 text-center">Do It Yourself</CardTitle>
-                <CardDescription className="text-sm text-center font-medium">
-                  You drive. We're in the back seat.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground text-center">
+                
+                <p className="text-sm text-white/60 text-center mb-6">
                   Access our proven frameworks, templates, and training resources. You're in full control of the implementation.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>The Manumation Method book & guides</span>
+                
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="text-primary" size={14} />
+                    </div>
+                    <span className="text-white/80">The Manumation Method book & guides</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Templates & workflow blueprints</span>
+                  <li className="flex items-start gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="text-primary" size={14} />
+                    </div>
+                    <span className="text-white/80">Templates & workflow blueprints</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Community support access</span>
+                  <li className="flex items-start gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="text-primary" size={14} />
+                    </div>
+                    <span className="text-white/80">Community support access</span>
                   </li>
                 </ul>
-                <Button className="w-full" asChild>
+                
+                <Button className="w-full bg-primary/20 hover:bg-primary/30 text-white border border-primary/30 backdrop-blur-sm" asChild>
                   <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
                     <ClipboardCheck className="mr-2" size={16} />
                     Take the Assessment
                   </a>
                 </Button>
-              </CardContent>
-            </Card>
+              </TiltCard>
             </AnimatedSection>
 
             {/* DWY - Done With You */}
             <AnimatedSection animation="slide-up" delay={200}>
-            <Card className="relative overflow-hidden border-2 border-[#FFD700]/40 hover:border-[#FFD700] transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-[#FFD700]/5 h-full">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FFD700] to-primary"></div>
-              <div className="absolute top-4 right-4 px-3 py-1 bg-[#FFD700] text-gray-900 text-xs font-bold rounded-full">
-                MOST POPULAR
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#FFD700] via-primary to-[#FFD700] rounded-2xl opacity-60 blur-sm animate-gradient-shift" />
+                <TiltCard 
+                  className="h-full p-6 relative"
+                  glowColor="rgba(251, 191, 36, 0.4)"
+                  borderGradient="from-[#FFD700] via-primary to-[#FFD700]"
+                >
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-[#FFD700] to-amber-400 text-gray-900 text-xs font-bold rounded-full shadow-lg shadow-[#FFD700]/30">
+                    MOST POPULAR
+                  </div>
+                  
+                  <div className="text-center mb-6 pt-4">
+                    <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#FFD700]/30 to-primary/20 flex items-center justify-center mb-4 mx-auto backdrop-blur-sm border border-[#FFD700]/30">
+                      <DWYIcon size={72} className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Done With You</h3>
+                    <p className="text-[#FFD700] font-medium text-sm">
+                      You drive. We're in the passenger seat.
+                    </p>
+                  </div>
+                  
+                  <p className="text-sm text-white/60 text-center mb-6">
+                    Collaborative coaching where we guide you through implementation. You stay in control while we navigate together.
+                  </p>
+                  
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-3 text-sm">
+                      <div className="w-5 h-5 rounded-full bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle2 className="text-[#FFD700]" size={14} />
+                      </div>
+                      <span className="text-white/80">1:1 coaching sessions</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-sm">
+                      <div className="w-5 h-5 rounded-full bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle2 className="text-[#FFD700]" size={14} />
+                      </div>
+                      <span className="text-white/80">Custom strategy development</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-sm">
+                      <div className="w-5 h-5 rounded-full bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle2 className="text-[#FFD700]" size={14} />
+                      </div>
+                      <span className="text-white/80">Hands-on guidance & accountability</span>
+                    </li>
+                  </ul>
+                  
+                  <Button className="w-full bg-gradient-to-r from-[#FFD700] to-amber-400 hover:from-[#FFD700]/90 hover:to-amber-400/90 text-gray-900 font-bold shadow-lg shadow-[#FFD700]/30" asChild>
+                    <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
+                      <ClipboardCheck className="mr-2" size={16} />
+                      Take the Assessment
+                    </a>
+                  </Button>
+                </TiltCard>
               </div>
-              <CardHeader className="pb-4">
-                <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-[#FFD700]/20 to-primary/10 flex items-center justify-center mb-4 mx-auto">
-                  <DWYIcon size={56} className="text-foreground" />
-                </div>
-                <CardTitle className="text-xl mb-2 text-center">Done With You</CardTitle>
-                <CardDescription className="text-sm text-center font-medium">
-                  You drive. We're in the passenger seat.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground text-center">
-                  Collaborative coaching where we guide you through implementation. You stay in control while we navigate together.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-[#FFD700] mt-0.5 flex-shrink-0" size={16} />
-                    <span>1:1 coaching sessions</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-[#FFD700] mt-0.5 flex-shrink-0" size={16} />
-                    <span>Custom strategy development</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-[#FFD700] mt-0.5 flex-shrink-0" size={16} />
-                    <span>Hands-on guidance & accountability</span>
-                  </li>
-                </ul>
-                <Button className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900" asChild>
-                  <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
-                    <ClipboardCheck className="mr-2" size={16} />
-                    Take the Assessment
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
             </AnimatedSection>
 
             {/* DFY - Done For You */}
             <AnimatedSection animation="slide-up" delay={400}>
-            <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20 h-full">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-primary"></div>
-              <CardHeader className="pb-4">
-                <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 mx-auto">
-                  <DFYIcon size={56} className="text-foreground" />
+              <TiltCard 
+                className="h-full p-6"
+                glowColor="rgba(139, 92, 246, 0.4)"
+                borderGradient="from-purple-500 via-primary to-purple-500"
+              >
+                <div className="text-center mb-6">
+                  <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500/30 to-primary/20 flex items-center justify-center mb-4 mx-auto backdrop-blur-sm border border-purple-500/20">
+                    <DFYIcon size={72} className="text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Done For You</h3>
+                  <p className="text-purple-400 font-medium text-sm">
+                    We drive. You're in the passenger seat.
+                  </p>
                 </div>
-                <CardTitle className="text-xl mb-2 text-center">Done For You</CardTitle>
-                <CardDescription className="text-sm text-center font-medium">
-                  We drive. You're in the passenger seat.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground text-center">
+                
+                <p className="text-sm text-white/60 text-center mb-6">
                   Full-service implementation by our expert team. Sit back while we build and optimize your systems.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Complete system build-out</span>
+                
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="text-purple-400" size={14} />
+                    </div>
+                    <span className="text-white/80">Complete system build-out</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>AI automation & integrations</span>
+                  <li className="flex items-start gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="text-purple-400" size={14} />
+                    </div>
+                    <span className="text-white/80">AI automation & integrations</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Ongoing management & optimization</span>
+                  <li className="flex items-start gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="text-purple-400" size={14} />
+                    </div>
+                    <span className="text-white/80">Ongoing management & optimization</span>
                   </li>
                 </ul>
-                <Button className="w-full" asChild>
+                
+                <Button className="w-full bg-purple-500/20 hover:bg-purple-500/30 text-white border border-purple-500/30 backdrop-blur-sm" asChild>
                   <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
                     <ClipboardCheck className="mr-2" size={16} />
                     Take the Assessment
                   </a>
                 </Button>
-              </CardContent>
-            </Card>
+              </TiltCard>
             </AnimatedSection>
           </div>
         </div>
