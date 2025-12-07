@@ -86,6 +86,12 @@ export default function Navigation() {
               Results
             </button>
             <a
+              href="/blog"
+              className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide`}
+            >
+              Blog
+            </a>
+            <a
               href="/jeremys-calendar"
               className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide`}
             >
@@ -124,6 +130,12 @@ export default function Navigation() {
             >
               Services
             </button>
+            <a
+              href="/blog"
+              className="text-left text-foreground hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
+            >
+              Blog
+            </a>
             <a
               href="/jeremys-calendar"
               className="text-left text-foreground hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
