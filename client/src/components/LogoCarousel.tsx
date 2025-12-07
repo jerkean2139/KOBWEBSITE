@@ -8,9 +8,6 @@ const logos = [
   { src: "/gohighlevel-logo.png", alt: "GoHighLevel - Marketing automation platform" },
   { src: "/chatgpt-logo.png", alt: "ChatGPT - OpenAI" },
   { src: "/claude-logo.png", alt: "Claude AI - Anthropic" },
-  { src: "/wordpress-logo.jpg", alt: "WordPress - CMS platform" },
-  { src: "/wix-logo.jpg", alt: "Wix - Website builder" },
-  { src: "/shopify-logo.jpg", alt: "Shopify - E-commerce platform" },
 ];
 
 export default function LogoCarousel() {
