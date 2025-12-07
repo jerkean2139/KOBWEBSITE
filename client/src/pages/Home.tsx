@@ -135,7 +135,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-primary/10 rounded-2xl blur-2xl"></div>
                 <img
-                  src="/attached_assets/FYSP-Kean-9262_1765129238579.jpg"
+                  src="/jeremy-about-photo.jpg"
                   alt="Jeremy Kean - Business Coach with 35 years of experience helping entrepreneurs transform their businesses"
                   className="relative rounded-2xl shadow-2xl w-full h-auto object-cover object-top"
                   style={{ maxHeight: '600px' }}
