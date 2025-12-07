@@ -265,122 +265,143 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section - DIY/DWY/DFY Model */}
       <section id="services" aria-labelledby="services-heading" className="py-16 bg-background">
         <div className="container">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
-              <p className="text-primary text-sm font-bold uppercase tracking-wider">Services</p>
+              <p className="text-primary text-sm font-bold uppercase tracking-wider">Engagement Levels</p>
             </div>
             <h2 id="services-heading" className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-              How We Work Together
+              Choose Your Journey
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Three distinct pathways designed to transform your business operations.
+              Think of your business transformation like a road trip. You decide how much support you need along the way.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {/* Service 1: 1:1 Coaching */}
+            {/* DIY - Do It Yourself */}
             <AnimatedSection animation="slide-up" delay={0}>
-            <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20">
+            <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20 h-full">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
               <CardHeader className="pb-4">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4">
-                  <Users className="text-primary" size={28} />
+                <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 mx-auto">
+                  <DIYIcon size={56} className="text-foreground" />
                 </div>
-                <CardTitle className="text-xl mb-2">1:1 Coaching</CardTitle>
-                <CardDescription className="text-sm">
-                  For entrepreneurs and their teams
+                <CardTitle className="text-xl mb-2 text-center">Do It Yourself</CardTitle>
+                <CardDescription className="text-sm text-center font-medium">
+                  You drive. We're in the back seat.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
+                <p className="text-sm text-muted-foreground text-center">
+                  Access our proven frameworks, templates, and training resources. You're in full control of the implementation.
+                </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Personalized strategy sessions</span>
+                    <span>The Manumation Method book & guides</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Custom system design</span>
+                    <span>Templates & workflow blueprints</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Ongoing support & optimization</span>
+                    <span>Community support access</span>
                   </li>
                 </ul>
-                <Button className="w-full" onClick={() => scrollToSection("contact")}>
-                  Learn More
+                <Button className="w-full" asChild>
+                  <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
+                    <ClipboardCheck className="mr-2" size={16} />
+                    Take the Assessment
+                  </a>
                 </Button>
               </CardContent>
             </Card>
             </AnimatedSection>
 
-            {/* Service 2: Digital Marketing Agency */}
+            {/* DWY - Done With You */}
             <AnimatedSection animation="slide-up" delay={200}>
-            <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
+            <Card className="relative overflow-hidden border-2 border-[#FFD700]/40 hover:border-[#FFD700] transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-[#FFD700]/5 h-full">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FFD700] to-primary"></div>
+              <div className="absolute top-4 right-4 px-3 py-1 bg-[#FFD700] text-gray-900 text-xs font-bold rounded-full">
+                MOST POPULAR
+              </div>
               <CardHeader className="pb-4">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4">
-                  <Megaphone className="text-primary" size={28} />
+                <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-[#FFD700]/20 to-primary/10 flex items-center justify-center mb-4 mx-auto">
+                  <DWYIcon size={56} className="text-foreground" />
                 </div>
-                <CardTitle className="text-xl mb-2">Digital Marketing</CardTitle>
-                <CardDescription className="text-sm">
-                  Full-service marketing that drives results
+                <CardTitle className="text-xl mb-2 text-center">Done With You</CardTitle>
+                <CardDescription className="text-sm text-center font-medium">
+                  You drive. We're in the passenger seat.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
+                <p className="text-sm text-muted-foreground text-center">
+                  Collaborative coaching where we guide you through implementation. You stay in control while we navigate together.
+                </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Website design & development</span>
+                    <CheckCircle2 className="text-[#FFD700] mt-0.5 flex-shrink-0" size={16} />
+                    <span>1:1 coaching sessions</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>SEO/AEO/GEO optimization</span>
+                    <CheckCircle2 className="text-[#FFD700] mt-0.5 flex-shrink-0" size={16} />
+                    <span>Custom strategy development</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Paid ads & retargeting</span>
+                    <CheckCircle2 className="text-[#FFD700] mt-0.5 flex-shrink-0" size={16} />
+                    <span>Hands-on guidance & accountability</span>
                   </li>
                 </ul>
-                <Button className="w-full" onClick={() => scrollToSection("contact")}>
-                  Learn More
+                <Button className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900" asChild>
+                  <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
+                    <ClipboardCheck className="mr-2" size={16} />
+                    Take the Assessment
+                  </a>
                 </Button>
               </CardContent>
             </Card>
             </AnimatedSection>
 
-            {/* Service 3: Tech Ecosystem */}
+            {/* DFY - Done For You */}
             <AnimatedSection animation="slide-up" delay={400}>
-            <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
+            <Card className="relative overflow-hidden border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20 h-full">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-primary"></div>
               <CardHeader className="pb-4">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4">
-                  <Bot className="text-primary" size={28} />
+                <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 mx-auto">
+                  <DFYIcon size={56} className="text-foreground" />
                 </div>
-                <CardTitle className="text-xl mb-2">Tech Ecosystem</CardTitle>
-                <CardDescription className="text-sm">
-                  AI-powered automation & custom solutions
+                <CardTitle className="text-xl mb-2 text-center">Done For You</CardTitle>
+                <CardDescription className="text-sm text-center font-medium">
+                  We drive. You're in the passenger seat.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
+                <p className="text-sm text-muted-foreground text-center">
+                  Full-service implementation by our expert team. Sit back while we build and optimize your systems.
+                </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>AI agents & voice automation</span>
+                    <span>Complete system build-out</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>AgentMob.ai orchestration</span>
+                    <span>AI automation & integrations</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Custom AI projects</span>
+                    <span>Ongoing management & optimization</span>
                   </li>
                 </ul>
-                <Button className="w-full" onClick={() => scrollToSection("tech-ecosystem")}>
-                  Learn More
+                <Button className="w-full" asChild>
+                  <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
+                    <ClipboardCheck className="mr-2" size={16} />
+                    Take the Assessment
+                  </a>
                 </Button>
               </CardContent>
             </Card>
