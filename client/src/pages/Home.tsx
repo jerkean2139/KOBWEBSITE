@@ -9,6 +9,7 @@ import { ArrowRight, CheckCircle2, ExternalLink, Mail, Sparkles, Users, Megaphon
 import { DIYIcon, DWYIcon, DFYIcon } from "@/components/VehicleIcons";
 import { TiltCard } from "@/components/TiltCard";
 import { NeuralBackground } from "@/components/NeuralBackground";
+import LogoCarousel from "@/components/LogoCarousel";
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
@@ -235,29 +236,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center max-w-6xl mx-auto">
-            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/zapier-logo.png" alt="Zapier - Automation platform integration" className="h-12 w-auto" loading="lazy" />
-            </div>
-            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/make-logo.png" alt="Make.com - Visual automation platform" className="h-12 w-auto" loading="lazy" />
-            </div>
-            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/n8n-logo.png" alt="n8n - Workflow automation tool" className="h-12 w-auto" loading="lazy" />
-            </div>
-            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/replit-logo.png" alt="Replit - Cloud development platform" className="h-12 w-auto" loading="lazy" />
-            </div>
-            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/lovable-logo.png" alt="Lovable - AI development platform" className="h-12 w-auto" loading="lazy" />
-            </div>
-            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/chatgpt-logo.png" alt="ChatGPT - OpenAI language model" className="h-12 w-auto" loading="lazy" />
-            </div>
-            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-              <img src="/claude-logo.png" alt="Claude AI - Anthropic language model" className="h-12 w-auto" loading="lazy" />
-            </div>
-          </div>
+          <LogoCarousel />
 
           <div className="text-center mt-12">
             <p className="text-muted-foreground max-w-2xl mx-auto">
