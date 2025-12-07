@@ -931,16 +931,10 @@ export default function Home() {
                     <span>Actionable Insights</span>
                   </div>
                 </div>
-                <div className="bg-muted/50 rounded-lg p-6">
-                  <p className="text-sm text-muted-foreground mb-4">
-                    <strong className="text-foreground">Paste your GoHighLevel assessment embed code below:</strong>
-                  </p>
-                  <div className="bg-background/50 rounded border-2 border-dashed border-primary/30 p-8 text-center">
-                    <p className="text-muted-foreground text-sm">GHL Assessment Embed Code Goes Here</p>
-                  </div>
-                </div>
-                <Button size="lg" className="text-base px-8 py-5">
-                  Start Your Assessment <ArrowRight className="ml-2" />
+                <Button size="lg" className="text-base px-8 py-5" asChild>
+                  <a href="/assessment">
+                    Start Your Assessment <ArrowRight className="ml-2" />
+                  </a>
                 </Button>
               </div>
             </Card>
@@ -965,13 +959,24 @@ export default function Home() {
                     Biweekly insights on AI, automation, and business systems.
                   </p>
                 </div>
-                <div className="bg-muted/50 rounded-lg p-6 mb-6">
-                  <p className="text-sm text-muted-foreground mb-4">
-                    <strong className="text-foreground">Paste your GoHighLevel newsletter signup embed code below:</strong>
-                  </p>
-                  <div className="bg-background/50 rounded border-2 border-dashed border-primary/30 p-8 text-center">
-                    <p className="text-muted-foreground text-sm">GHL Newsletter Embed Code Goes Here</p>
-                  </div>
+                <div className="w-full" style={{ minHeight: '507px' }}>
+                  <iframe
+                    src="https://api.leadconnectorhq.com/widget/form/WeCKj6eththzMepQtObZ"
+                    style={{ width: '100%', height: '507px', border: 'none', borderRadius: '3px' }}
+                    id="inline-WeCKj6eththzMepQtObZ"
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Newsletter Signup"
+                    data-height="507"
+                    data-layout-iframe-id="inline-WeCKj6eththzMepQtObZ"
+                    data-form-id="WeCKj6eththzMepQtObZ"
+                    title="Newsletter Signup"
+                  />
                 </div>
                 <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground flex-wrap">
                   <div className="flex items-center gap-2">
