@@ -330,60 +330,57 @@ export default function Home() {
 
             {/* DWY - Done With You */}
             <AnimatedSection animation="slide-up" delay={200}>
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#FFD700] via-primary to-[#FFD700] rounded-2xl opacity-60 blur-sm animate-gradient-shift" />
-                <TiltCard 
-                  className="h-full p-6 relative"
-                  glowColor="rgba(251, 191, 36, 0.4)"
-                  borderGradient="from-[#FFD700] via-primary to-[#FFD700]"
-                >
-                  <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-[#FFD700] to-amber-400 text-gray-900 text-xs font-bold rounded-full shadow-lg shadow-[#FFD700]/30">
-                    MOST POPULAR
+              <TiltCard 
+                className="h-full p-6 relative"
+                glowColor="rgba(251, 191, 36, 0.4)"
+                borderGradient="from-[#FFD700] via-amber-400 to-[#FFD700]"
+              >
+                <div className="absolute top-4 right-4 px-3 py-1 bg-[#FFD700]/20 text-[#FFD700] text-xs font-bold rounded-full border border-[#FFD700]/30">
+                  MOST POPULAR
+                </div>
+                
+                <div className="text-center mb-6 pt-4">
+                  <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#FFD700]/30 to-primary/20 flex items-center justify-center mb-4 mx-auto backdrop-blur-sm border border-[#FFD700]/20">
+                    <DWYIcon size={72} className="text-white" />
                   </div>
-                  
-                  <div className="text-center mb-6 pt-4">
-                    <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#FFD700]/30 to-primary/20 flex items-center justify-center mb-4 mx-auto backdrop-blur-sm border border-[#FFD700]/30">
-                      <DWYIcon size={72} className="text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Done With You</h3>
-                    <p className="text-[#FFD700] font-medium text-sm">
-                      You drive. We're in the passenger seat.
-                    </p>
-                  </div>
-                  
-                  <p className="text-sm text-white/60 text-center mb-6">
-                    Collaborative coaching where we guide you through implementation. You stay in control while we navigate together.
+                  <h3 className="text-2xl font-bold text-white mb-2">Done With You</h3>
+                  <p className="text-[#FFD700] font-medium text-sm">
+                    You drive. We're in the passenger seat.
                   </p>
-                  
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-3 text-sm">
-                      <div className="w-5 h-5 rounded-full bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle2 className="text-[#FFD700]" size={14} />
-                      </div>
-                      <span className="text-white/80">1:1 coaching sessions</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <div className="w-5 h-5 rounded-full bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle2 className="text-[#FFD700]" size={14} />
-                      </div>
-                      <span className="text-white/80">Custom strategy development</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <div className="w-5 h-5 rounded-full bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle2 className="text-[#FFD700]" size={14} />
-                      </div>
-                      <span className="text-white/80">Hands-on guidance & accountability</span>
-                    </li>
-                  </ul>
-                  
-                  <Button className="w-full bg-gradient-to-r from-[#FFD700] to-amber-400 hover:from-[#FFD700]/90 hover:to-amber-400/90 text-gray-900 font-bold shadow-lg shadow-[#FFD700]/30" asChild>
-                    <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
-                      <ClipboardCheck className="mr-2" size={16} />
-                      Take the Assessment
-                    </a>
-                  </Button>
-                </TiltCard>
-              </div>
+                </div>
+                
+                <p className="text-sm text-white/60 text-center mb-6">
+                  Collaborative coaching where we guide you through implementation. You stay in control while we navigate together.
+                </p>
+                
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="text-[#FFD700]" size={14} />
+                    </div>
+                    <span className="text-white/80">1:1 coaching sessions</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="text-[#FFD700]" size={14} />
+                    </div>
+                    <span className="text-white/80">Custom strategy development</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="text-[#FFD700]" size={14} />
+                    </div>
+                    <span className="text-white/80">Hands-on guidance & accountability</span>
+                  </li>
+                </ul>
+                
+                <Button className="w-full bg-[#FFD700]/20 hover:bg-[#FFD700]/30 text-white border border-[#FFD700]/30 backdrop-blur-sm" asChild>
+                  <a href="https://manumation.ai/assessment" target="_blank" rel="noopener noreferrer">
+                    <ClipboardCheck className="mr-2" size={16} />
+                    Take the Assessment
+                  </a>
+                </Button>
+              </TiltCard>
             </AnimatedSection>
 
             {/* DFY - Done For You */}
