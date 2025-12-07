@@ -10,6 +10,7 @@ import ManumationCoach from "./pages/ManumationCoach";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Assessment from "./pages/Assessment";
+import Book from "./pages/Book";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/assessment" component={Assessment} />
+      <Route path="/book" component={Book} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

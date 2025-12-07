@@ -95,7 +95,7 @@ export default function Home() {
                     <p className="text-[#FFD700] text-xs font-bold uppercase mb-1">New Book</p>
                     <h3 className="text-white font-bold text-sm mb-2">The Manumation Method</h3>
                     <Button size="sm" className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold min-h-[44px]" asChild>
-                      <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
+                      <a href="/book">
                         Pre-Order • Dec 15th
                       </a>
                     </Button>
@@ -114,7 +114,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center mt-4" style={{ marginBottom: '10px' }}>
                 <Button size="lg" className="bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold shadow-xl px-8" asChild>
-                  <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
+                  <a href="/book">
                     Pre-Order Now • Dec 15th
                   </a>
                 </Button>
@@ -201,7 +201,7 @@ export default function Home() {
                 <p className="text-white/80 font-semibold mb-2">gives you the strategy.</p>
                 <p className="text-white/60 text-sm">Personal coaching and strategic guidance</p>
               </div>
-              <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer" className="bg-white/5 backdrop-blur-sm border-2 border-primary/30 rounded-2xl p-8 hover:bg-white/10 hover:border-primary/60 transition-all group cursor-pointer">
+              <a href="/book" className="bg-white/5 backdrop-blur-sm border-2 border-primary/30 rounded-2xl p-8 hover:bg-white/10 hover:border-primary/60 transition-all group cursor-pointer">
                 <div className="text-6xl font-bold text-primary mb-4">02</div>
                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Manumation</h3>
                 <p className="text-white/80 font-semibold mb-2">gives you the method.</p>

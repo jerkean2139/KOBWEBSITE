@@ -73,7 +73,7 @@ export default function Assessment() {
                 © {new Date().getFullYear()} KeanOnBiz. All rights reserved.
               </p>
               <div className="flex items-center gap-6">
-                <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a href="/book" className="text-gray-400 hover:text-white transition-colors text-sm">
                   Manumation
                 </a>
                 <a href="https://zenoflo.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">

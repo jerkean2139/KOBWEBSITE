@@ -83,7 +83,7 @@ Most agencies leave money on the table because they can't follow up consistently
 - **Re-engaging cold leads** with relevant content
 - **Scheduling appointments** without back-and-forth emails
 
-Learn more about building effective nurture sequences in [The Manumation Method](https://manumation.ai), where I break down the exact frameworks that have generated millions in revenue for my clients.
+Learn more about building effective nurture sequences in [The Manumation Method](/book), where I break down the exact frameworks that have generated millions in revenue for my clients.
 
 ### 4. Renewal Management
 
@@ -156,7 +156,7 @@ If you're ready to transform your insurance agency with AI automation, here's wh
 3. **Start with one automation** - Build momentum with a quick win
 4. **Get expert guidance** - Avoid costly mistakes with proven frameworks
 
-Ready to take the first step? [Book a strategy call](/jeremys-calendar) to discuss your agency's specific situation, or explore the complete automation framework in [The Manumation Method book](https://manumation.ai).
+Ready to take the first step? [Book a strategy call](/jeremys-calendar) to discuss your agency's specific situation, or explore the complete automation framework in [The Manumation Method book](/book).
 
 ## Conclusion
 
@@ -268,7 +268,7 @@ Pure automation handles the repetitive, rule-based tasks that eat up your day:
 
 ## The Manumation Matrix: Where Each Layer Shines
 
-Here's a framework I teach in [The Manumation Method book](https://manumation.ai) for deciding which layer should handle each task:
+Here's a framework I teach in [The Manumation Method book](/book) for deciding which layer should handle each task:
 
 | Task Type | Best Handled By | Why |
 |-----------|-----------------|-----|
@@ -389,7 +389,7 @@ Still on the fence? Consider these statistics from businesses implementing the M
 
 If you're ready to transform your business with the Manumation Method, here's your roadmap:
 
-1. **Read the book** - [The Manumation Method](https://manumation.ai) provides the complete framework with step-by-step implementation guides.
+1. **Read the book** - [The Manumation Method](/book) provides the complete framework with step-by-step implementation guides.
 
 2. **Audit your operations** - Use the time-tracking method above to identify your biggest opportunities.
 
@@ -405,7 +405,7 @@ The businesses that thrive in the next decade won't be the ones with the most AI
 
 That's Manumation. That's the future.
 
-*Ready to become a Manumator? [Get the book](https://manumation.ai) or [book a strategy session](/jeremys-calendar) to start your transformation today.*
+*Ready to become a Manumator? [Get the book](/book) or [book a strategy session](/jeremys-calendar) to start your transformation today.*
     `,
     author: {
       name: "Jeremy Kean",
@@ -523,7 +523,7 @@ Everything else is a candidate for delegation, automation, or elimination.
 
 ### Step 4: Implement Strategic Automation
 
-This is where [the Manumation Method](https://manumation.ai) transforms everything. When you automate strategically:
+This is where [the Manumation Method](/book) transforms everything. When you automate strategically:
 
 **You eliminate time-wasters:**
 - Automated scheduling ends email tag
@@ -627,7 +627,7 @@ If you've read this far, something resonated. Don't let that moment pass. Here's
 3. Take a full day completely off
 
 **This Quarter:**
-1. Read [The Manumation Method](https://manumation.ai) for the complete framework
+1. Read [The Manumation Method](/book) for the complete framework
 2. Consider working with a coach ([schedule a call](/jeremys-calendar) if that's me)
 3. Redesign your business model around your life
 

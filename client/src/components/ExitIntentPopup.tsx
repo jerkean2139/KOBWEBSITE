@@ -81,7 +81,7 @@ export default function ExitIntentPopup() {
                 className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold group"
                 asChild
               >
-                <a href="https://manumation.ai" target="_blank" rel="noopener noreferrer">
+                <a href="/book">
                   Learn More & Pre-Order
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                 </a>
