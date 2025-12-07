@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getAllBlogPosts } from "@/data/blogPosts";
-import { Clock, Calendar, ArrowRight, BookOpen, Sparkles, Users, Bot } from "lucide-react";
+import { Clock, Calendar, ArrowRight, Lightbulb, Target, Users, Zap } from "lucide-react";
 
 export default function Blog() {
   const posts = getAllBlogPosts();
@@ -13,44 +13,66 @@ export default function Blog() {
   const otherPosts = posts.slice(1);
 
   const categoryIcons: Record<string, React.ReactNode> = {
-    "AI Automation": <Bot className="w-4 h-4" />,
-    "Business Strategy": <Sparkles className="w-4 h-4" />,
-    "Business Mindset": <Users className="w-4 h-4" />,
+    "AI Automation": <Zap className="w-4 h-4" />,
+    "Business Strategy": <Target className="w-4 h-4" />,
+    "Business Mindset": <Lightbulb className="w-4 h-4" />,
   };
 
   return (
     <>
       <Navigation />
-      <main id="main-content" className="min-h-screen bg-gradient-to-b from-slate-50 to-white" role="main">
-        <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+      <main id="main-content" className="min-h-screen bg-white" role="main">
+        <section className="relative pt-32 pb-16 bg-gray-900 overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
           </div>
           
           <div className="container relative z-10">
             <AnimatedSection animation="fade-in">
-              <div className="text-center max-w-3xl mx-auto mb-16">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
-                  <BookOpen className="text-primary" size={16} />
-                  <span className="text-primary text-sm font-semibold uppercase tracking-wider">KeanOnBiz Blog</span>
+              <div className="max-w-4xl mx-auto">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
+                  <div className="flex-1">
+                    <p className="text-primary font-medium text-sm uppercase tracking-wider mb-4">
+                      Practical Insights from 35 Years in Business
+                    </p>
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                      Work Smarter,<br />
+                      Not Harder
+                    </h1>
+                    <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
+                      Real strategies for business owners who want to reclaim their time, empower their teams, and build operations that actually work.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
+                      <Target className="text-primary" size={16} />
+                      <span className="text-white/80 text-sm">Strategy</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
+                      <Zap className="text-primary" size={16} />
+                      <span className="text-white/80 text-sm">Efficiency</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
+                      <Users className="text-primary" size={16} />
+                      <span className="text-white/80 text-sm">Team Growth</span>
+                    </div>
+                  </div>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                  Insights for{" "}
-                  <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                    Business Growth
-                  </span>
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Expert strategies on AI automation, business coaching, and building operations that let your business breathe again.
-                </p>
               </div>
             </AnimatedSection>
+          </div>
+        </section>
 
+        <section className="py-16 bg-gray-50">
+          <div className="container">
             {featuredPost && (
               <AnimatedSection animation="slide-up" delay={0.1}>
+                <div className="mb-8">
+                  <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Featured Article</h2>
+                </div>
                 <Link href={`/blog/${featuredPost.slug}`}>
-                  <Card className="group cursor-pointer overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white mb-12">
+                  <Card className="group cursor-pointer overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-white">
                     <div className="grid md:grid-cols-2 gap-0">
                       <div className="relative aspect-video md:aspect-auto overflow-hidden">
                         <img
