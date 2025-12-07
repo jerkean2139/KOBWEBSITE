@@ -1,13 +1,31 @@
+import { useState } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { getAllBlogPosts } from "@/data/blogPosts";
-import { Clock, Calendar, ArrowRight, Lightbulb, Target, Users, Zap } from "lucide-react";
+import { Clock, Calendar, ArrowRight, Lightbulb, Target, Users, Zap, Mail, CheckCircle } from "lucide-react";
 
 export default function Blog() {
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setIsLoading(false);
+      setEmail("");
+    }, 800);
+  };
+
   const posts = getAllBlogPosts();
   const featuredPost = posts[0];
   const otherPosts = posts.slice(1);
@@ -58,6 +76,42 @@ export default function Blog() {
                       <span className="text-white/80 text-sm">Team Growth</span>
                     </div>
                   </div>
+                </div>
+
+                <div className="mt-10 pt-8 border-t border-white/10">
+                  {isSubmitted ? (
+                    <div className="flex items-center gap-3 text-green-400">
+                      <CheckCircle size={24} />
+                      <p className="text-lg font-medium">You're in! Check your inbox for weekly insights.</p>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="flex items-center gap-2 mb-4">
+                        <Mail className="text-primary" size={20} />
+                        <p className="text-white font-medium">Get weekly business insights delivered free</p>
+                      </div>
+                      <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg">
+                        <Input
+                          type="email"
+                          placeholder="Enter your email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
+                          className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-primary focus:ring-primary"
+                        />
+                        <Button 
+                          type="submit" 
+                          size="lg"
+                          disabled={isLoading}
+                          className="whitespace-nowrap"
+                        >
+                          {isLoading ? "Subscribing..." : "Subscribe"}
+                          {!isLoading && <ArrowRight className="ml-2" size={16} />}
+                        </Button>
+                      </form>
+                      <p className="text-gray-500 text-xs mt-3">No spam. Unsubscribe anytime.</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </AnimatedSection>
