@@ -26,13 +26,13 @@ export function TiltCard({
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     
-    const rotateX = ((y - centerY) / centerY) * -8;
-    const rotateY = ((x - centerX) / centerX) * 8;
+    const rotateX = ((y - centerY) / centerY) * -2;
+    const rotateY = ((x - centerX) / centerX) * 2;
     
-    cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.005, 1.005, 1.005)`;
     
-    glowRef.current.style.background = `radial-gradient(circle at ${x}px ${y}px, ${glowColor}, transparent 50%)`;
-    glowRef.current.style.opacity = '1';
+    glowRef.current.style.background = `radial-gradient(circle at ${x}px ${y}px, ${glowColor}, transparent 70%)`;
+    glowRef.current.style.opacity = '0.5';
   }, [glowColor]);
 
   const handleMouseLeave = useCallback(() => {
@@ -45,13 +45,9 @@ export function TiltCard({
     <div className="relative group" style={{ transformStyle: 'preserve-3d' }}>
       <div 
         className={cn(
-          "absolute -inset-[1px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500",
+          "absolute -inset-[1px] rounded-2xl opacity-0 group-hover:opacity-60 transition-opacity duration-500",
           `bg-gradient-to-r ${borderGradient}`
         )}
-        style={{ 
-          animation: 'gradient-shift 3s ease infinite',
-          backgroundSize: '200% 200%'
-        }}
       />
       
       <div
