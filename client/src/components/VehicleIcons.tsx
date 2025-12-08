@@ -63,7 +63,7 @@ export function DIYIcon({ className = "", size = 80 }: IconProps) {
       </g>
       
       <rect x="26" y="40" width="8" height="3" rx="1" fill="#0f172a" opacity="0.6" />
-      <circle cx="28" cy="41.5" r="0.8" fill="#22c55e" className="animate-pulse" />
+      <circle cx="28" cy="41.5" r="0.8" fill="#22c55e"  />
       <circle cx="31" cy="41.5" r="0.8" fill="#3b82f6" />
       
       <text x="31" y="14" fontSize="7" fontWeight="bold" fill="#3b82f6" textAnchor="middle" className="uppercase">You Drive</text>
@@ -139,15 +139,15 @@ export function DWYIcon({ className = "", size = 80 }: IconProps) {
       </g>
       
       <path d="M36 36 L42 36" stroke="#fbbf24" strokeWidth="1" strokeDasharray="2 1" opacity="0.6" />
-      <circle cx="39" cy="36" r="1" fill="#fbbf24" className="animate-pulse" />
+      <circle cx="39" cy="36" r="1" fill="#fbbf24"  />
       
       <rect x="26" y="40" width="8" height="3" rx="1" fill="#0f172a" opacity="0.6" />
-      <circle cx="28" cy="41.5" r="0.8" fill="#22c55e" className="animate-pulse" />
+      <circle cx="28" cy="41.5" r="0.8" fill="#22c55e"  />
       <circle cx="31" cy="41.5" r="0.8" fill="#fbbf24" />
       
       <rect x="46" y="40" width="8" height="3" rx="1" fill="#0f172a" opacity="0.6" />
-      <circle cx="48" cy="41.5" r="0.8" fill="#8b5cf6" className="animate-pulse" />
-      <circle cx="51" cy="41.5" r="0.8" fill="#8b5cf6" className="animate-pulse" style={{ animationDelay: '0.5s' }} />
+      <circle cx="48" cy="41.5" r="0.8" fill="#8b5cf6"  />
+      <circle cx="51" cy="41.5" r="0.8" fill="#8b5cf6"   />
       
       <text x="28" y="14" fontSize="5" fontWeight="bold" fill="#fbbf24" textAnchor="middle">YOU</text>
       <text x="49" y="14" fontSize="5" fontWeight="bold" fill="#8b5cf6" textAnchor="middle">+ AI</text>
@@ -225,12 +225,12 @@ export function DFYIcon({ className = "", size = 80 }: IconProps) {
       
       <path d="M36 34 L42 34" stroke="#8b5cf6" strokeWidth="1.5" strokeDasharray="2 1" opacity="0.8" />
       <path d="M36 36 L42 36" stroke="#8b5cf6" strokeWidth="1.5" strokeDasharray="2 1" opacity="0.8" />
-      <circle cx="39" cy="35" r="1.5" fill="#a78bfa" className="animate-pulse" />
+      <circle cx="39" cy="35" r="1.5" fill="#a78bfa"  />
       
       <rect x="26" y="40" width="10" height="3" rx="1" fill="#0f172a" opacity="0.8" />
-      <circle cx="28" cy="41.5" r="0.8" fill="#8b5cf6" className="animate-pulse" />
-      <circle cx="31" cy="41.5" r="0.8" fill="#a78bfa" className="animate-pulse" style={{ animationDelay: '0.3s' }} />
-      <circle cx="34" cy="41.5" r="0.8" fill="#c4b5fd" className="animate-pulse" style={{ animationDelay: '0.6s' }} />
+      <circle cx="28" cy="41.5" r="0.8" fill="#8b5cf6"  />
+      <circle cx="31" cy="41.5" r="0.8" fill="#a78bfa"   />
+      <circle cx="34" cy="41.5" r="0.8" fill="#c4b5fd"   />
       
       <text x="28" y="14" fontSize="5" fontWeight="bold" fill="#8b5cf6" textAnchor="middle">AI+HUMAN</text>
       <text x="49" y="14" fontSize="5" fontWeight="bold" fill="#3b82f6" textAnchor="middle">YOU</text>
