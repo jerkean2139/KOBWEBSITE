@@ -105,58 +105,134 @@ export default function DirtySecretCoaching() {
                   Don't wait for them to change—<span className="font-bold text-white">change their environment</span>.
                 </p>
 
-                <div className="py-12 my-8 text-center">
-                  <p className="text-2xl md:text-3xl font-bold text-white mb-4">
-                    Your clients don't need more advice on how to swim.
-                  </p>
-                  <p className="text-2xl md:text-3xl text-[#FFD700] font-bold">
-                    They need you to build them the raft.
-                  </p>
-                </div>
-
-                <div 
-                  className="bg-white/5 border border-primary/30 rounded-xl p-8 text-center my-12"
-                  style={{ boxShadow: "8px 8px 0 rgba(59, 130, 246, 0.2)" }}
-                >
-                  <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider mb-4">Coming Soon</p>
-                  <h3 className="text-2xl font-bold text-white mb-4">Become a Certified Manumation Partner</h3>
-                  <p className="text-white/80 mb-8">
-                    Be the first to know when applications open. Join an elite group of coaches who deliver results, not just advice.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button 
-                      size="lg" 
-                      className="bg-[#FFD700] text-gray-900 font-bold px-8"
-                      style={{ boxShadow: "4px 4px 0 rgba(255, 215, 0, 0.4)" }}
-                      asChild
+                {/* Dramatic closing statement */}
+                <div className="relative py-16 my-12">
+                  <div 
+                    className="absolute inset-0 border-y-2 border-[#FFD700]/30"
+                    style={{ 
+                      boxShadow: "0 -4px 30px rgba(255, 215, 0, 0.15), 0 4px 30px rgba(59, 130, 246, 0.15)"
+                    }}
+                  />
+                  <div className="relative text-center">
+                    <p 
+                      className="text-2xl md:text-4xl font-bold text-white mb-6"
+                      style={{ textShadow: "0 0 40px rgba(255, 255, 255, 0.1)" }}
                     >
-                      <a href="/become-a-coach">
-                        Get Notified <ArrowRight className="ml-2" size={18} />
-                      </a>
-                    </Button>
-                    <Button 
-                      size="lg" 
-                      variant="outline"
-                      className="bg-white/10 text-white border-white/30 px-8"
-                      asChild
+                      Your clients don't need more advice on how to swim.
+                    </p>
+                    <p 
+                      className="text-3xl md:text-5xl text-[#FFD700] font-black"
+                      style={{ textShadow: "0 0 60px rgba(255, 215, 0, 0.4), 0 4px 0 rgba(59, 130, 246, 0.6)" }}
                     >
-                      <a href="/jeremys-calendar">
-                        Book a Call
-                      </a>
-                    </Button>
+                      They need you to build them the raft.
+                    </p>
                   </div>
                 </div>
 
-                <div className="text-center pt-8">
-                  <Link href="/">
-                    <Button 
-                      variant="outline" 
-                      className="bg-white/10 text-white border-white/30"
+                {/* CTA Card with chromatic layered shadows */}
+                <div className="relative my-16">
+                  {/* Chromatic shadow layers */}
+                  <div 
+                    className="absolute inset-0 rounded-2xl"
+                    style={{ 
+                      transform: "translate(12px, 12px)",
+                      backgroundColor: "rgba(59, 130, 246, 0.4)"
+                    }}
+                  />
+                  <div 
+                    className="absolute inset-0 rounded-2xl"
+                    style={{ 
+                      transform: "translate(6px, 6px)",
+                      backgroundColor: "rgba(255, 215, 0, 0.3)"
+                    }}
+                  />
+                  
+                  {/* Main card */}
+                  <div 
+                    className="relative bg-[#12121f] border-2 border-white/20 rounded-2xl p-10 md:p-14 text-center"
+                    style={{ 
+                      boxShadow: "inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 60px rgba(59, 130, 246, 0.1)"
+                    }}
+                  >
+                    {/* Corner accents */}
+                    <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-[#FFD700] rounded-tl-2xl" />
+                    <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-primary rounded-tr-2xl" />
+                    <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-primary rounded-bl-2xl" />
+                    <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-[#FFD700] rounded-br-2xl" />
+                    
+                    <div 
+                      className="inline-block px-6 py-2 bg-[#FFD700] text-gray-900 text-sm font-black uppercase tracking-widest mb-6"
+                      style={{ 
+                        boxShadow: "4px 4px 0 rgba(59, 130, 246, 0.8)",
+                        transform: "rotate(-2deg)"
+                      }}
                     >
-                      <ArrowLeft className="mr-2" size={16} />
-                      Back to Home
-                    </Button>
-                  </Link>
+                      Coming Soon
+                    </div>
+                    
+                    <h3 
+                      className="text-3xl md:text-4xl font-black text-white mb-6"
+                      style={{ textShadow: "0 2px 0 rgba(59, 130, 246, 0.5)" }}
+                    >
+                      Become a Certified Manumation Partner
+                    </h3>
+                    
+                    <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto">
+                      Be the first to know when applications open. Join an elite group of coaches who deliver <span className="text-white font-semibold">results</span>, not just advice.
+                    </p>
+                    
+                    <div className="flex flex-col sm:flex-row gap-5 justify-center">
+                      <Button 
+                        size="lg" 
+                        className="bg-[#FFD700] hover:bg-[#ffdd33] text-gray-900 font-black text-lg px-10 py-6 h-auto"
+                        style={{ 
+                          boxShadow: "6px 6px 0 rgba(59, 130, 246, 0.8), 0 0 30px rgba(255, 215, 0, 0.3)"
+                        }}
+                        asChild
+                      >
+                        <a href="/become-a-coach">
+                          Get Notified <ArrowRight className="ml-2" size={20} />
+                        </a>
+                      </Button>
+                      <Button 
+                        size="lg" 
+                        className="bg-transparent hover:bg-white/10 text-white border-2 border-white/40 font-bold text-lg px-10 py-6 h-auto"
+                        style={{ 
+                          boxShadow: "4px 4px 0 rgba(255, 215, 0, 0.4)"
+                        }}
+                        asChild
+                      >
+                        <a href="/jeremys-calendar">
+                          Book a Call
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer navigation with style */}
+                <div className="relative pt-12 pb-8">
+                  <div className="flex items-center justify-center gap-8 mb-8">
+                    <div className="h-px flex-1 max-w-24 bg-primary/40" style={{ boxShadow: "0 0 10px rgba(59, 130, 246, 0.5)" }} />
+                    <div 
+                      className="w-3 h-3 bg-[#FFD700] rotate-45"
+                      style={{ boxShadow: "0 0 15px rgba(255, 215, 0, 0.6)" }}
+                    />
+                    <div className="h-px flex-1 max-w-24 bg-[#FFD700]/40" style={{ boxShadow: "0 0 10px rgba(255, 215, 0, 0.5)" }} />
+                  </div>
+                  
+                  <div className="text-center">
+                    <Link href="/">
+                      <Button 
+                        variant="outline" 
+                        className="bg-transparent hover:bg-white/5 text-white/70 hover:text-white border border-white/20 hover:border-white/40 transition-all duration-300"
+                        style={{ boxShadow: "3px 3px 0 rgba(59, 130, 246, 0.3)" }}
+                      >
+                        <ArrowLeft className="mr-2" size={16} />
+                        Back to Home
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
