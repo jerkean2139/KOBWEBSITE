@@ -50,6 +50,10 @@ localPort = 36547
 externalPort = 4200
 
 [[ports]]
+localPort = 39839
+externalPort = 6000
+
+[[ports]]
 localPort = 41435
 externalPort = 3002
 
@@ -63,5 +67,5 @@ externalPort = 3003
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["pnpm", "start"]
-build = ["pnpm", "build"]
+run = ["node", "dist/index.js"]
+build = ["npm", "run", "build"]
