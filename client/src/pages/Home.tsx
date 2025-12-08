@@ -902,6 +902,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* For Business Coaches CTA */}
+      <section className="py-20 bg-background relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" aria-hidden="true"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#FFD700]/5 rounded-full blur-3xl" aria-hidden="true"></div>
+        <div className="container relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <AnimatedSection animation="slide-up">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <div className="inline-block px-4 py-2 bg-red-500/10 rounded-full mb-4">
+                    <p className="text-red-500 text-sm font-bold uppercase tracking-wider">For Business Coaches</p>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+                    The Dirty Secret of Business Coaching
+                  </h2>
+                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    Your clients aren't ignoring your advice. They're drowning in operations before they can execute it. Learn why the best coaches are switching from giving advice to installing systems.
+                  </p>
+                  <Button size="lg" className="text-base px-6 py-5" asChild>
+                    <a href="/coaching-truth">
+                      Read the Truth <ArrowRight className="ml-2" />
+                    </a>
+                  </Button>
+                </div>
+                <div className="relative">
+                  <Card 
+                    className="border-0 bg-muted/50 p-6"
+                    style={{ boxShadow: "8px 8px 0 rgba(59, 130, 246, 0.1)" }}
+                  >
+                    <div className="space-y-4 text-muted-foreground">
+                      <p className="flex items-start gap-3">
+                        <span className="text-red-500 font-bold text-xl">✗</span>
+                        <span>Client agrees to your strategy on the call</span>
+                      </p>
+                      <p className="flex items-start gap-3">
+                        <span className="text-red-500 font-bold text-xl">✗</span>
+                        <span>Monday hits and operations take over</span>
+                      </p>
+                      <p className="flex items-start gap-3">
+                        <span className="text-red-500 font-bold text-xl">✗</span>
+                        <span>Three weeks later: zero progress</span>
+                      </p>
+                      <div className="border-t border-muted-foreground/20 pt-4 mt-4">
+                        <p className="flex items-start gap-3 text-foreground font-semibold">
+                          <span className="text-primary font-bold text-xl">→</span>
+                          <span>There's a better way. Become a Manumation Partner.</span>
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* Manumation Assessment CTA */}
       <section id="assessment" className="py-16 bg-muted/30">
         <div className="container">

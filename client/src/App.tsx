@@ -11,6 +11,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Assessment from "./pages/Assessment";
 import Book from "./pages/Book";
+import DirtySecretCoaching from "./pages/DirtySecretCoaching";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/assessment" component={Assessment} />
       <Route path="/book" component={Book} />
+      <Route path="/coaching-truth" component={DirtySecretCoaching} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
