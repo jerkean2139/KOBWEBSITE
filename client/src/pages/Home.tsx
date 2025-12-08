@@ -266,7 +266,7 @@ export default function Home() {
             </AnimatedSection>
             <AnimatedSection animation="slide-up" delay={100}>
               <h2 id="services-heading" className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Choose Your <span className="bg-gradient-to-r from-primary via-[#FFD700] to-primary bg-clip-text text-transparent animate-gradient-shift">Journey</span>
+                Choose Your <span className="text-[#FFD700]">Journey</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection animation="slide-up" delay={200}>
