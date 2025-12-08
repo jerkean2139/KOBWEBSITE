@@ -1,9 +1,20 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 
 export default function DirtySecretCoaching() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://link.msgsndr.com/js/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <>
       <Navigation />
@@ -177,35 +188,28 @@ export default function DirtySecretCoaching() {
                       Become a Certified Manumation Partner
                     </h3>
                     
-                    <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto">
+                    <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
                       Be the first to know when applications open. Join an elite group of coaches who deliver <span className="text-white font-semibold">results</span>, not just advice.
                     </p>
                     
-                    <div className="flex flex-col sm:flex-row gap-5 justify-center">
-                      <Button 
-                        size="lg" 
-                        className="bg-[#FFD700] hover:bg-[#ffdd33] text-gray-900 font-black text-lg px-10 py-6 h-auto"
-                        style={{ 
-                          boxShadow: "6px 6px 0 rgba(59, 130, 246, 0.8), 0 0 30px rgba(255, 215, 0, 0.3)"
-                        }}
-                        asChild
-                      >
-                        <a href="/become-a-coach">
-                          Get Notified <ArrowRight className="ml-2" size={20} />
-                        </a>
-                      </Button>
-                      <Button 
-                        size="lg" 
-                        className="bg-transparent hover:bg-white/10 text-white border-2 border-white/40 font-bold text-lg px-10 py-6 h-auto"
-                        style={{ 
-                          boxShadow: "4px 4px 0 rgba(255, 215, 0, 0.4)"
-                        }}
-                        asChild
-                      >
-                        <a href="/jeremys-calendar">
-                          Book a Call
-                        </a>
-                      </Button>
+                    <div className="w-full max-w-lg mx-auto">
+                      <iframe
+                        src="https://api.leadconnectorhq.com/widget/form/BmNwodj0BwAaw5UlvZO0"
+                        style={{ width: "100%", height: "450px", border: "none", borderRadius: "8px" }}
+                        id="inline-BmNwodj0BwAaw5UlvZO0"
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="Manumation Certified Coach Interest"
+                        data-height="450"
+                        data-layout-iframe-id="inline-BmNwodj0BwAaw5UlvZO0"
+                        data-form-id="BmNwodj0BwAaw5UlvZO0"
+                        title="Manumation Certified Coach Interest"
+                      />
                     </div>
                   </div>
                 </div>
