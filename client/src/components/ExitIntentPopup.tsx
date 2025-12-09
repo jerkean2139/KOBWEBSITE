@@ -18,7 +18,7 @@ export default function ExitIntentPopup() {
     // Add delay to prevent immediate trigger
     const timer = setTimeout(() => {
       document.addEventListener("mouseleave", handleMouseLeave);
-    }, 3000);
+    }, 1500);
 
     return () => {
       clearTimeout(timer);

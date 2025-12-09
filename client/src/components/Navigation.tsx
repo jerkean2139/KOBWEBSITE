@@ -53,8 +53,8 @@ export default function Navigation() {
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <button
-            onClick={scrollToTop}
+          <a
+            href="/"
             className="hover:opacity-80 transition-opacity"
             aria-label="Go to homepage"
           >
@@ -63,7 +63,7 @@ export default function Navigation() {
               <span className="text-xs align-middle mx-1 text-primary">ON</span>
               <span className="text-primary">BIZ</span>
             </span>
-          </button>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">

@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
-import { Calendar as CalendarIcon, Clock, Users, Zap } from "lucide-react";
+import { Calendar as CalendarIcon, Clock, Users, Zap, ArrowLeft } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Calendar() {
   return (
@@ -239,6 +240,20 @@ export default function Calendar() {
             <Button size="lg" variant="outline">
               Schedule Quick Connect
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Back to Home */}
+      <section className="py-8 border-t">
+        <div className="container">
+          <div className="text-center">
+            <Link href="/">
+              <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+                <ArrowLeft className="mr-2" size={16} />
+                Back to Home
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
