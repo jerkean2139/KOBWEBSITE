@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useCallback } from 'react';
+import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
 interface TiltCardProps {
@@ -11,38 +11,10 @@ interface TiltCardProps {
 export function TiltCard({ 
   children, 
   className = "",
-  glowColor = "rgba(59, 130, 246, 0.3)",
   borderGradient = "from-primary via-secondary to-primary"
 }: TiltCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const glowRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current || !glowRef.current) return;
-    
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = ((y - centerY) / centerY) * -2;
-    const rotateY = ((x - centerX) / centerX) * 2;
-    
-    cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.005, 1.005, 1.005)`;
-    
-    glowRef.current.style.background = `radial-gradient(circle at ${x}px ${y}px, ${glowColor}, transparent 70%)`;
-    glowRef.current.style.opacity = '0.5';
-  }, [glowColor]);
-
-  const handleMouseLeave = useCallback(() => {
-    if (!cardRef.current || !glowRef.current) return;
-    cardRef.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    glowRef.current.style.opacity = '0';
-  }, []);
-
   return (
-    <div className="relative group" style={{ transformStyle: 'preserve-3d' }}>
+    <div className="relative group">
       <div 
         className={cn(
           "absolute -inset-[1px] rounded-2xl opacity-0 group-hover:opacity-60 transition-opacity duration-500",
@@ -51,22 +23,14 @@ export function TiltCard({
       />
       
       <div
-        ref={cardRef}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
         className={cn(
-          "relative rounded-2xl transition-transform duration-300 ease-out",
+          "relative rounded-2xl transition-all duration-300 ease-out",
           "backdrop-blur-xl bg-white/5 border border-white/10",
           "shadow-xl shadow-black/20",
+          "group-hover:border-white/20",
           className
         )}
-        style={{ transformStyle: 'preserve-3d' }}
       >
-        <div 
-          ref={glowRef}
-          className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 transition-opacity duration-300"
-        />
-        
         <div className="relative z-10">
           {children}
         </div>
