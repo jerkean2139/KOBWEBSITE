@@ -540,7 +540,7 @@ export default function Home() {
                     <p className="text-sm text-[#60a5fa] font-medium">• Automated client follow-up sequences</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-1.jpg" alt="Beth Prince" className="w-14 h-14 rounded-full object-cover border-2 border-[#1e3a5f]" loading="lazy" />
+                    <img src="/testimonial-1.jpg" alt="Beth Prince" className="w-14 h-14 rounded-full object-cover border-2 border-[#1e3a5f] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Beth Prince</h3>
                       <p className="text-white/60 text-sm">Insurance Agency Owner</p>
@@ -569,7 +569,7 @@ export default function Home() {
                     <p className="text-sm text-[#a78bfa] font-medium">• Reclaimed 15 hours per week</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-2.jpg" alt="Danielle M." className="w-14 h-14 rounded-full object-cover border-2 border-[#4c1d95]" loading="lazy" />
+                    <img src="/testimonial-2.jpg" alt="Danielle M." className="w-14 h-14 rounded-full object-cover border-2 border-[#4c1d95] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Danielle M.</h3>
                       <p className="text-white/60 text-sm">Business Coach</p>
@@ -598,7 +598,7 @@ export default function Home() {
                     <p className="text-sm text-[#93c5fd] font-medium">• Reduced errors by 80%</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-3.jpg" alt="Lauren S." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e40af]" loading="lazy" />
+                    <img src="/testimonial-3.jpg" alt="Lauren S." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e40af] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Lauren S.</h3>
                       <p className="text-white/60 text-sm">Agency Manager</p>
@@ -627,7 +627,7 @@ export default function Home() {
                     <p className="text-sm text-[#c4b5fd] font-medium">• 4x team growth in 12 months</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-4.jpg" alt="Heather K." className="w-14 h-14 rounded-full object-cover border-2 border-[#6d28d9]" loading="lazy" />
+                    <img src="/testimonial-4.jpg" alt="Heather K." className="w-14 h-14 rounded-full object-cover border-2 border-[#6d28d9] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Heather K.</h3>
                       <p className="text-white/60 text-sm">Agency Principal</p>
@@ -656,7 +656,7 @@ export default function Home() {
                     <p className="text-sm text-[#60a5fa] font-medium">• Cut response time from 24hrs to 2hrs</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-5.jpg" alt="Ashley R." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e3a5f]" loading="lazy" />
+                    <img src="/testimonial-5.jpg" alt="Ashley R." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e3a5f] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Ashley R.</h3>
                       <p className="text-white/60 text-sm">Independent Agent</p>
@@ -685,7 +685,7 @@ export default function Home() {
                     <p className="text-sm text-[#a78bfa] font-medium">• Increased revenue by 28%</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-6.jpg" alt="Erica T." className="w-14 h-14 rounded-full object-cover border-2 border-[#4c1d95]" loading="lazy" />
+                    <img src="/testimonial-6.jpg" alt="Erica T." className="w-14 h-14 rounded-full object-cover border-2 border-[#4c1d95] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Erica T.</h3>
                       <p className="text-white/60 text-sm">Small Business Owner</p>
@@ -714,7 +714,7 @@ export default function Home() {
                     <p className="text-sm text-[#93c5fd] font-medium">• Retention rate up to 94%</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-7.jpg" alt="Amy L." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e40af]" loading="lazy" />
+                    <img src="/testimonial-7.jpg" alt="Amy L." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e40af] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Amy L.</h3>
                       <p className="text-white/60 text-sm">Insurance Broker</p>
@@ -743,7 +743,7 @@ export default function Home() {
                     <p className="text-sm text-[#c4b5fd] font-medium">• Closed 40% more policies</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-8.jpg" alt="Ryan P." className="w-14 h-14 rounded-full object-cover border-2 border-[#6d28d9]" loading="lazy" />
+                    <img src="/testimonial-8.jpg" alt="Ryan P." className="w-14 h-14 rounded-full object-cover border-2 border-[#6d28d9] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Ryan P.</h3>
                       <p className="text-white/60 text-sm">Sales Executive</p>
@@ -772,7 +772,7 @@ export default function Home() {
                     <p className="text-sm text-[#60a5fa] font-medium">• Consistent processes across all offices</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-9.jpg" alt="Anissa W." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e3a5f]" loading="lazy" />
+                    <img src="/testimonial-9.jpg" alt="Anissa W." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e3a5f] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Anissa W.</h3>
                       <p className="text-white/60 text-sm">Multi-Location Owner</p>
@@ -801,7 +801,7 @@ export default function Home() {
                     <p className="text-sm text-[#a78bfa] font-medium">• Customer complaints down 65%</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-10.jpg" alt="Paula G." className="w-14 h-14 rounded-full object-cover border-2 border-[#4c1d95]" loading="lazy" />
+                    <img src="/testimonial-10.jpg" alt="Paula G." className="w-14 h-14 rounded-full object-cover border-2 border-[#4c1d95] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Paula G.</h3>
                       <p className="text-white/60 text-sm">Claims Manager</p>
@@ -830,7 +830,7 @@ export default function Home() {
                     <p className="text-sm text-[#93c5fd] font-medium">• Revenue actually increased 22%</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-11.jpg" alt="Nicci D." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e40af]" loading="lazy" />
+                    <img src="/testimonial-11.jpg" alt="Nicci D." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e40af] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Nicci D.</h3>
                       <p className="text-white/60 text-sm">Agency Owner</p>
@@ -859,7 +859,7 @@ export default function Home() {
                     <p className="text-sm text-[#c4b5fd] font-medium">• Staff focused on complex cases</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-1.jpg" alt="Cody M." className="w-14 h-14 rounded-full object-cover border-2 border-[#6d28d9]" loading="lazy" />
+                    <img src="/testimonial-1.jpg" alt="Cody M." className="w-14 h-14 rounded-full object-cover border-2 border-[#6d28d9] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Cody M.</h3>
                       <p className="text-white/60 text-sm">Tech Director</p>
@@ -888,7 +888,7 @@ export default function Home() {
                     <p className="text-sm text-[#60a5fa] font-medium">• Zero turnover in 18 months</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src="/testimonial-2.jpg" alt="Missy H." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e3a5f]" loading="lazy" />
+                    <img src="/testimonial-2.jpg" alt="Missy H." className="w-14 h-14 rounded-full object-cover border-2 border-[#1e3a5f] group-hover:border-[#FFD700] transition-colors duration-300" loading="lazy" />
                     <div>
                       <h3 className="font-bold text-white text-lg">Missy H.</h3>
                       <p className="text-white/60 text-sm">HR Manager</p>
