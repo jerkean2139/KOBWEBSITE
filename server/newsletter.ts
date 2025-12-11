@@ -8,6 +8,20 @@ import { Resend } from "resend";
 const router = Router();
 router.use(json());
 
+const ADMIN_KEY = process.env.NEWSLETTER_ADMIN_KEY || "kean-newsletter-admin-2024";
+
+const authMiddleware = (req: any, res: any, next: any) => {
+  const authHeader = req.headers.authorization;
+  const providedKey = authHeader?.replace("Bearer ", "");
+  
+  if (providedKey !== ADMIN_KEY) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+  next();
+};
+
+router.use(authMiddleware);
+
 const openai = new OpenAI({
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
   baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
@@ -216,6 +230,41 @@ router.put("/newsletters/:id", async (req, res) => {
   }
 });
 
+router.post("/fetch-article", async (req, res) => {
+  try {
+    const { url } = req.body;
+    if (!url) {
+      return res.status(400).json({ error: "URL required" });
+    }
+
+    const response = await fetch(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (compatible; KeanOnBiz/1.0)"
+      }
+    });
+    const html = await response.text();
+    
+    const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+    const title = titleMatch ? titleMatch[1].trim() : "";
+    
+    let content = html
+      .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
+      .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "")
+      .replace(/<nav[^>]*>[\s\S]*?<\/nav>/gi, "")
+      .replace(/<header[^>]*>[\s\S]*?<\/header>/gi, "")
+      .replace(/<footer[^>]*>[\s\S]*?<\/footer>/gi, "")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 5000);
+
+    res.json({ title, content });
+  } catch (error) {
+    console.error("Error fetching article:", error);
+    res.status(500).json({ error: "Failed to fetch article" });
+  }
+});
+
 function generateEmailHTML({ title, tldr, topTen }: { title: string; tldr: string; topTen: string[] }) {
   return `<!DOCTYPE html>
 <html>
@@ -246,7 +295,7 @@ function generateEmailHTML({ title, tldr, topTen }: { title: string; tldr: strin
           <!-- TLDR -->
           <tr>
             <td style="padding: 0 30px 30px;">
-              <div style="background: linear-gradient(135deg, #1e3a5f 0%, #172554 100%); border-radius: 12px; padding: 24px; border-left: 4px solid #FFD700;">
+              <div style="background-color: #1e3a5f; border-radius: 12px; padding: 24px; border-left: 4px solid #FFD700;">
                 <p style="margin: 0 0 8px; color: #FFD700; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">TL;DR</p>
                 <p style="margin: 0; color: #e2e8f0; font-size: 16px; line-height: 1.6;">${tldr}</p>
               </div>
@@ -258,7 +307,7 @@ function generateEmailHTML({ title, tldr, topTen }: { title: string; tldr: strin
             <td style="padding: 0 30px 40px;">
               <h3 style="margin: 0 0 20px; color: #3b82f6; font-size: 20px;">Top 10 Things You Need to Know</h3>
               ${topTen.map((item, i) => `
-              <div style="margin-bottom: 16px; padding: 16px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+              <div style="margin-bottom: 16px; padding: 16px; background-color: #172554; border-radius: 8px;">
                 <p style="margin: 0; color: #ffffff; font-size: 15px; line-height: 1.5;">${item}</p>
               </div>
               `).join('')}

@@ -40,12 +40,16 @@ interface ResearchSource {
 }
 
 export default function NewsletterCreator() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [adminKey, setAdminKey] = useState("");
+  const [authError, setAuthError] = useState("");
   const [newsletters, setNewsletters] = useState<Newsletter[]>([]);
   const [selectedNewsletter, setSelectedNewsletter] = useState<Newsletter | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSummarizing, setIsSummarizing] = useState(false);
   const [isGeneratingHtml, setIsGeneratingHtml] = useState(false);
   const [isSending, setIsSending] = useState(false);
+  const [isFetchingUrl, setIsFetchingUrl] = useState(false);
   const [newTitle, setNewTitle] = useState("");
   const [showPreview, setShowPreview] = useState(false);
   const [testEmail, setTestEmail] = useState("");
@@ -53,13 +57,51 @@ export default function NewsletterCreator() {
   
   const [newSource, setNewSource] = useState({ url: "", title: "", content: "" });
 
+  const apiFetch = (url: string, options: RequestInit = {}) => {
+    return fetch(url, {
+      ...options,
+      headers: {
+        ...options.headers,
+        "Authorization": `Bearer ${adminKey}`,
+        "Content-Type": "application/json",
+      },
+    });
+  };
+
+  const handleLogin = async () => {
+    setAuthError("");
+    try {
+      const res = await fetch("/api/newsletters", {
+        headers: { "Authorization": `Bearer ${adminKey}` },
+      });
+      if (res.ok) {
+        setIsAuthenticated(true);
+        sessionStorage.setItem("newsletter_auth", adminKey);
+      } else {
+        setAuthError("Invalid admin key");
+      }
+    } catch {
+      setAuthError("Connection failed");
+    }
+  };
+
   useEffect(() => {
-    fetchNewsletters();
+    const savedKey = sessionStorage.getItem("newsletter_auth");
+    if (savedKey) {
+      setAdminKey(savedKey);
+      setIsAuthenticated(true);
+    }
   }, []);
+
+  useEffect(() => {
+    if (isAuthenticated && adminKey) {
+      fetchNewsletters();
+    }
+  }, [isAuthenticated, adminKey]);
 
   const fetchNewsletters = async () => {
     try {
-      const res = await fetch("/api/newsletters");
+      const res = await apiFetch("/api/newsletters");
       const data = await res.json();
       setNewsletters(data);
     } catch (error) {
@@ -71,9 +113,8 @@ export default function NewsletterCreator() {
     if (!newTitle.trim()) return;
     setIsLoading(true);
     try {
-      const res = await fetch("/api/newsletters", {
+      const res = await apiFetch("/api/newsletters", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title: newTitle }),
       });
       const data = await res.json();
@@ -88,7 +129,7 @@ export default function NewsletterCreator() {
 
   const selectNewsletter = async (id: number) => {
     try {
-      const res = await fetch(`/api/newsletters/${id}`);
+      const res = await apiFetch(`/api/newsletters/${id}`);
       const data = await res.json();
       setSelectedNewsletter(data);
       setShowPreview(false);
@@ -97,12 +138,33 @@ export default function NewsletterCreator() {
     }
   };
 
+  const fetchArticleContent = async () => {
+    if (!newSource.url.trim()) return;
+    setIsFetchingUrl(true);
+    try {
+      const res = await apiFetch("/api/fetch-article", {
+        method: "POST",
+        body: JSON.stringify({ url: newSource.url }),
+      });
+      const data = await res.json();
+      if (data.title || data.content) {
+        setNewSource({
+          ...newSource,
+          title: data.title || newSource.title,
+          content: data.content || newSource.content,
+        });
+      }
+    } catch (error) {
+      console.error("Failed to fetch article:", error);
+    }
+    setIsFetchingUrl(false);
+  };
+
   const addSource = async () => {
     if (!selectedNewsletter || !newSource.title.trim()) return;
     try {
-      const res = await fetch(`/api/newsletters/${selectedNewsletter.id}/sources`, {
+      const res = await apiFetch(`/api/newsletters/${selectedNewsletter.id}/sources`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newSource),
       });
       const source = await res.json();
@@ -120,7 +182,7 @@ export default function NewsletterCreator() {
     if (!selectedNewsletter) return;
     setIsSummarizing(true);
     try {
-      const res = await fetch(`/api/newsletters/${selectedNewsletter.id}/summarize`, {
+      const res = await apiFetch(`/api/newsletters/${selectedNewsletter.id}/summarize`, {
         method: "POST",
       });
       const data = await res.json();
@@ -139,7 +201,7 @@ export default function NewsletterCreator() {
     if (!selectedNewsletter) return;
     setIsGeneratingHtml(true);
     try {
-      const res = await fetch(`/api/newsletters/${selectedNewsletter.id}/generate-html`, {
+      const res = await apiFetch(`/api/newsletters/${selectedNewsletter.id}/generate-html`, {
         method: "POST",
       });
       const data = await res.json();
@@ -159,9 +221,8 @@ export default function NewsletterCreator() {
     setIsSending(true);
     setSendStatus("idle");
     try {
-      const res = await fetch(`/api/newsletters/${selectedNewsletter.id}/send`, {
+      const res = await apiFetch(`/api/newsletters/${selectedNewsletter.id}/send`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ testEmail }),
       });
       if (res.ok) {
@@ -179,9 +240,8 @@ export default function NewsletterCreator() {
   const updateNewsletter = async (updates: Partial<Newsletter>) => {
     if (!selectedNewsletter) return;
     try {
-      await fetch(`/api/newsletters/${selectedNewsletter.id}`, {
+      await apiFetch(`/api/newsletters/${selectedNewsletter.id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updates),
       });
       setSelectedNewsletter({ ...selectedNewsletter, ...updates });
@@ -190,10 +250,42 @@ export default function NewsletterCreator() {
     }
   };
 
+  if (!isAuthenticated) {
+    return (
+      <>
+        <Navigation />
+        <main className="min-h-screen pt-20 flex items-center justify-center" style={{ backgroundColor: "#0f172a" }}>
+          <Card className="w-full max-w-md bg-white/5 border-white/10">
+            <CardHeader className="text-center">
+              <CardTitle className="text-white text-2xl">Newsletter Admin</CardTitle>
+              <p className="text-white/60">Enter your admin key to continue</p>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <Input
+                type="password"
+                placeholder="Admin Key"
+                value={adminKey}
+                onChange={(e) => setAdminKey(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/40"
+              />
+              {authError && (
+                <p className="text-red-400 text-sm text-center">{authError}</p>
+              )}
+              <Button onClick={handleLogin} className="w-full bg-primary hover:bg-primary/90">
+                Access Newsletter Creator
+              </Button>
+            </CardContent>
+          </Card>
+        </main>
+      </>
+    );
+  }
+
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-20" style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #172554 100%)" }}>
+      <main className="min-h-screen pt-20" style={{ backgroundColor: "#0f172a" }}>
         <div className="container py-8">
           <div className="flex items-center gap-4 mb-8">
             <Link href="/">
@@ -277,13 +369,26 @@ export default function NewsletterCreator() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <div className="grid md:grid-cols-3 gap-3">
-                        <Input
-                          placeholder="Article URL (optional)"
-                          value={newSource.url}
-                          onChange={(e) => setNewSource({ ...newSource, url: e.target.value })}
-                          className="bg-white/10 border-white/20 text-white placeholder:text-white/40"
-                        />
+                      <div className="flex gap-2 items-end">
+                        <div className="flex-1">
+                          <label className="text-white/60 text-xs mb-1 block">Article URL</label>
+                          <Input
+                            placeholder="https://example.com/article"
+                            value={newSource.url}
+                            onChange={(e) => setNewSource({ ...newSource, url: e.target.value })}
+                            className="bg-white/10 border-white/20 text-white placeholder:text-white/40"
+                          />
+                        </div>
+                        <Button 
+                          onClick={fetchArticleContent} 
+                          disabled={isFetchingUrl || !newSource.url.trim()}
+                          variant="outline"
+                          className="border-white/20 text-white hover:bg-white/10"
+                        >
+                          {isFetchingUrl ? <Loader2 className="animate-spin" size={16} /> : "Fetch"}
+                        </Button>
+                      </div>
+                      <div className="grid md:grid-cols-2 gap-3">
                         <Input
                           placeholder="Title / Topic"
                           value={newSource.title}
