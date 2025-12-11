@@ -233,20 +233,22 @@ export default function NewsletterCreator() {
               <p className="text-white/60">Enter your admin key to continue</p>
             </CardHeader>
             <CardContent className="space-y-4">
-              <Input
-                type="password"
-                placeholder="Admin Key"
-                value={adminKey}
-                onChange={(e) => setAdminKey(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleLogin()}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/40"
-              />
-              {authError && (
-                <p className="text-red-400 text-sm text-center">{authError}</p>
-              )}
-              <Button onClick={handleLogin} className="w-full bg-primary hover:bg-primary/90">
-                Access Newsletter Creator
-              </Button>
+              <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
+                <Input
+                  type="password"
+                  placeholder="Admin Key"
+                  value={adminKey}
+                  onChange={(e) => setAdminKey(e.target.value)}
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/40 mb-4"
+                  autoComplete="current-password"
+                />
+                {authError && (
+                  <p className="text-red-400 text-sm text-center mb-4">{authError}</p>
+                )}
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                  Access Newsletter Creator
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </main>
