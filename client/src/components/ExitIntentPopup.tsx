@@ -65,7 +65,7 @@ export default function ExitIntentPopup() {
             <div className="md:w-3/5 p-8">
               <div className="flex items-center gap-2 mb-3">
                 <BookOpen className="text-[#FFD700]" size={24} />
-                <span className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">Launching Dec 15th</span>
+                <span className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">Launching Dec 31st</span>
               </div>
               
               <h3 className="text-2xl font-bold text-white mb-3">

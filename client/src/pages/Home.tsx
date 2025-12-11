@@ -122,7 +122,7 @@ export default function Home() {
             <div className="text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FFD700]/20 rounded-full mb-6">
                 <BookOpen className="text-[#FFD700]" size={16} />
-                <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book • Launching Dec 15th</p>
+                <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book • Launching Dec 31st</p>
               </div>
               <h1 id="hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 Let Your Business <span className="text-primary">Breathe Again.</span>
@@ -173,26 +173,26 @@ export default function Home() {
                     <h3 className="text-white font-bold text-sm mb-2">The Manumation Method</h3>
                     <Button size="sm" className="w-full bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold min-h-[44px]" asChild>
                       <a href="/book">
-                        Pre-Order • Dec 15th
+                        Pre-Order • Dec 31st
                       </a>
                     </Button>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="hidden lg:block">
+            <div className="hidden lg:block mt-16">
               <div className="relative max-w-xs mx-auto">
                 <div className="absolute -inset-4 bg-[#FFD700]/20 rounded-xl blur-2xl"></div>
                 <img
                   src="/manumation-book-cover.png"
-                  alt="The Manumation Method - Launching December 15th"
+                  alt="The Manumation Method - Launching December 31st"
                   className="relative rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full"
                 />
               </div>
               <div className="flex justify-center mt-4" style={{ marginBottom: '10px' }}>
                 <Button size="lg" className="bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold shadow-xl px-8" asChild>
                   <a href="/book">
-                    Pre-Order Now • Dec 15th
+                    Pre-Order Now • Dec 31st
                   </a>
                 </Button>
               </div>

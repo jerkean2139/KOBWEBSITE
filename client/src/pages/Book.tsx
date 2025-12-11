@@ -36,7 +36,7 @@ export default function Book() {
                   style={{ backgroundColor: "rgba(255, 215, 0, 0.1)" }}
                 >
                   <BookOpen className="text-[#FFD700]" size={16} />
-                  <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book • Launching Dec 15th</p>
+                  <p className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">New Book • Launching Dec 31st</p>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                   The Manumation <span className="text-[#3b82f6]">Method</span>
@@ -270,7 +270,7 @@ export default function Book() {
                   Ready to Transform Your Business?
                 </h2>
                 <p className="text-lg text-gray-600 mb-10">
-                  Pre-order The Manumation Method now and be the first to receive it when it launches December 15th.
+                  Pre-order The Manumation Method now and be the first to receive it when it launches December 31st.
                 </p>
               </AnimatedSection>
               <AnimatedSection animation="slide-up" delay={100}>

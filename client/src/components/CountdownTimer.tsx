@@ -14,8 +14,8 @@ export default function CountdownTimer() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      // December 15, 2025 at midnight
-      const launchDate = new Date("2025-12-15T00:00:00").getTime();
+      // December 31, 2025 at midnight
+      const launchDate = new Date("2025-12-31T00:00:00").getTime();
       const now = new Date().getTime();
       const difference = launchDate - now;
 
