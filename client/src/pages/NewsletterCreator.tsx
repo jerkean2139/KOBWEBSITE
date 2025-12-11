@@ -367,6 +367,9 @@ export default function NewsletterCreator() {
                         <LinkIcon size={18} />
                         Research Sources
                       </CardTitle>
+                      <p className="text-white/50 text-sm mt-1">
+                        Add 30-40 sources from: GoHighLevel updates, industry articles, YouTube videos, LinkedIn/X posts, competitor newsletters. AI will curate the Top 10.
+                      </p>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div className="flex gap-2 items-end">
@@ -429,20 +432,39 @@ export default function NewsletterCreator() {
                         </div>
                       )}
 
+                      <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg mb-3">
+                        <span className="text-white/60 text-sm">
+                          Sources added: <span className="text-white font-bold">{selectedNewsletter.sources?.length || 0}</span> / 30-40 recommended
+                        </span>
+                        <span className={`text-xs px-2 py-1 rounded ${
+                          (selectedNewsletter.sources?.length || 0) >= 30 
+                            ? "bg-green-500/20 text-green-400" 
+                            : (selectedNewsletter.sources?.length || 0) >= 10 
+                              ? "bg-yellow-500/20 text-yellow-400"
+                              : "bg-red-500/20 text-red-400"
+                        }`}>
+                          {(selectedNewsletter.sources?.length || 0) >= 30 
+                            ? "Ready!" 
+                            : (selectedNewsletter.sources?.length || 0) >= 10 
+                              ? "Good start"
+                              : "Add more sources"}
+                        </span>
+                      </div>
+
                       <Button 
                         onClick={summarize} 
-                        disabled={isSummarizing || !selectedNewsletter.sources?.length}
-                        className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                        disabled={isSummarizing || (selectedNewsletter.sources?.length || 0) < 5}
+                        className="w-full bg-purple-600 hover:bg-purple-700"
                       >
                         {isSummarizing ? (
                           <>
                             <Loader2 className="animate-spin mr-2" size={18} />
-                            AI is analyzing...
+                            AI is curating Top 10 from {selectedNewsletter.sources?.length} sources...
                           </>
                         ) : (
                           <>
                             <Sparkles className="mr-2" size={18} />
-                            Generate TLDR + Top 10 with AI
+                            Curate Top 10 with AI
                           </>
                         )}
                       </Button>

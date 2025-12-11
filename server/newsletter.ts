@@ -8,9 +8,14 @@ import { Resend } from "resend";
 const router = Router();
 router.use(json());
 
-const ADMIN_KEY = process.env.NEWSLETTER_ADMIN_KEY || "kean-newsletter-admin-2024";
+const ADMIN_KEY = process.env.NEWSLETTER_ADMIN_KEY;
 
 const authMiddleware = (req: any, res: any, next: any) => {
+  if (!ADMIN_KEY) {
+    console.error("NEWSLETTER_ADMIN_KEY environment variable is not set");
+    return res.status(500).json({ error: "Newsletter admin not configured" });
+  }
+  
   const authHeader = req.headers.authorization;
   const providedKey = authHeader?.replace("Bearer ", "");
   
@@ -90,34 +95,57 @@ router.post("/newsletters/:id/summarize", async (req, res) => {
     const sources = await db.select().from(researchSources).where(eq(researchSources.newsletterId, id));
     
     if (sources.length === 0) {
-      return res.status(400).json({ error: "No sources to summarize" });
+      return res.status(400).json({ error: "No sources to summarize. Add at least 10-40 sources for best results." });
     }
 
-    const sourcesText = sources.map(s => `Title: ${s.title}\nContent: ${s.content}`).join("\n\n---\n\n");
+    const sourcesText = sources.map((s, i) => `[${i+1}] ${s.title}\nURL: ${s.url || 'N/A'}\nContent: ${s.content?.slice(0, 1000) || 'N/A'}`).join("\n\n---\n\n");
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [
         {
           role: "system",
-          content: `You are a business newsletter writer for Jeremy Kean's "Kean on Biz" newsletter. 
-Your audience is business owners, coaches, and insurance agency owners interested in AI, automation, and business growth.
-Write in a conversational, engaging tone. Be practical and actionable.`
+          content: `You are the lead content curator for Jeremy Kean's "Kean on Biz" biweekly newsletter.
+
+TARGET AUDIENCE:
+- Business coaches and consultants
+- Insurance agency owners
+- Entrepreneurs interested in AI and automation
+- Business owners looking to scale with systems
+
+CONTENT PRIORITIES:
+1. AI & automation tools and strategies
+2. GoHighLevel updates and tips
+3. Business systems and SOPs
+4. Coaching/consulting industry trends
+5. Insurance industry technology
+6. Time-saving automation workflows
+7. Leadership and team building
+8. Revenue growth strategies
+
+TONE: Conversational, practical, no-fluff. Jeremy has 35 years of business experience - the newsletter should reflect wisdom and real-world application, not hype.`
         },
         {
           role: "user",
-          content: `Based on these research sources, create:
+          content: `You have ${sources.length} research sources. Your job is to:
 
-1. A TLDR (2-3 sentences capturing the main theme)
-2. Top 10 Things You Need to Know (numbered list, each item should be a compelling insight with a brief explanation)
+1. Analyze all sources for relevance to the target audience
+2. Select the TOP 10 most valuable insights (mix of: AI/automation news, business strategy, tools, and trends)
+3. Write a compelling TLDR that captures the overall theme
+4. Each Top 10 item should be actionable and valuable - not just a headline, but WHY it matters
 
-Sources:
+Sources to analyze:
 ${sourcesText}
 
 Format your response as JSON:
 {
-  "tldr": "...",
-  "topTen": ["1. Item one - explanation", "2. Item two - explanation", ...]
+  "tldr": "2-3 sentence executive summary of this issue's theme",
+  "topTen": [
+    "1. [Headline] - [Why it matters and what to do about it]",
+    "2. [Headline] - [Why it matters and what to do about it]",
+    ...
+  ],
+  "sourcesUsed": [1, 3, 5, 7, 12, 15, 18, 22, 28, 31]
 }`
         }
       ],

@@ -14,12 +14,13 @@ Preferred communication style: Simple, everyday language.
 
 **Framework**: React 18 with TypeScript running on Vite for fast development and optimized builds.
 
-**Routing**: Wouter for lightweight client-side routing with five main routes:
+**Routing**: Wouter for lightweight client-side routing with main routes:
 - `/` - Home page with all main sections
 - `/jeremys-calendar` - Dedicated calendar/booking page
 - `/become-a-coach` - Manumation Coach Certification "Coming Soon" page
 - `/blog` - Blog listing page with featured post and article cards
 - `/blog/:slug` - Individual blog post pages with full article content
+- `/admin/newsletter` - Newsletter Creator admin tool (password protected)
 
 **UI Component System**: shadcn/ui (New York variant) providing a comprehensive set of Radix UI-based components with Tailwind CSS styling. Components are configured to use CSS variables for theming, allowing for easy color scheme customization.
 
@@ -84,7 +85,45 @@ Preferred communication style: Simple, everyday language.
 - Hot module replacement in development
 - Separate tsconfig for Vite and Node environments
 
-**Server Architecture**: Minimal Express.js server that serves static files in production and handles client-side routing by serving index.html for all routes. No backend API endpoints currently implemented.
+**Server Architecture**: Express.js server that serves static files in production, handles client-side routing, and provides API endpoints for the Newsletter Creator.
+
+### Newsletter Creator System
+
+**Admin Tool** (`/admin/newsletter`): Password-protected admin dashboard for creating biweekly newsletters.
+
+**Workflow**:
+1. Create a new newsletter with a title
+2. Add 30-40 research sources (articles, videos, social posts)
+3. Optionally fetch article content from URLs automatically
+4. AI curates Top 10 insights based on target audience
+5. Preview the styled email
+6. Send test emails via Resend
+
+**API Endpoints** (`server/newsletter.ts`):
+- `GET /api/newsletters` - List all newsletters
+- `POST /api/newsletters` - Create new newsletter
+- `GET /api/newsletters/:id` - Get newsletter with sources
+- `POST /api/newsletters/:id/sources` - Add research source
+- `POST /api/newsletters/:id/summarize` - AI generates TLDR + Top 10
+- `POST /api/newsletters/:id/generate-html` - Generate email HTML
+- `POST /api/newsletters/:id/send` - Send via Resend
+- `POST /api/fetch-article` - Fetch and parse article content from URL
+
+**Database Schema** (`shared/schema.ts`):
+- `newsletters` - Newsletter drafts with title, TLDR, Top 10 items, HTML content
+- `researchSources` - Research articles/content linked to newsletters
+
+**Email Sending**: Resend API with custom domain (newsletter@mail.keanonbiz.co)
+
+**AI Integration**: OpenAI (via Replit AI Integrations) for content curation and summarization
+
+**Authentication**: Bearer token auth using NEWSLETTER_ADMIN_KEY environment variable
+
+**Target Audience for Content Curation**:
+- Business coaches and consultants
+- Insurance agency owners
+- AI/automation enthusiasts
+- Entrepreneurs seeking systems and scale
 
 ### Performance Optimizations
 
