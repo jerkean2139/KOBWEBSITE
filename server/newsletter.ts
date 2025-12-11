@@ -25,7 +25,40 @@ const authMiddleware = (req: any, res: any, next: any) => {
   next();
 };
 
-router.use(authMiddleware);
+// Store active session tokens (in-memory, cleared on restart)
+const sessionTokens = new Map<string, { adminKey: string; expires: number }>();
+
+// Generate a short-lived session token for SSE connections
+router.post("/session-token", authMiddleware, (req, res) => {
+  const crypto = require("crypto");
+  const token = crypto.randomBytes(32).toString("hex");
+  // Token valid for 10 minutes
+  sessionTokens.set(token, { 
+    adminKey: ADMIN_KEY!, 
+    expires: Date.now() + 10 * 60 * 1000 
+  });
+  res.json({ token });
+});
+
+// Validate SSE token
+const validateSseToken = (token: string): boolean => {
+  const session = sessionTokens.get(token);
+  if (!session) return false;
+  if (Date.now() > session.expires) {
+    sessionTokens.delete(token);
+    return false;
+  }
+  return true;
+};
+
+// Apply auth middleware to all routes except SSE
+router.use((req, res, next) => {
+  // Skip auth for SSE endpoint (uses session token)
+  if (req.path.includes("/auto-generate")) {
+    return next();
+  }
+  authMiddleware(req, res, next);
+});
 
 const openai = new OpenAI({
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
@@ -293,12 +326,12 @@ router.post("/fetch-article", async (req, res) => {
   }
 });
 
-// Automated newsletter generation with streaming progress (SSE - auth via query param)
+// Automated newsletter generation with streaming progress (SSE - auth via session token)
 router.get("/newsletters/:id/auto-generate", async (req, res) => {
-  // SSE doesn't support headers, so auth comes via query param
-  const authKey = req.query.auth as string;
-  if (!ADMIN_KEY || authKey !== ADMIN_KEY) {
-    return res.status(401).json({ error: "Unauthorized" });
+  // Validate session token (short-lived, not the admin key)
+  const sessionToken = req.query.token as string;
+  if (!validateSseToken(sessionToken)) {
+    return res.status(401).json({ error: "Invalid or expired session token" });
   }
   
   const id = parseInt(req.params.id);

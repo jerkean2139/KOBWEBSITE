@@ -121,6 +121,13 @@ export default function NewsletterCreator() {
     setShowPreview(false);
 
     try {
+      // Get a short-lived session token for SSE
+      const tokenRes = await apiFetch("/api/session-token", { method: "POST" });
+      if (!tokenRes.ok) {
+        throw new Error("Failed to get session token");
+      }
+      const { token: sessionToken } = await tokenRes.json();
+
       const res = await apiFetch("/api/newsletters", {
         method: "POST",
         body: JSON.stringify({ title: "New Newsletter" }),
@@ -134,7 +141,7 @@ export default function NewsletterCreator() {
       }
 
       const eventSource = new EventSource(
-        `/api/newsletters/${newsletter.id}/auto-generate?auth=${encodeURIComponent(adminKey)}`
+        `/api/newsletters/${newsletter.id}/auto-generate?token=${encodeURIComponent(sessionToken)}`
       );
       eventSourceRef.current = eventSource;
 
