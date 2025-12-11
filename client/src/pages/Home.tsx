@@ -181,12 +181,12 @@ export default function Home() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <div className="relative max-w-md mx-auto">
-                <div className="absolute -inset-6 bg-[#FFD700]/20 rounded-2xl blur-3xl"></div>
+              <div className="relative max-w-xs mx-auto">
+                <div className="absolute -inset-4 bg-[#FFD700]/20 rounded-xl blur-2xl"></div>
                 <img
                   src="/manumation-book-cover.png"
                   alt="The Manumation Method - Launching December 15th"
-                  className="relative rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                  className="relative rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full"
                 />
               </div>
               <div className="flex justify-center mt-4" style={{ marginBottom: '10px' }}>
