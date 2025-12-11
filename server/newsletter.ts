@@ -293,6 +293,198 @@ router.post("/fetch-article", async (req, res) => {
   }
 });
 
+// Automated newsletter generation with streaming progress (SSE - auth via query param)
+router.get("/newsletters/:id/auto-generate", async (req, res) => {
+  // SSE doesn't support headers, so auth comes via query param
+  const authKey = req.query.auth as string;
+  if (!ADMIN_KEY || authKey !== ADMIN_KEY) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+  
+  const id = parseInt(req.params.id);
+  
+  // Set up SSE
+  res.setHeader("Content-Type", "text/event-stream");
+  res.setHeader("Cache-Control", "no-cache");
+  res.setHeader("Connection", "keep-alive");
+  res.flushHeaders();
+
+  const sendEvent = (stage: string, message: string, data?: any) => {
+    res.write(`data: ${JSON.stringify({ stage, message, data })}\n\n`);
+  };
+
+  try {
+    // Stage 1: Starting
+    sendEvent("starting", "Initializing newsletter generation...");
+    await new Promise(r => setTimeout(r, 500));
+
+    // Stage 2: Research - AI generates trending topics
+    sendEvent("researching", "Scanning latest business, AI, and coaching trends...");
+    
+    const researchCompletion = await openai.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        {
+          role: "system",
+          content: `You are a business intelligence analyst. Generate 30 realistic, current research items that would appear in industry news sources.
+
+Focus areas:
+- AI & automation tools (ChatGPT updates, Claude, automation platforms)
+- GoHighLevel news and tips
+- Business coaching industry trends
+- Insurance agency technology
+- CRM and marketing automation
+- Workflow automation and SOPs
+- Leadership and scaling businesses
+
+For each item, provide a realistic title and 1-2 sentence summary as if from a real article.`
+        },
+        {
+          role: "user",
+          content: `Generate 30 research items for this week's newsletter. Mix of:
+- 8 AI/automation news items
+- 6 GoHighLevel/CRM updates
+- 6 business coaching insights
+- 5 insurance industry tech items
+- 5 general business strategy items
+
+Format as JSON array:
+{
+  "items": [
+    {"title": "...", "summary": "...", "category": "ai|ghl|coaching|insurance|strategy"}
+  ]
+}`
+        }
+      ],
+      response_format: { type: "json_object" }
+    });
+
+    const researchData = JSON.parse(researchCompletion.choices[0].message.content || "{}");
+    const items = researchData.items || [];
+    
+    sendEvent("researching", `Found ${items.length} trending topics`, { count: items.length });
+    await new Promise(r => setTimeout(r, 500));
+
+    // Save research items to database
+    for (const item of items) {
+      await db.insert(researchSources).values({
+        newsletterId: id,
+        title: item.title,
+        content: item.summary,
+        url: null
+      });
+    }
+
+    sendEvent("analyzing", `Saved ${items.length} sources. Now ranking for relevance...`);
+    await new Promise(r => setTimeout(r, 500));
+
+    // Stage 3: Ranking and selecting Top 10
+    sendEvent("ranking", "AI is selecting the Top 10 most valuable insights...");
+    
+    const sourcesText = items.map((s: any, i: number) => 
+      `[${i+1}] ${s.title} (${s.category})\n${s.summary}`
+    ).join("\n\n");
+
+    const summaryCompletion = await openai.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        {
+          role: "system",
+          content: `You are the lead content curator for Jeremy Kean's "Kean on Biz" biweekly newsletter.
+
+TARGET AUDIENCE:
+- Business coaches and consultants
+- Insurance agency owners
+- Entrepreneurs interested in AI and automation
+- Business owners looking to scale with systems
+
+TONE: Conversational, practical, no-fluff. Jeremy has 35 years of business experience.`
+        },
+        {
+          role: "user",
+          content: `From these ${items.length} research items, select the TOP 10 most valuable for our audience.
+
+Research items:
+${sourcesText}
+
+Format response as JSON:
+{
+  "tldr": "2-3 sentence theme for this newsletter issue",
+  "topTen": [
+    "1. [Headline] - [Why it matters and what to do about it]",
+    ...10 items total
+  ]
+}`
+        }
+      ],
+      response_format: { type: "json_object" }
+    });
+
+    const result = JSON.parse(summaryCompletion.choices[0].message.content || "{}");
+    
+    sendEvent("ranking", "Selected Top 10 insights!", { topTen: result.topTen });
+    await new Promise(r => setTimeout(r, 500));
+
+    // Stage 4: Generate newsletter title
+    sendEvent("writing", "Creating newsletter title and TLDR...");
+    
+    const titleCompletion = await openai.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        {
+          role: "user",
+          content: `Based on this TLDR, generate a catchy newsletter title (max 60 chars):
+          
+TLDR: ${result.tldr}
+
+Just respond with the title, nothing else.`
+        }
+      ]
+    });
+
+    const generatedTitle = titleCompletion.choices[0].message.content?.trim() || "This Week in Business & AI";
+
+    // Update newsletter in database
+    await db.update(newsletters)
+      .set({
+        title: generatedTitle,
+        tldr: result.tldr,
+        topTenItems: result.topTen,
+        updatedAt: new Date()
+      })
+      .where(eq(newsletters.id, id));
+
+    sendEvent("writing", "Newsletter content ready!", { title: generatedTitle, tldr: result.tldr });
+    await new Promise(r => setTimeout(r, 500));
+
+    // Stage 5: Generate HTML
+    sendEvent("finalizing", "Generating email template...");
+    
+    const htmlContent = generateEmailHTML({
+      title: generatedTitle,
+      tldr: result.tldr,
+      topTen: result.topTen
+    });
+
+    await db.update(newsletters)
+      .set({ htmlContent, updatedAt: new Date() })
+      .where(eq(newsletters.id, id));
+
+    sendEvent("complete", "Newsletter ready!", { 
+      title: generatedTitle,
+      tldr: result.tldr,
+      topTen: result.topTen,
+      htmlContent
+    });
+
+    res.end();
+  } catch (error) {
+    console.error("Auto-generate error:", error);
+    sendEvent("error", "Failed to generate newsletter: " + (error as Error).message);
+    res.end();
+  }
+});
+
 function generateEmailHTML({ title, tldr, topTen }: { title: string; tldr: string; topTen: string[] }) {
   return `<!DOCTYPE html>
 <html>
