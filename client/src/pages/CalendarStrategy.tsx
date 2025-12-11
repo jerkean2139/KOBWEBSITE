@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
-import { Calendar as CalendarIcon, Clock, ArrowLeft } from "lucide-react";
+import { Calendar as CalendarIcon, Clock, ArrowLeft, CheckCircle } from "lucide-react";
 import { Link } from "wouter";
 
 export default function CalendarStrategy() {
@@ -18,104 +17,96 @@ export default function CalendarStrategy() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#0f172a]">
       <Navigation />
       
-      <section className="pt-32 pb-16 bg-gradient-to-b from-primary/10 to-background">
+      <section className="pt-32 pb-12 bg-[#0f172a]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Strategy <span className="text-primary">Session</span>
+            <div className="inline-flex items-center gap-2 bg-[#1e3a5f] text-slate-300 px-4 py-2 rounded-full text-sm mb-6">
+              <Clock size={16} />
+              <span>60 minute session</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              Strategy & <span className="text-[#FFD700]">Working Sessions</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-slate-300">
               Deep strategic planning and focused execution work with Jeremy.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-12 bg-[#1e1b4b]">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-primary/20">
-              <CardHeader className="bg-primary/5">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        <CalendarIcon className="text-primary" size={24} />
-                      </div>
-                      <CardTitle className="text-2xl">Strategy & Working Sessions</CardTitle>
-                    </div>
-                    <CardDescription className="text-base">
-                      Deep strategic planning or focused execution
-                    </CardDescription>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl font-bold text-white mb-4">Session Focus Areas</h2>
+                <ul className="space-y-3">
+                  {[
+                    "Comprehensive business automation strategy",
+                    "System design and workflow mapping",
+                    "Hands-on implementation and setup",
+                    "Marketing strategy and campaign planning",
+                    "AI integration and custom solutions",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-slate-300">
+                      <CheckCircle className="text-[#FFD700] mt-0.5 flex-shrink-0" size={20} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-[#0f172a] rounded-xl p-6 border border-[#1e3a5f]">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-[#1e3a5f] flex items-center justify-center">
+                    <CalendarIcon className="text-[#FFD700]" size={24} />
                   </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Clock size={18} />
-                    <span className="text-sm">60 min</span>
+                  <div>
+                    <h3 className="font-bold text-white">Strategy Session</h3>
+                    <p className="text-sm text-slate-400">60 minutes with Jeremy</p>
                   </div>
                 </div>
-              </CardHeader>
-              <CardContent className="pt-6">
-                <p className="text-muted-foreground mb-6">
-                  This 60-minute session is designed for deep strategic planning or focused execution work. Whether you're mapping out a new automation strategy, building systems together, or tackling complex business challenges, this is where transformation happens.
+                <p className="text-slate-300 text-sm">
+                  Come prepared with specific goals or challenges. The more context you provide, the more value we can extract from our time.
                 </p>
-                <div className="space-y-3 mb-6">
-                  <h4 className="font-semibold text-foreground">Session Focus Areas:</h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Comprehensive business automation strategy development</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>System design and workflow mapping sessions</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Hands-on implementation and technical setup</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Marketing strategy and campaign planning</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>AI integration and custom solution design</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-muted/50 rounded-lg p-4 mb-6">
-                  <p className="text-sm text-muted-foreground">
-                    <strong className="text-foreground">Note:</strong> Come prepared with specific goals or challenges you want to address. The more context you provide beforehand, the more value we can extract from our time together.
-                  </p>
-                </div>
-                <div className="rounded-lg overflow-hidden min-h-[600px]">
-                  <iframe 
-                    src="https://api.leadconnectorhq.com/widget/booking/uslCIRV9xwkJQlHC1Rl7" 
-                    style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "600px" }}
-                    scrolling="no" 
-                    id="uslCIRV9xwkJQlHC1Rl7_1765457335823"
-                  />
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-8 border-t">
+      <section className="py-16 bg-[#0f172a]">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-white mb-2">Select Your Time</h2>
+              <p className="text-slate-400">Choose a date and time that works for you</p>
+            </div>
+            <div className="bg-white rounded-xl overflow-hidden shadow-2xl">
+              <iframe 
+                src="https://api.leadconnectorhq.com/widget/booking/uslCIRV9xwkJQlHC1Rl7" 
+                style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
+                scrolling="no" 
+                id="uslCIRV9xwkJQlHC1Rl7_1765457335823"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8 bg-[#0f172a] border-t border-[#1e3a5f]">
         <div className="container">
           <div className="flex justify-center gap-4">
             <Link href="/jeremys-calendar">
-              <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+              <Button variant="ghost" className="text-slate-400 hover:text-white hover:bg-[#1e3a5f]">
                 <ArrowLeft className="mr-2" size={16} />
                 All Booking Options
               </Button>
             </Link>
             <Link href="/">
-              <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+              <Button variant="ghost" className="text-slate-400 hover:text-white hover:bg-[#1e3a5f]">
                 Back to Home
               </Button>
             </Link>

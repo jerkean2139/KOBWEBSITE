@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
-import { Users, Clock, ArrowLeft } from "lucide-react";
+import { Users, Clock, ArrowLeft, CheckCircle, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
 
 export default function CalendarCoaching() {
@@ -18,95 +17,100 @@ export default function CalendarCoaching() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#0f172a]">
       <Navigation />
       
-      <section className="pt-32 pb-16 bg-gradient-to-b from-primary/10 to-background">
+      <section className="pt-32 pb-12 bg-[#0f172a]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              1:1 <span className="text-primary">Coaching</span>
+            <div className="inline-flex items-center gap-2 bg-[#FFD700] text-[#0f172a] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <ShieldCheck size={16} />
+              <span>Clients Only</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              1:1 <span className="text-[#FFD700]">Coaching Call</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-slate-300">
               Exclusive sessions for active coaching clients and their teams.
             </p>
+            <div className="inline-flex items-center gap-2 text-slate-400 mt-4">
+              <Clock size={18} />
+              <span>60 minute session</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-12 bg-[#172554]">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-primary/20">
-              <CardHeader className="bg-primary/5">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        <Users className="text-primary" size={24} />
-                      </div>
-                      <CardTitle className="text-2xl">1:1 Coaching Call (Clients Only)</CardTitle>
-                    </div>
-                    <CardDescription className="text-base">
-                      Exclusive session for active coaching clients and their team
-                    </CardDescription>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl font-bold text-white mb-4">What to Expect</h2>
+                <ul className="space-y-3">
+                  {[
+                    "Deep dive into specific business challenges",
+                    "Strategic guidance on implementation",
+                    "Accountability check-ins and progress reviews",
+                    "Team member training and walkthroughs",
+                    "Addressing urgent challenges as they arise",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-slate-300">
+                      <CheckCircle className="text-[#FFD700] mt-0.5 flex-shrink-0" size={20} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-[#0f172a] rounded-xl p-6 border border-[#1e3a5f]">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-[#1e3a5f] flex items-center justify-center">
+                    <Users className="text-[#FFD700]" size={24} />
                   </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Clock size={18} />
-                    <span className="text-sm">60 min</span>
+                  <div>
+                    <h3 className="font-bold text-white">For Active Clients</h3>
+                    <p className="text-sm text-slate-400">60 minutes with Jeremy</p>
                   </div>
                 </div>
-              </CardHeader>
-              <CardContent className="pt-6">
-                <p className="text-muted-foreground mb-6">
-                  This session is available exclusively for active coaching clients and their team members who need additional time outside their regularly scheduled sessions. Perfect for addressing urgent challenges, implementing new strategies, or getting quick feedback on specific initiatives.
+                <p className="text-slate-300 text-sm">
+                  This session is for active coaching clients and their team members who need additional time outside regularly scheduled sessions.
                 </p>
-                <div className="space-y-3 mb-6">
-                  <h4 className="font-semibold text-foreground">What to Expect:</h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Deep dive into specific business challenges or opportunities</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Strategic guidance on implementation and execution</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Accountability check-ins and progress reviews</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Team member training and system walkthroughs</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="rounded-lg overflow-hidden min-h-[600px]">
-                  <iframe 
-                    src="https://api.leadconnectorhq.com/widget/booking/HDMThBdATyMVW7HFteZe" 
-                    style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "600px" }}
-                    scrolling="no" 
-                    id="HDMThBdATyMVW7HFteZe_1765457377264"
-                  />
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-8 border-t">
+      <section className="py-16 bg-[#0f172a]">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-white mb-2">Select Your Time</h2>
+              <p className="text-slate-400">Choose a date and time that works for you</p>
+            </div>
+            <div className="bg-white rounded-xl overflow-hidden shadow-2xl">
+              <iframe 
+                src="https://api.leadconnectorhq.com/widget/booking/HDMThBdATyMVW7HFteZe" 
+                style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
+                scrolling="no" 
+                id="HDMThBdATyMVW7HFteZe_1765457377264"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8 bg-[#0f172a] border-t border-[#1e3a5f]">
         <div className="container">
           <div className="flex justify-center gap-4">
             <Link href="/jeremys-calendar">
-              <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+              <Button variant="ghost" className="text-slate-400 hover:text-white hover:bg-[#1e3a5f]">
                 <ArrowLeft className="mr-2" size={16} />
                 All Booking Options
               </Button>
             </Link>
             <Link href="/">
-              <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+              <Button variant="ghost" className="text-slate-400 hover:text-white hover:bg-[#1e3a5f]">
                 Back to Home
               </Button>
             </Link>
