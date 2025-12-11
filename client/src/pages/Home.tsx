@@ -987,55 +987,57 @@ export default function Home() {
       END Testimonials Section - TEMPORARILY COMMENTED OUT */}
 
       {/* For Business Coaches CTA */}
-      <section className="py-20 bg-background relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" aria-hidden="true"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#FFD700]/5 rounded-full blur-3xl" aria-hidden="true"></div>
+      <section className="py-20 bg-[#0f172a] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-red-500 rounded-full blur-3xl" aria-hidden="true"></div>
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#FFD700] rounded-full blur-3xl" aria-hidden="true"></div>
+        </div>
         <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <AnimatedSection animation="slide-up">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <div className="inline-block px-4 py-2 bg-red-500/10 rounded-full mb-4">
-                    <p className="text-red-500 text-sm font-bold uppercase tracking-wider">For Business Coaches</p>
+                  <div className="inline-block px-4 py-2 bg-red-500/20 backdrop-blur-sm rounded-full mb-6 border border-red-500/30">
+                    <p className="text-red-400 text-sm font-bold uppercase tracking-wider">For Business Coaches</p>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
-                    The Dirty Secret of Business Coaching
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                    The Dirty Secret of <span className="text-red-400">Business Coaching</span>
                   </h2>
-                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-lg text-white/70 mb-8 leading-relaxed">
                     Your clients aren't ignoring your advice. They're drowning in operations before they can execute it. Learn why the best coaches are switching from giving advice to installing systems.
                   </p>
-                  <Button size="lg" className="text-base px-6 py-5" asChild>
+                  <Button size="lg" className="text-base px-8 py-6 bg-red-500 hover:bg-red-600 text-white border-0" style={{ boxShadow: "0 4px 0 #b91c1c, 0 8px 20px rgba(239, 68, 68, 0.3)" }} asChild>
                     <a href="/coaching-truth">
                       Read the Truth <ArrowRight className="ml-2" />
                     </a>
                   </Button>
                 </div>
                 <div className="relative">
-                  <Card 
-                    className="border-0 bg-muted/50 p-6"
-                    style={{ boxShadow: "8px 8px 0 rgba(59, 130, 246, 0.1)" }}
-                  >
-                    <div className="space-y-4 text-muted-foreground">
-                      <p className="flex items-start gap-3">
-                        <span className="text-red-500 font-bold text-xl">✗</span>
-                        <span>Client agrees to your strategy on the call</span>
-                      </p>
-                      <p className="flex items-start gap-3">
-                        <span className="text-red-500 font-bold text-xl">✗</span>
-                        <span>Monday hits and operations take over</span>
-                      </p>
-                      <p className="flex items-start gap-3">
-                        <span className="text-red-500 font-bold text-xl">✗</span>
-                        <span>Three weeks later: zero progress</span>
-                      </p>
-                      <div className="border-t border-muted-foreground/20 pt-4 mt-4">
-                        <p className="flex items-start gap-3 text-foreground font-semibold">
-                          <span className="text-primary font-bold text-xl">→</span>
-                          <span>There's a better way. Become a Manumation Partner.</span>
+                  <div className="group relative">
+                    <div className="absolute -inset-0.5 bg-red-500/40 rounded-2xl opacity-50 blur transition-all duration-300"></div>
+                    <div className="relative bg-[#1a0a0a] border border-red-500/30 rounded-2xl p-8">
+                      <div className="space-y-5 text-white/80">
+                        <p className="flex items-start gap-4">
+                          <span className="text-red-400 font-bold text-2xl">✗</span>
+                          <span className="text-lg">Client agrees to your strategy on the call</span>
                         </p>
+                        <p className="flex items-start gap-4">
+                          <span className="text-red-400 font-bold text-2xl">✗</span>
+                          <span className="text-lg">Monday hits and operations take over</span>
+                        </p>
+                        <p className="flex items-start gap-4">
+                          <span className="text-red-400 font-bold text-2xl">✗</span>
+                          <span className="text-lg">Three weeks later: zero progress</span>
+                        </p>
+                        <div className="border-t border-white/10 pt-5 mt-5">
+                          <p className="flex items-start gap-4 text-white font-semibold">
+                            <span className="text-[#FFD700] font-bold text-2xl">→</span>
+                            <span className="text-lg">There's a better way. Become a Manumation Partner.</span>
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </Card>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
@@ -1044,41 +1046,60 @@ export default function Home() {
       </section>
 
       {/* Manumation Assessment CTA */}
-      <section id="assessment" className="py-16 bg-muted/30">
-        <div className="container">
+      <section id="assessment" className="py-20 bg-[#0a0a12] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl transform -translate-y-1/2"></div>
+          <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-[#FFD700] rounded-full blur-3xl transform -translate-y-1/2"></div>
+        </div>
+        <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
-              <p className="text-primary text-sm font-bold uppercase tracking-wider">Assessment</p>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-              Discover Your Automation Readiness
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Identify exactly where intelligent automation will free up your time, grow your revenue, and simplify your operations.
-            </p>
-            <Card className="border-2 border-primary/20 p-6">
-              <div className="space-y-6">
-                <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground flex-wrap">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="text-primary" size={18} />
-                    <span>5-10 Minutes</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="text-primary" size={18} />
-                    <span>Personalized Results</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="text-primary" size={18} />
-                    <span>Actionable Insights</span>
-                  </div>
-                </div>
-                <Button size="lg" className="text-base px-8 py-5" asChild>
-                  <a href="/assessment">
-                    Start Your Assessment <ArrowRight className="ml-2" />
-                  </a>
-                </Button>
+            <AnimatedSection animation="fade-in">
+              <div className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full mb-6 border border-primary/30">
+                <p className="text-primary text-sm font-bold uppercase tracking-wider">Assessment</p>
               </div>
-            </Card>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-up" delay={100}>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                Discover Your <span className="text-primary">Automation Readiness</span>
+              </h2>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-up" delay={200}>
+              <p className="text-lg text-white/70 mb-10 max-w-2xl mx-auto">
+                Identify exactly where intelligent automation will free up your time, grow your revenue, and simplify your operations.
+              </p>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-up" delay={300}>
+              <div className="group relative inline-block">
+                <div className="absolute -inset-1 bg-primary/40 rounded-2xl opacity-50 group-hover:opacity-80 blur transition-all duration-300"></div>
+                <div className="relative bg-[#0f172a] border border-primary/30 rounded-2xl p-8">
+                  <div className="flex items-center justify-center gap-8 text-sm text-white/70 flex-wrap mb-8">
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                        <CheckCircle2 className="text-primary" size={14} />
+                      </div>
+                      <span>5-10 Minutes</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 rounded-full bg-[#FFD700]/20 flex items-center justify-center">
+                        <CheckCircle2 className="text-[#FFD700]" size={14} />
+                      </div>
+                      <span>Personalized Results</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center">
+                        <CheckCircle2 className="text-purple-400" size={14} />
+                      </div>
+                      <span>Actionable Insights</span>
+                    </div>
+                  </div>
+                  <Button size="lg" className="text-lg px-10 py-6 bg-[#FFD700] hover:bg-[#FFD700]/90 text-gray-900 font-bold border-0" style={{ boxShadow: "0 4px 0 #b89700, 0 8px 20px rgba(255, 215, 0, 0.3)" }} asChild>
+                    <a href="/assessment">
+                      Start Your Assessment <ArrowRight className="ml-2" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
