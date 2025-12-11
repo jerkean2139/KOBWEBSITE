@@ -539,7 +539,7 @@ export default function Home() {
               <div className="group relative h-full">
                 <div className="absolute -inset-0.5 bg-primary/50 rounded-2xl opacity-50 group-hover:opacity-80 blur transition-all duration-300"></div>
                 <div className="relative h-full bg-[#0f172a] border border-primary/30 rounded-2xl p-8 hover:bg-[#1a2744] transition-all duration-300">
-                  <img src="/zenoflo-logo.png" alt="Zenoflo - Your Business Command Center" className="h-12 mb-4 object-contain object-left" loading="lazy" />
+                  <img src="/zenoflo-logo-new.png" alt="Zenoflo - Your Business Command Center" className="h-10 mb-4 object-contain object-left" loading="lazy" />
                   <h3 className="text-xl font-bold text-white mb-2">Your Business Command Center</h3>
                   <p className="text-white/60 mb-6 text-sm">
                     Complete business operating system featuring AI agents, voice automation, and intelligent workflows that adapt to your needs.
