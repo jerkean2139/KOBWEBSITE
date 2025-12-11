@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://keanonbiz.com/</loc>
-    <lastmod>2024-12-07</lastmod>
+    <lastmod>2025-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -19,25 +19,25 @@
   </url>
   <url>
     <loc>https://keanonbiz.com/jeremys-calendar</loc>
-    <lastmod>2024-12-07</lastmod>
+    <lastmod>2025-12-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://keanonbiz.com/become-a-coach</loc>
-    <lastmod>2024-12-07</lastmod>
+    <lastmod>2025-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://keanonbiz.com/assessment</loc>
-    <lastmod>2024-12-07</lastmod>
+    <lastmod>2025-12-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://keanonbiz.com/book</loc>
-    <lastmod>2024-12-07</lastmod>
+    <lastmod>2025-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -47,14 +47,20 @@
     </image:image>
   </url>
   <url>
+    <loc>https://keanonbiz.com/coaching-truth</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://keanonbiz.com/blog</loc>
-    <lastmod>2024-12-07</lastmod>
+    <lastmod>2025-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://keanonbiz.com/blog/ai-automation-for-insurance-agencies-complete-guide-2025</loc>
-    <lastmod>2024-12-07</lastmod>
+    <lastmod>2025-12-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -65,7 +71,7 @@
   </url>
   <url>
     <loc>https://keanonbiz.com/blog/manumation-method-human-ai-collaboration-business-growth</loc>
-    <lastmod>2024-12-07</lastmod>
+    <lastmod>2025-12-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -76,7 +82,7 @@
   </url>
   <url>
     <loc>https://keanonbiz.com/blog/escape-business-burnout-work-life-balance-entrepreneurs</loc>
-    <lastmod>2024-12-07</lastmod>
+    <lastmod>2025-12-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>

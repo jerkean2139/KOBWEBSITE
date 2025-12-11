@@ -162,12 +162,53 @@
       ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://keanonbiz.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://keanonbiz.com/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Book",
+          "item": "https://keanonbiz.com/book"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Blog",
+          "item": "https://keanonbiz.com/blog"
+        }
+      ]
+    }
+    </script>
   </head>
 
   <body>
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded">Skip to main content</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script type="module">
+      import {onCLS,onFCP,onLCP,onTTFB} from 'https://unpkg.com/web-vitals@3/dist/web-vitals.attribution.js?module';
+      const send = (m) => {
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon('/rum', JSON.stringify(m));
+        }
+      };
+      [onCLS,onFCP,onLCP,onTTFB].forEach(fn => fn(send));
+    </script>
   </body>
 
 </html>

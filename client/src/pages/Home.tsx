@@ -449,7 +449,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <Card className="border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <CardHeader>
                 <img src="/zenoflo-logo.png" alt="Zenoflo - Your Business Command Center for AI agents and automation" className="h-12 mb-4 object-contain object-left" loading="lazy" />
@@ -464,6 +464,25 @@ export default function Home() {
                 <Button className="w-full" asChild>
                   <a href="https://zenoflo.com" target="_blank" rel="noopener noreferrer">
                     Visit Zenoflo.com <ExternalLink className="ml-2" size={16} />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <CardHeader>
+                <img src="/trex-motors-logo.png" alt="Trex Motors - Automotive Sales Automation" className="h-12 mb-4 object-contain object-left" loading="lazy" />
+                <CardDescription className="text-base">
+                  Automotive Sales Automation
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-6 text-sm">
+                  Streamlined dealership operations with AI-powered lead management, automated follow-ups, and integrated CRM solutions.
+                </p>
+                <Button className="w-full" variant="outline" asChild>
+                  <a href="https://trexmotors.com" target="_blank" rel="noopener noreferrer">
+                    Visit TrexMotors.com <ExternalLink className="ml-2" size={16} />
                   </a>
                 </Button>
               </CardContent>
@@ -1000,27 +1019,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="py-16 bg-background">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <Card className="border-2 border-primary/20">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
-                    <p className="text-primary text-sm font-bold uppercase tracking-wider">Newsletter</p>
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3 leading-tight">
-                    Stay Ahead of the Curve
-                  </h2>
-                  <p className="text-base text-muted-foreground">
-                    Biweekly insights on AI, automation, and business systems.
-                  </p>
+      {/* Newsletter Signup - Compact Dark Design */}
+      <section className="py-10 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #172554 100%)' }}>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 right-1/4 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-1/4 w-48 h-48 bg-[#FFD700] rounded-full blur-3xl"></div>
+        </div>
+        <div className="container relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+              <div className="flex-1 text-center md:text-left">
+                <div className="flex items-center gap-2 justify-center md:justify-start mb-2">
+                  <Mail className="text-[#FFD700]" size={20} />
+                  <span className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">Newsletter</span>
                 </div>
-                <div className="w-full" style={{ minHeight: '507px' }}>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
+                  Get Biweekly Business Insights
+                </h3>
+                <p className="text-white/60 text-sm">
+                  AI, automation & systems strategies delivered free.
+                </p>
+              </div>
+              <div className="flex-1 w-full max-w-md">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-1 border border-white/10">
                   <iframe
                     src="https://api.leadconnectorhq.com/widget/form/WeCKj6eththzMepQtObZ"
-                    style={{ width: '100%', height: '507px', border: 'none', borderRadius: '3px' }}
+                    style={{ width: '100%', height: '120px', border: 'none', borderRadius: '8px', background: 'transparent' }}
                     id="inline-WeCKj6eththzMepQtObZ"
                     data-layout="{'id':'INLINE'}"
                     data-trigger-type="alwaysShow"
@@ -1030,28 +1054,18 @@ export default function Home() {
                     data-deactivation-type="neverDeactivate"
                     data-deactivation-value=""
                     data-form-name="Newsletter Signup"
-                    data-height="507"
+                    data-height="120"
                     data-layout-iframe-id="inline-WeCKj6eththzMepQtObZ"
                     data-form-id="WeCKj6eththzMepQtObZ"
                     title="Newsletter Signup"
                   />
                 </div>
-                <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground flex-wrap">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="text-primary" size={14} />
-                    <span>Biweekly Updates</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="text-primary" size={14} />
-                    <span>AI & Automation Insights</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="text-primary" size={14} />
-                    <span>Unsubscribe Anytime</span>
-                  </div>
+                <div className="flex items-center justify-center gap-4 mt-3 text-xs text-white/50">
+                  <span className="flex items-center gap-1"><CheckCircle2 size={12} /> No spam</span>
+                  <span className="flex items-center gap-1"><CheckCircle2 size={12} /> Unsubscribe anytime</span>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
