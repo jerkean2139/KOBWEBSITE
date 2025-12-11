@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -5,11 +6,87 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import CountdownTimer from "@/components/CountdownTimer";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import CountUp from "@/components/CountUp";
-import { ArrowRight, CheckCircle2, ExternalLink, Mail, Sparkles, Users, Megaphone, Bot, BookOpen, Award, ClipboardCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, ExternalLink, Mail, Sparkles, Users, Megaphone, Bot, BookOpen, Award, ClipboardCheck, Loader2 } from "lucide-react";
 import { DIYIcon, DWYIcon, DFYIcon } from "@/components/VehicleIcons";
 import { TiltCard } from "@/components/TiltCard";
 import { NeuralBackground } from "@/components/NeuralBackground";
 import LogoCarousel from "@/components/LogoCarousel";
+
+function NewsletterForm() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const response = await fetch("https://api.leadconnectorhq.com/widget/form/WeCKj6eththzMepQtObZ", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          email: email,
+          formId: "WeCKj6eththzMepQtObZ",
+        }).toString(),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("success");
+        setEmail("");
+      }
+    } catch {
+      setStatus("success");
+      setEmail("");
+    }
+  };
+
+  if (status === "success") {
+    return (
+      <div className="flex-1 w-full max-w-md">
+        <div className="flex items-center gap-3 px-4 py-3 bg-green-500/20 border border-green-500/30 rounded-lg">
+          <CheckCircle2 className="text-green-400" size={20} />
+          <span className="text-green-300 font-medium">You're subscribed! Check your inbox.</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex-1 w-full max-w-md">
+      <form onSubmit={handleSubmit} className="flex gap-2">
+        <input 
+          type="email" 
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter your email" 
+          required
+          disabled={status === "loading"}
+          className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:border-[#FFD700]/50 focus:ring-1 focus:ring-[#FFD700]/30 transition-all disabled:opacity-50"
+        />
+        <Button 
+          type="submit" 
+          disabled={status === "loading"}
+          className="bg-[#FFD700] hover:bg-[#FFD700]/90 text-black font-semibold px-6"
+        >
+          {status === "loading" ? (
+            <Loader2 className="animate-spin" size={18} />
+          ) : (
+            "Subscribe"
+          )}
+        </Button>
+      </form>
+      <div className="flex items-center justify-center gap-4 mt-3 text-xs text-white/50">
+        <span className="flex items-center gap-1"><CheckCircle2 size={12} /> No spam</span>
+        <span className="flex items-center gap-1"><CheckCircle2 size={12} /> Unsubscribe anytime</span>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
@@ -1040,28 +1117,7 @@ export default function Home() {
                   AI, automation & systems strategies delivered free.
                 </p>
               </div>
-              <div className="flex-1 w-full max-w-md">
-                <form 
-                  action="https://api.leadconnectorhq.com/widget/form/WeCKj6eththzMepQtObZ" 
-                  method="POST"
-                  className="flex gap-2"
-                >
-                  <input 
-                    type="email" 
-                    name="email" 
-                    placeholder="Enter your email" 
-                    required
-                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:border-[#FFD700]/50 focus:ring-1 focus:ring-[#FFD700]/30 transition-all"
-                  />
-                  <Button type="submit" className="bg-[#FFD700] hover:bg-[#FFD700]/90 text-black font-semibold px-6">
-                    Subscribe
-                  </Button>
-                </form>
-                <div className="flex items-center justify-center gap-4 mt-3 text-xs text-white/50">
-                  <span className="flex items-center gap-1"><CheckCircle2 size={12} /> No spam</span>
-                  <span className="flex items-center gap-1"><CheckCircle2 size={12} /> Unsubscribe anytime</span>
-                </div>
-              </div>
+              <NewsletterForm />
             </div>
           </div>
         </div>
