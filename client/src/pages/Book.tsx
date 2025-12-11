@@ -99,9 +99,9 @@ export default function Book() {
                 <CountdownTimer />
               </AnimatedSection>
 
-              <AnimatedSection animation="slide-right" className="hidden lg:block">
+              <AnimatedSection animation="slide-right" className="hidden lg:flex justify-center items-start pt-8">
                 <div 
-                  className="relative p-2 rounded-2xl"
+                  className="relative p-2 rounded-2xl max-w-xs"
                   style={{
                     backgroundColor: "#13131f",
                     boxShadow: "-8px 8px 0 rgba(59, 130, 246, 0.4), 8px -8px 0 rgba(255, 215, 0, 0.4), 0 25px 50px rgba(0,0,0,0.5)"
