@@ -46,8 +46,8 @@ export default function Navigation() {
       aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border"
-          : "bg-transparent"
+          ? "bg-[#0f172a]/95 backdrop-blur-md shadow-lg border-b border-white/10"
+          : "bg-[#0f172a]"
       }`}
     >
       <div className="container">
@@ -69,31 +69,31 @@ export default function Navigation() {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("about")}
-              className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide`}
+              className="text-white hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide`}
+              className="text-white hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("testimonials")}
-              className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide`}
+              className="text-white hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide"
             >
               Results
             </button>
             <a
               href="/blog"
-              className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide`}
+              className="text-white hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide"
             >
               Blog
             </a>
             <a
               href="/jeremys-calendar"
-              className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide`}
+              className="text-white hover:text-primary transition-colors font-medium text-sm uppercase tracking-wide"
             >
               Book a Call
             </a>
@@ -105,7 +105,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-foreground hover:text-primary transition-colors"
+            className="md:hidden text-white hover:text-primary transition-colors"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >
@@ -116,35 +116,35 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-background border-t border-border fixed inset-x-0 top-20 bottom-0 overflow-y-auto">
+        <div className="md:hidden bg-[#0f172a] border-t border-white/10 fixed inset-x-0 top-20 bottom-0 overflow-y-auto">
           <div className="container py-6 flex flex-col gap-2">
             <button
               onClick={() => scrollToSection("about")}
-              className="text-left text-foreground hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
+              className="text-left text-white hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-left text-foreground hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
+              className="text-left text-white hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
             >
               Services
             </button>
             <a
               href="/blog"
-              className="text-left text-foreground hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
+              className="text-left text-white hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
             >
               Blog
             </a>
             <a
               href="/jeremys-calendar"
-              className="text-left text-foreground hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
+              className="text-left text-white hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
             >
               Book a Call
             </a>
             <button
               onClick={() => scrollToSection("testimonials")}
-              className="text-left text-foreground hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
+              className="text-left text-white hover:text-primary transition-colors font-medium py-4 px-2 text-sm uppercase tracking-wide min-h-[44px] flex items-center"
             >
               Results
             </button>
