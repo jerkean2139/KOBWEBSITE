@@ -6,6 +6,9 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Calendar from "./pages/Calendar";
+import CalendarStrategy from "./pages/CalendarStrategy";
+import CalendarCoaching from "./pages/CalendarCoaching";
+import CalendarIntro from "./pages/CalendarIntro";
 import ManumationCoach from "./pages/ManumationCoach";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -19,6 +22,9 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path="/jeremys-calendar" component={Calendar} />
+      <Route path="/jeremys-calendar-strategy" component={CalendarStrategy} />
+      <Route path="/jeremys-calendar-coaching" component={CalendarCoaching} />
+      <Route path="/jeremys-calendar-intro" component={CalendarIntro} />
       <Route path="/become-a-coach" component={ManumationCoach} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
