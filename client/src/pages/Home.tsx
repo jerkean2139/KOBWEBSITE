@@ -494,7 +494,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section - TEMPORARILY COMMENTED OUT
       <section id="testimonials" aria-labelledby="testimonials-heading" className="py-24 relative overflow-hidden" style={{
         background: "linear-gradient(135deg, oklch(0.25 0.08 250) 0%, oklch(0.18 0.06 255) 50%, oklch(0.22 0.07 245) 100%)",
       }}>
@@ -901,6 +901,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      END Testimonials Section - TEMPORARILY COMMENTED OUT */}
 
       {/* For Business Coaches CTA */}
       <section className="py-20 bg-background relative overflow-hidden">
