@@ -3,6 +3,7 @@ import compression from "compression";
 import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
+import newsletterRouter from "./newsletter";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,6 +14,9 @@ async function startServer() {
 
   // Enable gzip compression
   app.use(compression({ level: 6 }));
+
+  // Newsletter API routes
+  app.use("/api", newsletterRouter);
 
   // Security & performance headers
   app.use((req, res, next) => {
@@ -56,7 +60,7 @@ async function startServer() {
     res.sendFile(path.join(staticPath, "index.html"));
   });
 
-  const port = parseInt(process.env.PORT || "5000", 10);
+  const port = parseInt(process.env.PORT || "3001", 10);
 
   server.listen(port, "0.0.0.0", () => {
     console.log(`Server running on http://0.0.0.0:${port}/`);

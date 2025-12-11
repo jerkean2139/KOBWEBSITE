@@ -12,6 +12,7 @@ import BlogPost from "./pages/BlogPost";
 import Assessment from "./pages/Assessment";
 import Book from "./pages/Book";
 import DirtySecretCoaching from "./pages/DirtySecretCoaching";
+import NewsletterCreator from "./pages/NewsletterCreator";
 
 function Router() {
   return (
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/assessment" component={Assessment} />
       <Route path="/book" component={Book} />
       <Route path="/coaching-truth" component={DirtySecretCoaching} />
+      <Route path="/admin/newsletter" component={NewsletterCreator} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
