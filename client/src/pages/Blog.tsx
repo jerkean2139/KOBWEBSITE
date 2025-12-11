@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import { AnimatedSection } from "@/components/AnimatedSection";
@@ -6,18 +6,60 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getAllBlogPosts } from "@/data/blogPosts";
-import { Clock, Calendar, ArrowRight, Lightbulb, Target, Users, Zap, Mail } from "lucide-react";
+import { Clock, Calendar, ArrowRight, Lightbulb, Target, Users, Zap, Mail, CheckCircle2, Loader2 } from "lucide-react";
+
+function BlogNewsletterForm() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      await fetch("https://api.leadconnectorhq.com/widget/form/WeCKj6eththzMepQtObZ", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ email, formId: "WeCKj6eththzMepQtObZ" }).toString(),
+      });
+    } catch {}
+    
+    setStatus("success");
+    setEmail("");
+  };
+
+  if (status === "success") {
+    return (
+      <div className="flex items-center gap-3 px-4 py-3 bg-green-500/20 border border-green-500/30 rounded-lg">
+        <CheckCircle2 className="text-green-400" size={20} />
+        <span className="text-green-300 font-medium">You're subscribed! Check your inbox.</span>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+      <input 
+        type="email" 
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email" 
+        required
+        disabled={status === "loading"}
+        className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 disabled:opacity-50"
+      />
+      <Button 
+        type="submit" 
+        disabled={status === "loading"}
+        className="bg-primary hover:bg-primary/90 text-white font-semibold px-6"
+      >
+        {status === "loading" ? <Loader2 className="animate-spin" size={18} /> : "Subscribe"}
+      </Button>
+    </form>
+  );
+}
 
 export default function Blog() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://link.msgsndr.com/js/form_embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   const posts = getAllBlogPosts();
   const featuredPost = posts[0];
@@ -76,24 +118,9 @@ export default function Blog() {
                     <Mail className="text-primary" size={20} />
                     <p className="text-white font-medium">Get weekly business insights delivered free</p>
                   </div>
-                  <div className="max-w-lg bg-white rounded-lg overflow-hidden" style={{ height: "280px" }}>
-                    <iframe
-                      src="https://api.leadconnectorhq.com/widget/form/WeCKj6eththzMepQtObZ"
-                      style={{ width: "100%", height: "100%", border: "none", borderRadius: "3px" }}
-                      id="inline-WeCKj6eththzMepQtObZ"
-                      data-layout='{"id":"INLINE"}'
-                      data-trigger-type="alwaysShow"
-                      data-trigger-value=""
-                      data-activation-type="alwaysActivated"
-                      data-activation-value=""
-                      data-deactivation-type="neverDeactivate"
-                      data-deactivation-value=""
-                      data-form-name="Newsletter Signup"
-                      data-height="507"
-                      data-layout-iframe-id="inline-WeCKj6eththzMepQtObZ"
-                      data-form-id="WeCKj6eththzMepQtObZ"
-                      title="Newsletter Signup"
-                    />
+                  <div className="max-w-lg">
+                    <BlogNewsletterForm />
+                    <p className="text-white/40 text-xs mt-3">No spam. Unsubscribe anytime.</p>
                   </div>
                 </div>
               </div>
