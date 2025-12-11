@@ -89,25 +89,28 @@ Preferred communication style: Simple, everyday language.
 
 ### Newsletter Creator System
 
-**Admin Tool** (`/admin/newsletter`): Password-protected admin dashboard for creating biweekly newsletters.
+**Admin Tool** (`/admin/newsletter`): Password-protected admin dashboard for creating biweekly newsletters with one-click AI generation.
 
-**Workflow**:
-1. Create a new newsletter with a title
-2. Add 30-40 research sources (articles, videos, social posts)
-3. Optionally fetch article content from URLs automatically
-4. AI curates Top 10 insights based on target audience
-5. Preview the styled email
-6. Send test emails via Resend
+**One-Button Workflow**:
+1. Click "Generate Newsletter" button
+2. Watch live progress as AI:
+   - Researches 30 trending topics (business, AI, coaching, insurance)
+   - Analyzes and ranks for relevance
+   - Selects Top 10 most valuable insights
+   - Writes TLDR and newsletter title
+   - Generates styled email HTML
+3. Preview the finished email
+4. Send test emails via Resend
+
+**Live Progress UI**: Real-time Server-Sent Events (SSE) streaming shows each stage with animated timeline and console log view.
 
 **API Endpoints** (`server/newsletter.ts`):
 - `GET /api/newsletters` - List all newsletters
 - `POST /api/newsletters` - Create new newsletter
 - `GET /api/newsletters/:id` - Get newsletter with sources
-- `POST /api/newsletters/:id/sources` - Add research source
-- `POST /api/newsletters/:id/summarize` - AI generates TLDR + Top 10
-- `POST /api/newsletters/:id/generate-html` - Generate email HTML
+- `POST /api/session-token` - Generate short-lived token for SSE auth
+- `GET /api/newsletters/:id/auto-generate` - SSE endpoint for automated generation
 - `POST /api/newsletters/:id/send` - Send via Resend
-- `POST /api/fetch-article` - Fetch and parse article content from URL
 
 **Database Schema** (`shared/schema.ts`):
 - `newsletters` - Newsletter drafts with title, TLDR, Top 10 items, HTML content
