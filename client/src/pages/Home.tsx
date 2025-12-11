@@ -515,77 +515,64 @@ export default function Home() {
       </section>
 
       {/* Brand Showcase Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container">
+      <section className="py-20 bg-[#0a0a12] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-10 left-20 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-20 w-80 h-80 bg-purple-600 rounded-full blur-3xl"></div>
+        </div>
+        <div className="container relative z-10">
           <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
-              <p className="text-primary text-sm font-bold uppercase tracking-wider">Tech Brands</p>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-              Purpose-Built Platforms
-            </h2>
+            <AnimatedSection animation="fade-in">
+              <div className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full mb-4 border border-primary/30">
+                <p className="text-primary text-sm font-bold uppercase tracking-wider">Tech Brands</p>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-up" delay={100}>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                Purpose-Built <span className="text-primary">Platforms</span>
+              </h2>
+            </AnimatedSection>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <Card className="border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <CardHeader>
-                <img src="/zenoflo-logo.png" alt="Zenoflo - Your Business Command Center for AI agents and automation" className="h-12 mb-4 object-contain object-left" loading="lazy" />
-                <CardDescription className="text-base">
-                  Your Business Command Center
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-6 text-sm">
-                  Complete business operating system featuring AI agents, voice automation, and intelligent workflows that adapt to your needs.
-                </p>
-                <Button className="w-full" asChild>
-                  <a href="https://zenoflo.com" target="_blank" rel="noopener noreferrer">
-                    Visit Zenoflo.com <ExternalLink className="ml-2" size={16} />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <CardHeader>
-                <img src="/trex-motors-logo.png" alt="Trex Motors - Automotive Sales Automation" className="h-12 mb-4 object-contain object-left" loading="lazy" />
-                <CardDescription className="text-base">
-                  Automotive Sales Automation
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-6 text-sm">
-                  Streamlined dealership operations with AI-powered lead management, automated follow-ups, and integrated CRM solutions.
-                </p>
-                <Button className="w-full" variant="outline" asChild>
-                  <a href="https://trexmotors.com" target="_blank" rel="noopener noreferrer">
-                    Visit TrexMotors.com <ExternalLink className="ml-2" size={16} />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative">
-              <div className="absolute top-4 right-4 px-3 py-1 bg-yellow-500 text-black text-xs font-bold rounded-full">
-                COMING SOON
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <AnimatedSection animation="slide-up" delay={0}>
+              <div className="group relative h-full">
+                <div className="absolute -inset-0.5 bg-primary/50 rounded-2xl opacity-50 group-hover:opacity-80 blur transition-all duration-300"></div>
+                <div className="relative h-full bg-[#0f172a] border border-primary/30 rounded-2xl p-8 hover:bg-[#1a2744] transition-all duration-300">
+                  <img src="/zenoflo-logo.png" alt="Zenoflo - Your Business Command Center" className="h-12 mb-4 object-contain object-left" loading="lazy" />
+                  <h3 className="text-xl font-bold text-white mb-2">Your Business Command Center</h3>
+                  <p className="text-white/60 mb-6 text-sm">
+                    Complete business operating system featuring AI agents, voice automation, and intelligent workflows that adapt to your needs.
+                  </p>
+                  <Button className="w-full bg-primary/20 hover:bg-primary/30 text-white border border-primary/30" asChild>
+                    <a href="https://zenoflo.com" target="_blank" rel="noopener noreferrer">
+                      Visit Zenoflo.com <ExternalLink className="ml-2" size={16} />
+                    </a>
+                  </Button>
+                </div>
               </div>
-              <CardHeader>
-                <img src="/agentmob-logo.png" alt="AgentMob.ai - AI Agent Orchestration Platform" className="h-12 mb-4 object-contain object-left" loading="lazy" />
-                <CardDescription className="text-base">
-                  AI Agent Orchestration Platform
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-6 text-sm">
-                  Central hub for AI agents that connect through intelligent orchestration, enabling seamless automation across your entire business.
-                </p>
-                <Button className="w-full" variant="outline" asChild>
-                  <a href="https://agentmob.ai" target="_blank" rel="noopener noreferrer">
-                    Visit AgentMob.ai <ExternalLink className="ml-2" size={16} />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="slide-up" delay={150}>
+              <div className="group relative h-full">
+                <div className="absolute -inset-0.5 bg-[#FFD700]/40 rounded-2xl opacity-50 group-hover:opacity-80 blur transition-all duration-300"></div>
+                <div className="relative h-full bg-[#0f172a] border border-[#FFD700]/30 rounded-2xl p-8 hover:bg-[#1a2744] transition-all duration-300 overflow-visible">
+                  <div className="absolute -top-3 right-4 px-3 py-1 bg-[#FFD700] text-gray-900 text-xs font-bold rounded-full shadow-lg z-10">
+                    COMING SOON
+                  </div>
+                  <img src="/agentmob-logo.png" alt="AgentMob.ai - AI Agent Orchestration Platform" className="h-12 mb-4 object-contain object-left" loading="lazy" />
+                  <h3 className="text-xl font-bold text-white mb-2">AI Agent Orchestration Platform</h3>
+                  <p className="text-white/60 mb-6 text-sm">
+                    Central hub for AI agents that connect through intelligent orchestration, enabling seamless automation across your entire business.
+                  </p>
+                  <Button className="w-full bg-[#FFD700]/20 hover:bg-[#FFD700]/30 text-white border border-[#FFD700]/30" asChild>
+                    <a href="https://agentmob.ai" target="_blank" rel="noopener noreferrer">
+                      Visit AgentMob.ai <ExternalLink className="ml-2" size={16} />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
