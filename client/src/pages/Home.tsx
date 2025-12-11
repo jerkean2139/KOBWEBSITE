@@ -408,15 +408,15 @@ export default function Home() {
             {/* DWY - Done With You */}
             <AnimatedSection animation="slide-up" delay={200}>
               <TiltCard 
-                className="h-full p-6 relative"
+                className="h-full p-6 relative overflow-visible"
                 glowColor="rgba(251, 191, 36, 0.4)"
                 borderGradient="from-[#FFD700] via-amber-400 to-[#FFD700]"
               >
-                <div className="absolute top-4 right-4 px-3 py-1 bg-[#FFD700]/20 text-[#FFD700] text-xs font-bold rounded-full border border-[#FFD700]/30">
+                <div className="absolute -top-3 right-4 px-3 py-1 bg-[#FFD700] text-gray-900 text-xs font-bold rounded-full shadow-lg z-10">
                   MOST POPULAR
                 </div>
                 
-                <div className="text-center mb-6 pt-4">
+                <div className="text-center mb-6">
                   <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#FFD700]/30 to-primary/20 flex items-center justify-center mb-4 mx-auto backdrop-blur-sm border border-[#FFD700]/20">
                     <DWYIcon size={72} className="text-white" />
                   </div>
