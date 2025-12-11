@@ -1041,25 +1041,22 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 w-full max-w-md">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-1 border border-white/10">
-                  <iframe
-                    src="https://api.leadconnectorhq.com/widget/form/WeCKj6eththzMepQtObZ"
-                    style={{ width: '100%', height: '120px', border: 'none', borderRadius: '8px', background: 'transparent' }}
-                    id="inline-WeCKj6eththzMepQtObZ"
-                    data-layout="{'id':'INLINE'}"
-                    data-trigger-type="alwaysShow"
-                    data-trigger-value=""
-                    data-activation-type="alwaysActivated"
-                    data-activation-value=""
-                    data-deactivation-type="neverDeactivate"
-                    data-deactivation-value=""
-                    data-form-name="Newsletter Signup"
-                    data-height="120"
-                    data-layout-iframe-id="inline-WeCKj6eththzMepQtObZ"
-                    data-form-id="WeCKj6eththzMepQtObZ"
-                    title="Newsletter Signup"
+                <form 
+                  action="https://api.leadconnectorhq.com/widget/form/WeCKj6eththzMepQtObZ" 
+                  method="POST"
+                  className="flex gap-2"
+                >
+                  <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Enter your email" 
+                    required
+                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:border-[#FFD700]/50 focus:ring-1 focus:ring-[#FFD700]/30 transition-all"
                   />
-                </div>
+                  <Button type="submit" className="bg-[#FFD700] hover:bg-[#FFD700]/90 text-black font-semibold px-6">
+                    Subscribe
+                  </Button>
+                </form>
                 <div className="flex items-center justify-center gap-4 mt-3 text-xs text-white/50">
                   <span className="flex items-center gap-1"><CheckCircle2 size={12} /> No spam</span>
                   <span className="flex items-center gap-1"><CheckCircle2 size={12} /> Unsubscribe anytime</span>
